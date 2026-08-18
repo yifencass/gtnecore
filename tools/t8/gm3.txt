@@ -1,0 +1,1798 @@
+Compiled from "GTMachines.java"
+public class com.gregtechceu.gtceu.common.data.GTMachines {
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_SOLID_BOILER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_LIQUID_BOILER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_SOLAR_BOILER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_EXTRACTOR;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_MACERATOR;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_COMPRESSOR;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_HAMMER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_FURNACE;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_ALLOY_SMELTER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_ROCK_CRUSHER;
+
+  public static final it.unimi.dsi.fastutil.Pair<com.gregtechceu.gtceu.api.machine.MachineDefinition, com.gregtechceu.gtceu.api.machine.MachineDefinition> STEAM_MINER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] HULL;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ELECTRIC_FURNACE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ALLOY_SMELTER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ARC_FURNACE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ASSEMBLER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] AUTOCLAVE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BENDER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BREWERY;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CANNER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CENTRIFUGE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CHEMICAL_BATH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CHEMICAL_REACTOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] COMPRESSOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CUTTER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] DISTILLERY;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ELECTROLYZER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ELECTROMAGNETIC_SEPARATOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] EXTRACTOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] EXTRUDER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FERMENTER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_HEATER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_SOLIDIFIER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FORGE_HAMMER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FORMING_PRESS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LATHE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SCANNER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] MIXER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ORE_WASHER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] PACKER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] POLARIZER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_ENGRAVER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SIFTER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] THERMAL_CENTRIFUGE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] WIREMILL;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CIRCUIT_ASSEMBLER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] MACERATOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] GAS_COLLECTOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ROCK_CRUSHER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] AIR_SCRUBBER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] COMBUSTION;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] STEAM_TURBINE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] GAS_TURBINE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] TRANSFORMER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] HI_AMP_TRANSFORMER_2A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] HI_AMP_TRANSFORMER_4A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] POWER_TRANSFORMER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_CONVERTER_1A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_CONVERTER_4A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_CONVERTER_8A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_CONVERTER_16A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition LONG_DIST_ITEM_ENDPOINT;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition LONG_DIST_FLUID_ENDPOINT;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BATTERY_BUFFER_4;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BATTERY_BUFFER_8;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BATTERY_BUFFER_16;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] CHARGER_4;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] PUMP;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FISHER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BLOCK_BREAKER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] MINER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] WORLD_ACCELERATOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ITEM_COLLECTOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] BUFFER;
+
+  public static final java.util.function.BiConsumer<net.minecraft.world.item.ItemStack, java.util.List<net.minecraft.network.chat.Component>> CREATIVE_TOOLTIPS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CREATIVE_ENERGY;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CREATIVE_COMPUTATION_PROVIDER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CREATIVE_FLUID;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CREATIVE_ITEM;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SUPER_CHEST;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] QUANTUM_CHEST;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SUPER_TANK;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] QUANTUM_TANK;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition WOODEN_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition BRONZE_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition STEEL_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition ALUMINIUM_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition STAINLESS_STEEL_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition TITANIUM_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition TUNGSTENSTEEL_CRATE;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition WOODEN_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition BRONZE_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition STEEL_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition ALUMINIUM_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition STAINLESS_STEEL_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition GOLD_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition TITANIUM_DRUM;
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition TUNGSTENSTEEL_DRUM;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ITEM_IMPORT_BUS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ITEM_EXPORT_BUS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_IMPORT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_IMPORT_HATCH_4X;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_IMPORT_HATCH_9X;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_EXPORT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_EXPORT_HATCH_4X;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_EXPORT_HATCH_9X;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_INPUT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_OUTPUT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_INPUT_HATCH_4A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_OUTPUT_HATCH_4A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_INPUT_HATCH_16A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ENERGY_OUTPUT_HATCH_16A;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SUBSTATION_ENERGY_INPUT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] SUBSTATION_ENERGY_OUTPUT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] MUFFLER_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition STEAM_IMPORT_BUS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition STEAM_EXPORT_BUS;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition STEAM_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition COKE_OVEN_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition PUMP_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition MAINTENANCE_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CONFIGURABLE_MAINTENANCE_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CLEANING_MAINTENANCE_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition AUTO_MAINTENANCE_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ITEM_PASSTHROUGH_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] FLUID_PASSTHROUGH_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition RESERVOIR_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] DUAL_IMPORT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] DUAL_EXPORT_HATCH;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] DIODE;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] ROTOR_HOLDER;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_INPUT_HATCH_256;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_OUTPUT_HATCH_256;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_INPUT_HATCH_1024;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_OUTPUT_HATCH_1024;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_INPUT_HATCH_4096;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition[] LASER_OUTPUT_HATCH_4096;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition MONITOR;
+
+  public static final com.gregtechceu.gtceu.api.machine.MachineDefinition ADVANCED_MONITOR;
+
+  public com.gregtechceu.gtceu.common.data.GTMachines();
+    Code:
+       0: aload_0
+       1: invokespecial #192                // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void init();
+    Code:
+       0: invokestatic  #199                // Method com/gregtechceu/gtceu/common/data/machines/GTMultiMachines.init:()V
+       3: invokestatic  #202                // Method com/gregtechceu/gtceu/common/data/machines/GCYMMachines.init:()V
+       6: invokestatic  #205                // Method com/gregtechceu/gtceu/common/data/machines/GTResearchMachines.init:()V
+       9: invokestatic  #209                // Method com/gregtechceu/gtceu/GTCEu$Mods.isAE2Loaded:()Z
+      12: ifeq          18
+      15: invokestatic  #212                // Method com/gregtechceu/gtceu/common/data/machines/GTAEMachines.init:()V
+      18: invokestatic  #215                // Method com/gregtechceu/gtceu/GTCEu$Mods.isKubeJSLoaded:()Z
+      21: ifeq          33
+      24: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+      27: invokevirtual #225                // Method com/gregtechceu/gtceu/api/registry/GTRegistry$RL.getRegistryName:()Lnet/minecraft/resources/ResourceLocation;
+      30: invokestatic  #231                // Method com/gregtechceu/gtceu/integration/kjs/GTRegistryInfo.registerFor:(Lnet/minecraft/resources/ResourceLocation;)V
+      33: invokestatic  #237                // Method net/minecraftforge/fml/ModLoader.get:()Lnet/minecraftforge/fml/ModLoader;
+      36: new           #17                 // class com/gregtechceu/gtceu/api/GTCEuAPI$RegisterEvent
+      39: dup
+      40: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+      43: ldc           #239                // class com/gregtechceu/gtceu/api/machine/MachineDefinition
+      45: invokespecial #242                // Method com/gregtechceu/gtceu/api/GTCEuAPI$RegisterEvent."<init>":(Lcom/gregtechceu/gtceu/api/registry/GTRegistry;Ljava/lang/Class;)V
+      48: invokevirtual #246                // Method net/minecraftforge/fml/ModLoader.postEvent:(Lnet/minecraftforge/eventbus/api/Event;)V
+      51: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+      54: invokevirtual #249                // Method com/gregtechceu/gtceu/api/registry/GTRegistry$RL.freeze:()V
+      57: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+      60: invokevirtual #253                // Method com/gregtechceu/gtceu/api/registry/GTRegistry$RL.iterator:()Ljava/util/Iterator;
+      63: astore_0
+      64: aload_0
+      65: invokeinterface #258,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      70: ifeq          126
+      73: aload_0
+      74: invokeinterface #262,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      79: checkcast     #239                // class com/gregtechceu/gtceu/api/machine/MachineDefinition
+      82: astore_1
+      83: aload_1
+      84: invokevirtual #266                // Method com/gregtechceu/gtceu/api/machine/MachineDefinition.getStateDefinition:()Lnet/minecraft/world/level/block/state/StateDefinition;
+      87: invokevirtual #272                // Method net/minecraft/world/level/block/state/StateDefinition.m_61056_:()Lcom/google/common/collect/ImmutableList;
+      90: invokevirtual #277                // Method com/google/common/collect/ImmutableList.iterator:()Lcom/google/common/collect/UnmodifiableIterator;
+      93: astore_2
+      94: aload_2
+      95: invokeinterface #258,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     100: ifeq          123
+     103: aload_2
+     104: invokeinterface #262,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     109: checkcast     #279                // class com/gregtechceu/gtceu/client/model/machine/MachineRenderState
+     112: astore_3
+     113: getstatic     #283                // Field com/gregtechceu/gtceu/api/machine/MachineDefinition.RENDER_STATE_REGISTRY:Lnet/minecraft/core/IdMapper;
+     116: aload_3
+     117: invokevirtual #289                // Method net/minecraft/core/IdMapper.m_122667_:(Ljava/lang/Object;)V
+     120: goto          94
+     123: goto          64
+     126: return
+
+  public static com.gregtechceu.gtceu.api.machine.MachineDefinition get(java.lang.String);
+    Code:
+       0: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+       3: aload_0
+       4: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+       7: invokevirtual #300                // Method com/gregtechceu/gtceu/api/registry/GTRegistry$RL.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      10: checkcast     #239                // class com/gregtechceu/gtceu/api/machine/MachineDefinition
+      13: areturn
+
+  static {};
+    Code:
+       0: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+       3: invokedynamic #1441,  0           // InvokeDynamic #19:get:()Ljava/util/function/Supplier;
+       8: invokevirtual #1447               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.creativeModeTab:(Ljava/util/function/Supplier;)V
+      11: getstatic     #221                // Field com/gregtechceu/gtceu/api/registry/GTRegistries.MACHINES:Lcom/gregtechceu/gtceu/api/registry/GTRegistry$RL;
+      14: invokevirtual #1450               // Method com/gregtechceu/gtceu/api/registry/GTRegistry$RL.unfreeze:()V
+      17: ldc_w         #1452               // String steam_solid_boiler
+      20: invokedynamic #1460,  0           // InvokeDynamic #20:apply:()Ljava/util/function/BiFunction;
+      25: invokedynamic #1465,  0           // InvokeDynamic #21:apply:()Ljava/util/function/BiFunction;
+      30: invokestatic  #1469               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSteamMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;)Lit/unimi/dsi/fastutil/Pair;
+      33: putstatic     #1471               // Field STEAM_SOLID_BOILER:Lit/unimi/dsi/fastutil/Pair;
+      36: ldc_w         #1473               // String steam_liquid_boiler
+      39: invokedynamic #1477,  0           // InvokeDynamic #22:apply:()Ljava/util/function/BiFunction;
+      44: invokedynamic #1481,  0           // InvokeDynamic #23:apply:()Ljava/util/function/BiFunction;
+      49: invokestatic  #1469               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSteamMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;)Lit/unimi/dsi/fastutil/Pair;
+      52: putstatic     #1483               // Field STEAM_LIQUID_BOILER:Lit/unimi/dsi/fastutil/Pair;
+      55: ldc_w         #1485               // String steam_solar_boiler
+      58: invokedynamic #1489,  0           // InvokeDynamic #24:apply:()Ljava/util/function/BiFunction;
+      63: invokedynamic #1493,  0           // InvokeDynamic #25:apply:()Ljava/util/function/BiFunction;
+      68: invokestatic  #1469               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSteamMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;)Lit/unimi/dsi/fastutil/Pair;
+      71: putstatic     #1495               // Field STEAM_SOLAR_BOILER:Lit/unimi/dsi/fastutil/Pair;
+      74: ldc_w         #1497               // String extractor
+      77: getstatic     #1500               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.EXTRACTOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+      80: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+      83: putstatic     #1506               // Field STEAM_EXTRACTOR:Lit/unimi/dsi/fastutil/Pair;
+      86: ldc_w         #1508               // String steam_macerator
+      89: invokedynamic #1512,  0           // InvokeDynamic #26:apply:()Ljava/util/function/BiFunction;
+      94: invokedynamic #1516,  0           // InvokeDynamic #27:apply:()Ljava/util/function/BiFunction;
+      99: invokestatic  #1469               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSteamMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;)Lit/unimi/dsi/fastutil/Pair;
+     102: putstatic     #1518               // Field STEAM_MACERATOR:Lit/unimi/dsi/fastutil/Pair;
+     105: ldc_w         #1520               // String compressor
+     108: getstatic     #1523               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.COMPRESSOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     111: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+     114: putstatic     #1525               // Field STEAM_COMPRESSOR:Lit/unimi/dsi/fastutil/Pair;
+     117: ldc_w         #1527               // String forge_hammer
+     120: getstatic     #1530               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FORGE_HAMMER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     123: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+     126: putstatic     #1532               // Field STEAM_HAMMER:Lit/unimi/dsi/fastutil/Pair;
+     129: ldc_w         #1534               // String furnace
+     132: getstatic     #1537               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FURNACE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     135: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+     138: putstatic     #1539               // Field STEAM_FURNACE:Lit/unimi/dsi/fastutil/Pair;
+     141: ldc_w         #1541               // String alloy_smelter
+     144: getstatic     #1544               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ALLOY_SMELTER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     147: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+     150: putstatic     #1546               // Field STEAM_ALLOY_SMELTER:Lit/unimi/dsi/fastutil/Pair;
+     153: ldc_w         #1246               // String rock_crusher
+     156: getstatic     #1249               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ROCK_BREAKER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     159: invokestatic  #1504               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleSteamMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)Lit/unimi/dsi/fastutil/Pair;
+     162: putstatic     #1548               // Field STEAM_ROCK_CRUSHER:Lit/unimi/dsi/fastutil/Pair;
+     165: ldc_w         #1550               // String steam_miner
+     168: invokedynamic #1554,  0           // InvokeDynamic #28:apply:()Ljava/util/function/BiFunction;
+     173: invokedynamic #1558,  0           // InvokeDynamic #29:apply:()Ljava/util/function/BiFunction;
+     178: invokestatic  #1469               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSteamMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;)Lit/unimi/dsi/fastutil/Pair;
+     181: putstatic     #1560               // Field STEAM_MINER:Lit/unimi/dsi/fastutil/Pair;
+     184: ldc_w         #1562               // String machine_hull
+     187: invokedynamic #1570,  0           // InvokeDynamic #30:apply:()Ljava/util/function/BiFunction;
+     192: invokedynamic #1575,  0           // InvokeDynamic #31:apply:()Ljava/util/function/BiFunction;
+     197: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+     200: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     203: putstatic     #1585               // Field HULL:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     206: ldc_w         #1587               // String electric_furnace
+     209: getstatic     #1537               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FURNACE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     212: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     215: putstatic     #1593               // Field ELECTRIC_FURNACE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     218: ldc_w         #1541               // String alloy_smelter
+     221: getstatic     #1544               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ALLOY_SMELTER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     224: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     227: putstatic     #1595               // Field ALLOY_SMELTER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     230: ldc_w         #1597               // String arc_furnace
+     233: getstatic     #1600               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ARC_FURNACE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     236: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     239: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     242: putstatic     #1608               // Field ARC_FURNACE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     245: ldc_w         #1610               // String assembler
+     248: getstatic     #1613               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ASSEMBLER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     251: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     254: iconst_1
+     255: invokestatic  #1616               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Z)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     258: putstatic     #1618               // Field ASSEMBLER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     261: ldc_w         #1620               // String autoclave
+     264: getstatic     #1623               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.AUTOCLAVE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     267: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     270: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     273: putstatic     #1625               // Field AUTOCLAVE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     276: ldc_w         #1627               // String bender
+     279: getstatic     #1630               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.BENDER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     282: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     285: putstatic     #1632               // Field BENDER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     288: ldc_w         #1634               // String brewery
+     291: getstatic     #1637               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.BREWING_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     294: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     297: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     300: putstatic     #1639               // Field BREWERY:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     303: ldc_w         #1641               // String canner
+     306: getstatic     #1644               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CANNER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     309: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     312: putstatic     #1646               // Field CANNER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     315: ldc_w         #1648               // String centrifuge
+     318: getstatic     #1651               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CENTRIFUGE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     321: getstatic     #1654               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.largeTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     324: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     327: putstatic     #1656               // Field CENTRIFUGE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     330: ldc_w         #1658               // String chemical_bath
+     333: getstatic     #1661               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CHEMICAL_BATH_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     336: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     339: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     342: putstatic     #1663               // Field CHEMICAL_BATH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     345: ldc_w         #1665               // String chemical_reactor
+     348: getstatic     #1668               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CHEMICAL_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     351: invokedynamic #1675,  0           // InvokeDynamic #32:get:()Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     356: iconst_1
+     357: invokestatic  #1616               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Z)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     360: putstatic     #1677               // Field CHEMICAL_REACTOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     363: ldc_w         #1520               // String compressor
+     366: getstatic     #1523               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.COMPRESSOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     369: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     372: putstatic     #1679               // Field COMPRESSOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     375: ldc_w         #1681               // String cutter
+     378: getstatic     #1684               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CUTTER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     381: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     384: putstatic     #1686               // Field CUTTER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     387: ldc_w         #1688               // String distillery
+     390: getstatic     #1691               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.DISTILLERY_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     393: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     396: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     399: putstatic     #1693               // Field DISTILLERY:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     402: ldc_w         #1695               // String electrolyzer
+     405: getstatic     #1698               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ELECTROLYZER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     408: getstatic     #1654               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.largeTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     411: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     414: putstatic     #1700               // Field ELECTROLYZER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     417: ldc_w         #1702               // String electromagnetic_separator
+     420: getstatic     #1705               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ELECTROMAGNETIC_SEPARATOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     423: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     426: putstatic     #1707               // Field ELECTROMAGNETIC_SEPARATOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     429: ldc_w         #1497               // String extractor
+     432: getstatic     #1500               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.EXTRACTOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     435: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     438: putstatic     #1709               // Field EXTRACTOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     441: ldc_w         #1711               // String extruder
+     444: getstatic     #1714               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.EXTRUDER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     447: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     450: putstatic     #1716               // Field EXTRUDER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     453: ldc_w         #1718               // String fermenter
+     456: getstatic     #1721               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FERMENTING_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     459: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     462: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     465: putstatic     #1723               // Field FERMENTER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     468: ldc_w         #1725               // String fluid_heater
+     471: getstatic     #1728               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FLUID_HEATER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     474: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     477: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     480: putstatic     #1730               // Field FLUID_HEATER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     483: ldc_w         #1732               // String fluid_solidifier
+     486: getstatic     #1735               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FLUID_SOLIDFICATION_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     489: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     492: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     495: putstatic     #1737               // Field FLUID_SOLIDIFIER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     498: ldc_w         #1527               // String forge_hammer
+     501: getstatic     #1530               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FORGE_HAMMER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     504: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     507: putstatic     #1739               // Field FORGE_HAMMER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     510: ldc_w         #1741               // String forming_press
+     513: getstatic     #1744               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.FORMING_PRESS_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     516: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     519: putstatic     #1746               // Field FORMING_PRESS:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     522: ldc_w         #1748               // String lathe
+     525: getstatic     #1751               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.LATHE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     528: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     531: putstatic     #1753               // Field LATHE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     534: ldc_w         #1755               // String scanner
+     537: getstatic     #1758               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.SCANNER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     540: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     543: putstatic     #1760               // Field SCANNER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     546: ldc_w         #1762               // String mixer
+     549: getstatic     #1765               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.MIXER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     552: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     555: invokestatic  #1606               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     558: putstatic     #1767               // Field MIXER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     561: ldc_w         #1769               // String ore_washer
+     564: getstatic     #1772               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.ORE_WASHER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     567: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     570: putstatic     #1774               // Field ORE_WASHER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     573: ldc_w         #1776               // String packer
+     576: getstatic     #1779               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.PACKER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     579: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     582: putstatic     #1781               // Field PACKER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     585: ldc_w         #1783               // String polarizer
+     588: getstatic     #1786               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.POLARIZER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     591: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     594: putstatic     #1788               // Field POLARIZER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     597: ldc_w         #1790               // String laser_engraver
+     600: getstatic     #1793               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.LASER_ENGRAVER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     603: getstatic     #1225               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.defaultTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     606: iconst_1
+     607: invokestatic  #1616               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Z)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     610: putstatic     #1795               // Field LASER_ENGRAVER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     613: ldc_w         #1797               // String sifter
+     616: getstatic     #1800               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.SIFTER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     619: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     622: putstatic     #1802               // Field SIFTER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     625: ldc_w         #1804               // String thermal_centrifuge
+     628: getstatic     #1807               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.THERMAL_CENTRIFUGE_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     631: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     634: putstatic     #1809               // Field THERMAL_CENTRIFUGE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     637: ldc_w         #1811               // String wiremill
+     640: getstatic     #1814               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.WIREMILL_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     643: invokestatic  #1591               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     646: putstatic     #1816               // Field WIREMILL:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     649: ldc_w         #1818               // String circuit_assembler
+     652: getstatic     #1821               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     655: getstatic     #1603               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.hvCappedTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     658: iconst_1
+     659: invokestatic  #1616               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Z)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     662: putstatic     #1823               // Field CIRCUIT_ASSEMBLER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     665: ldc_w         #1260               // String macerator
+     668: invokedynamic #1827,  0           // InvokeDynamic #33:apply:()Ljava/util/function/BiFunction;
+     673: invokedynamic #1831,  0           // InvokeDynamic #34:apply:()Ljava/util/function/BiFunction;
+     678: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+     681: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     684: putstatic     #1836               // Field MACERATOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     687: ldc_w         #1838               // String gas_collector
+     690: getstatic     #1841               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.GAS_COLLECTOR_RECIPES:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     693: getstatic     #1654               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.largeTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     696: iconst_1
+     697: invokestatic  #1616               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleMachines:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;Z)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     700: putstatic     #1843               // Field GAS_COLLECTOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     703: ldc_w         #1246               // String rock_crusher
+     706: invokedynamic #1847,  0           // InvokeDynamic #35:apply:()Ljava/util/function/BiFunction;
+     711: invokedynamic #1851,  0           // InvokeDynamic #36:apply:()Ljava/util/function/BiFunction;
+     716: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+     719: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     722: putstatic     #1853               // Field ROCK_CRUSHER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     725: ldc_w         #1206               // String air_scrubber
+     728: invokedynamic #1857,  0           // InvokeDynamic #37:apply:()Ljava/util/function/BiFunction;
+     733: invokedynamic #1861,  0           // InvokeDynamic #38:apply:()Ljava/util/function/BiFunction;
+     738: getstatic     #1864               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.LOW_TIERS:[I
+     741: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     744: putstatic     #1866               // Field AIR_SCRUBBER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     747: ldc_w         #1868               // String combustion
+     750: getstatic     #1871               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.COMBUSTION_GENERATOR_FUELS:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     753: getstatic     #1874               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.genericGeneratorTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     756: ldc_w         #1875               // float 0.1f
+     759: iconst_3
+     760: newarray       int
+     762: dup
+     763: iconst_0
+     764: iconst_1
+     765: iastore
+     766: dup
+     767: iconst_1
+     768: iconst_2
+     769: iastore
+     770: dup
+     771: iconst_2
+     772: iconst_3
+     773: iastore
+     774: invokestatic  #1879               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleGenerator:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;F[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     777: putstatic     #1881               // Field COMBUSTION:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     780: ldc_w         #1883               // String steam_turbine
+     783: getstatic     #1886               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.STEAM_TURBINE_FUELS:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     786: getstatic     #1889               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.steamGeneratorTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     789: fconst_0
+     790: iconst_3
+     791: newarray       int
+     793: dup
+     794: iconst_0
+     795: iconst_1
+     796: iastore
+     797: dup
+     798: iconst_1
+     799: iconst_2
+     800: iastore
+     801: dup
+     802: iconst_2
+     803: iconst_3
+     804: iastore
+     805: invokestatic  #1879               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleGenerator:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;F[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     808: putstatic     #1891               // Field STEAM_TURBINE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     811: ldc_w         #1893               // String gas_turbine
+     814: getstatic     #1896               // Field com/gregtechceu/gtceu/common/data/GTRecipeTypes.GAS_TURBINE_FUELS:Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;
+     817: getstatic     #1874               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.genericGeneratorTankSizeFunction:Lit/unimi/dsi/fastutil/ints/Int2IntFunction;
+     820: ldc_w         #1875               // float 0.1f
+     823: iconst_3
+     824: newarray       int
+     826: dup
+     827: iconst_0
+     828: iconst_1
+     829: iastore
+     830: dup
+     831: iconst_1
+     832: iconst_2
+     833: iastore
+     834: dup
+     835: iconst_2
+     836: iconst_3
+     837: iastore
+     838: invokestatic  #1879               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerSimpleGenerator:(Ljava/lang/String;Lcom/gregtechceu/gtceu/api/recipe/GTRecipeType;Lit/unimi/dsi/fastutil/ints/Int2IntFunction;F[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     841: putstatic     #1898               // Field GAS_TURBINE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     844: ldc_w         #1900               // String
+     847: iconst_1
+     848: invokestatic  #1904               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTransformerMachines:(Ljava/lang/String;I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     851: putstatic     #1906               // Field TRANSFORMER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     854: ldc_w         #1908               // String Hi-Amp (2x)
+     857: iconst_2
+     858: invokestatic  #1904               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTransformerMachines:(Ljava/lang/String;I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     861: putstatic     #1910               // Field HI_AMP_TRANSFORMER_2A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     864: ldc_w         #1912               // String Hi-Amp (4x)
+     867: iconst_4
+     868: invokestatic  #1904               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTransformerMachines:(Ljava/lang/String;I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     871: putstatic     #1914               // Field HI_AMP_TRANSFORMER_4A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     874: ldc_w         #1916               // String Power
+     877: bipush        16
+     879: invokestatic  #1904               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTransformerMachines:(Ljava/lang/String;I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     882: putstatic     #1918               // Field POWER_TRANSFORMER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     885: iconst_1
+     886: invokestatic  #1922               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerConverter:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     889: putstatic     #1924               // Field ENERGY_CONVERTER_1A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     892: iconst_4
+     893: invokestatic  #1922               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerConverter:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     896: putstatic     #1926               // Field ENERGY_CONVERTER_4A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     899: bipush        8
+     901: invokestatic  #1922               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerConverter:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     904: putstatic     #1928               // Field ENERGY_CONVERTER_8A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     907: bipush        16
+     909: invokestatic  #1922               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerConverter:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     912: putstatic     #1930               // Field ENERGY_CONVERTER_16A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     915: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+     918: ldc_w         #1932               // String long_distance_item_pipeline_endpoint
+     921: invokedynamic #1943,  0           // InvokeDynamic #39:apply:()Ljava/util/function/Function;
+     926: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     929: ldc_w         #1948               // String Long Distance Item Pipeline Endpoint
+     932: invokevirtual #328                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.langValue:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     935: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+     938: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     941: iconst_1
+     942: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     945: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+     948: iconst_0
+     949: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     952: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     955: ldc_w         #1932               // String long_distance_item_pipeline_endpoint
+     958: invokevirtual #473                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlayTieredHullModel:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     961: ldc_w         #1953               // String gtceu.machine.endpoint.tooltip
+     964: invokestatic  #390                // Method com/gregtechceu/gtceu/data/lang/LangHandler.getMultiLang:(Ljava/lang/String;)Ljava/util/List;
+     967: invokevirtual #394                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:(Ljava/util/List;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     970: invokedynamic #1959,  0           // InvokeDynamic #40:accept:()Ljava/util/function/BiConsumer;
+     975: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     978: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     981: putstatic     #1961               // Field LONG_DIST_ITEM_ENDPOINT:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+     984: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+     987: ldc_w         #1963               // String long_distance_fluid_pipeline_endpoint
+     990: invokedynamic #1968,  0           // InvokeDynamic #41:apply:()Ljava/util/function/Function;
+     995: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+     998: ldc_w         #1970               // String Long Distance Fluid Pipeline Endpoint
+    1001: invokevirtual #328                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.langValue:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1004: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    1007: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1010: iconst_1
+    1011: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1014: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    1017: iconst_0
+    1018: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    1021: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1024: ldc_w         #1963               // String long_distance_fluid_pipeline_endpoint
+    1027: invokevirtual #473                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlayTieredHullModel:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1030: iconst_3
+    1031: anewarray     #396                // class net/minecraft/network/chat/Component
+    1034: dup
+    1035: iconst_0
+    1036: ldc_w         #1972               // String gtceu.machine.endpoint.tooltip.0
+    1039: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    1042: aastore
+    1043: dup
+    1044: iconst_1
+    1045: ldc_w         #1974               // String gtceu.machine.endpoint.tooltip.1
+    1048: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    1051: aastore
+    1052: dup
+    1053: iconst_2
+    1054: ldc_w         #1976               // String gtceu.machine.endpoint.tooltip.2
+    1057: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    1060: aastore
+    1061: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1064: invokedynamic #1980,  0           // InvokeDynamic #42:accept:()Ljava/util/function/BiConsumer;
+    1069: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1072: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1075: putstatic     #1982               // Field LONG_DIST_FLUID_ENDPOINT:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1078: iconst_4
+    1079: invokestatic  #1985               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerBatteryBuffer:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1082: putstatic     #1987               // Field BATTERY_BUFFER_4:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1085: bipush        8
+    1087: invokestatic  #1985               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerBatteryBuffer:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1090: putstatic     #1989               // Field BATTERY_BUFFER_8:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1093: bipush        16
+    1095: invokestatic  #1985               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerBatteryBuffer:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1098: putstatic     #1991               // Field BATTERY_BUFFER_16:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1101: iconst_4
+    1102: invokestatic  #1994               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCharger:(I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1105: putstatic     #1996               // Field CHARGER_4:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1108: ldc_w         #1998               // String pump
+    1111: invokedynamic #2002,  0           // InvokeDynamic #43:apply:()Ljava/util/function/BiFunction;
+    1116: invokedynamic #2006,  0           // InvokeDynamic #44:apply:()Ljava/util/function/BiFunction;
+    1121: iconst_4
+    1122: newarray       int
+    1124: dup
+    1125: iconst_0
+    1126: iconst_1
+    1127: iastore
+    1128: dup
+    1129: iconst_1
+    1130: iconst_2
+    1131: iastore
+    1132: dup
+    1133: iconst_2
+    1134: iconst_3
+    1135: iastore
+    1136: dup
+    1137: iconst_3
+    1138: iconst_4
+    1139: iastore
+    1140: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1143: putstatic     #2008               // Field PUMP:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1146: ldc_w         #1151               // String fisher
+    1149: invokedynamic #2012,  0           // InvokeDynamic #45:apply:()Ljava/util/function/BiFunction;
+    1154: invokedynamic #2016,  0           // InvokeDynamic #46:apply:()Ljava/util/function/BiFunction;
+    1159: bipush        6
+    1161: newarray       int
+    1163: dup
+    1164: iconst_0
+    1165: iconst_1
+    1166: iastore
+    1167: dup
+    1168: iconst_1
+    1169: iconst_2
+    1170: iastore
+    1171: dup
+    1172: iconst_2
+    1173: iconst_3
+    1174: iastore
+    1175: dup
+    1176: iconst_3
+    1177: iconst_4
+    1178: iastore
+    1179: dup
+    1180: iconst_4
+    1181: iconst_5
+    1182: iastore
+    1183: dup
+    1184: iconst_5
+    1185: bipush        6
+    1187: iastore
+    1188: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1191: putstatic     #2018               // Field FISHER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1194: ldc_w         #1130               // String block_breaker
+    1197: invokedynamic #2022,  0           // InvokeDynamic #47:apply:()Ljava/util/function/BiFunction;
+    1202: invokedynamic #2026,  0           // InvokeDynamic #48:apply:()Ljava/util/function/BiFunction;
+    1207: iconst_4
+    1208: newarray       int
+    1210: dup
+    1211: iconst_0
+    1212: iconst_1
+    1213: iastore
+    1214: dup
+    1215: iconst_1
+    1216: iconst_2
+    1217: iastore
+    1218: dup
+    1219: iconst_2
+    1220: iconst_3
+    1221: iastore
+    1222: dup
+    1223: iconst_3
+    1224: iconst_4
+    1225: iastore
+    1226: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1229: putstatic     #2028               // Field BLOCK_BREAKER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1232: ldc_w         #1071               // String miner
+    1235: invokedynamic #2032,  0           // InvokeDynamic #49:apply:()Ljava/util/function/BiFunction;
+    1240: invokedynamic #2036,  0           // InvokeDynamic #50:apply:()Ljava/util/function/BiFunction;
+    1245: iconst_3
+    1246: newarray       int
+    1248: dup
+    1249: iconst_0
+    1250: iconst_1
+    1251: iastore
+    1252: dup
+    1253: iconst_1
+    1254: iconst_2
+    1255: iastore
+    1256: dup
+    1257: iconst_2
+    1258: iconst_3
+    1259: iastore
+    1260: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1263: putstatic     #2038               // Field MINER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1266: ldc_w         #2040               // String world_accelerator
+    1269: invokedynamic #2044,  0           // InvokeDynamic #51:apply:()Ljava/util/function/BiFunction;
+    1274: invokedynamic #2048,  0           // InvokeDynamic #52:apply:()Ljava/util/function/BiFunction;
+    1279: bipush        8
+    1281: newarray       int
+    1283: dup
+    1284: iconst_0
+    1285: iconst_1
+    1286: iastore
+    1287: dup
+    1288: iconst_1
+    1289: iconst_2
+    1290: iastore
+    1291: dup
+    1292: iconst_2
+    1293: iconst_3
+    1294: iastore
+    1295: dup
+    1296: iconst_3
+    1297: iconst_4
+    1298: iastore
+    1299: dup
+    1300: iconst_4
+    1301: iconst_5
+    1302: iastore
+    1303: dup
+    1304: iconst_5
+    1305: bipush        6
+    1307: iastore
+    1308: dup
+    1309: bipush        6
+    1311: bipush        7
+    1313: iastore
+    1314: dup
+    1315: bipush        7
+    1317: bipush        8
+    1319: iastore
+    1320: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1323: putstatic     #2050               // Field WORLD_ACCELERATOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1326: ldc_w         #985                // String item_collector
+    1329: invokedynamic #2054,  0           // InvokeDynamic #53:apply:()Ljava/util/function/BiFunction;
+    1334: invokedynamic #2058,  0           // InvokeDynamic #54:apply:()Ljava/util/function/BiFunction;
+    1339: iconst_4
+    1340: newarray       int
+    1342: dup
+    1343: iconst_0
+    1344: iconst_1
+    1345: iastore
+    1346: dup
+    1347: iconst_1
+    1348: iconst_2
+    1349: iastore
+    1350: dup
+    1351: iconst_2
+    1352: iconst_3
+    1353: iastore
+    1354: dup
+    1355: iconst_3
+    1356: iconst_4
+    1357: iastore
+    1358: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1361: putstatic     #2060               // Field ITEM_COLLECTOR:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1364: ldc_w         #2062               // String buffer
+    1367: invokedynamic #2066,  0           // InvokeDynamic #55:apply:()Ljava/util/function/BiFunction;
+    1372: invokedynamic #2070,  0           // InvokeDynamic #56:apply:()Ljava/util/function/BiFunction;
+    1377: iconst_3
+    1378: newarray       int
+    1380: dup
+    1381: iconst_0
+    1382: iconst_1
+    1383: iastore
+    1384: dup
+    1385: iconst_1
+    1386: iconst_2
+    1387: iastore
+    1388: dup
+    1389: iconst_2
+    1390: iconst_3
+    1391: iastore
+    1392: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1395: putstatic     #2072               // Field BUFFER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1398: invokedynamic #2076,  0           // InvokeDynamic #57:accept:()Ljava/util/function/BiConsumer;
+    1403: putstatic     #833                // Field CREATIVE_TOOLTIPS:Ljava/util/function/BiConsumer;
+    1406: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    1409: ldc_w         #2078               // String creative_energy
+    1412: invokedynamic #2083,  0           // InvokeDynamic #58:apply:()Ljava/util/function/Function;
+    1417: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1420: getstatic     #932                // Field com/gregtechceu/gtceu/api/data/RotationState.NONE:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    1423: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1426: getstatic     #2089               // Field com/gregtechceu/gtceu/common/data/models/GTModels.BLANK_TEXTURE:Lnet/minecraft/resources/ResourceLocation;
+    1429: ldc_w         #2091               // String block/overlay/machine/overlay_energy_emitter
+    1432: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    1435: invokestatic  #940                // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createSingleOverlayTieredHullMachineModel:(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1438: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1441: getstatic     #833                // Field CREATIVE_TOOLTIPS:Ljava/util/function/BiConsumer;
+    1444: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1447: bipush        21
+    1449: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1452: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1455: putstatic     #2093               // Field CREATIVE_ENERGY:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1458: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    1461: ldc_w         #2095               // String creative_computation_provider
+    1464: invokedynamic #2100,  0           // InvokeDynamic #59:apply:()Ljava/util/function/Function;
+    1469: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1472: getstatic     #932                // Field com/gregtechceu/gtceu/api/data/RotationState.NONE:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    1475: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1478: ldc_w         #2102               // String block/overlay/machine/overlay_data_hatch_optical
+    1481: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    1484: ldc_w         #2104               // String block/overlay/machine/overlay_data_hatch_optical_emissive
+    1487: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    1490: invokestatic  #940                // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createSingleOverlayTieredHullMachineModel:(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1493: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1496: getstatic     #833                // Field CREATIVE_TOOLTIPS:Ljava/util/function/BiConsumer;
+    1499: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1502: bipush        21
+    1504: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1507: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1510: putstatic     #2106               // Field CREATIVE_COMPUTATION_PROVIDER:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1513: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    1516: ldc_w         #2108               // String creative_tank
+    1519: invokedynamic #2113,  0           // InvokeDynamic #60:apply:()Ljava/util/function/Function;
+    1524: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1527: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    1530: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1533: iconst_1
+    1534: invokevirtual #2116               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowExtendedFacing:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1537: invokedynamic #2120,  0           // InvokeDynamic #61:accept:()Ljava/util/function/BiConsumer;
+    1542: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1545: ldc_w         #2122               // String block/machine/template/quantum/creative_container
+    1548: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    1551: invokestatic  #2125               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createBasicMachineModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1554: invokedynamic #2133,  0           // InvokeDynamic #62:accept:()Ljava/util/function/Consumer;
+    1559: invokeinterface #2137,  2         // InterfaceMethod com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer.andThen:(Ljava/util/function/Consumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1564: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1567: iconst_1
+    1568: invokevirtual #2140               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.hasBER:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1571: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1574: putstatic     #2142               // Field CREATIVE_FLUID:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1577: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    1580: ldc_w         #2144               // String creative_chest
+    1583: invokedynamic #2149,  0           // InvokeDynamic #63:apply:()Ljava/util/function/Function;
+    1588: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1591: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    1594: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1597: iconst_1
+    1598: invokevirtual #2116               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowExtendedFacing:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1601: invokedynamic #2153,  0           // InvokeDynamic #64:accept:()Ljava/util/function/BiConsumer;
+    1606: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1609: ldc_w         #2122               // String block/machine/template/quantum/creative_container
+    1612: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    1615: invokestatic  #2125               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createBasicMachineModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1618: invokedynamic #2157,  0           // InvokeDynamic #65:accept:()Ljava/util/function/Consumer;
+    1623: invokeinterface #2137,  2         // InterfaceMethod com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer.andThen:(Ljava/util/function/Consumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    1628: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1631: iconst_1
+    1632: invokevirtual #2140               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.hasBER:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    1635: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1638: putstatic     #2159               // Field CREATIVE_ITEM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1641: ldc_w         #2161               // String super_chest
+    1644: getstatic     #1864               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.LOW_TIERS:[I
+    1647: invokestatic  #2165               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerQuantumChests:(Ljava/lang/String;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1650: putstatic     #2167               // Field SUPER_CHEST:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1653: ldc_w         #2169               // String quantum_chest
+    1656: getstatic     #2172               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.HIGH_TIERS:[I
+    1659: invokestatic  #2165               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerQuantumChests:(Ljava/lang/String;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1662: putstatic     #2174               // Field QUANTUM_CHEST:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1665: ldc_w         #2176               // String super_tank
+    1668: getstatic     #1864               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.LOW_TIERS:[I
+    1671: invokestatic  #2179               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerQuantumTanks:(Ljava/lang/String;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1674: putstatic     #2181               // Field SUPER_TANK:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1677: ldc_w         #2183               // String quantum_tank
+    1680: getstatic     #2172               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.HIGH_TIERS:[I
+    1683: invokestatic  #2179               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerQuantumTanks:(Ljava/lang/String;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1686: putstatic     #2185               // Field QUANTUM_TANK:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1689: getstatic     #2191               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Wood:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1692: bipush        27
+    1694: ldc_w         #2193               // String Wooden Crate
+    1697: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1700: putstatic     #2199               // Field WOODEN_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1703: getstatic     #2202               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Bronze:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1706: bipush        54
+    1708: ldc_w         #2204               // String Bronze Crate
+    1711: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1714: putstatic     #2206               // Field BRONZE_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1717: getstatic     #2209               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Steel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1720: bipush        72
+    1722: ldc_w         #2211               // String Steel Crate
+    1725: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1728: putstatic     #2213               // Field STEEL_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1731: getstatic     #2216               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Aluminium:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1734: bipush        90
+    1736: ldc_w         #2218               // String Aluminium Crate
+    1739: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1742: putstatic     #2220               // Field ALUMINIUM_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1745: getstatic     #2223               // Field com/gregtechceu/gtceu/common/data/GTMaterials.StainlessSteel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1748: bipush        108
+    1750: ldc_w         #2225               // String Stainless Steel Crate
+    1753: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1756: putstatic     #2227               // Field STAINLESS_STEEL_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1759: getstatic     #2230               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Titanium:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1762: bipush        126
+    1764: ldc_w         #2232               // String Titanium Crate
+    1767: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1770: putstatic     #2234               // Field TITANIUM_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1773: getstatic     #2237               // Field com/gregtechceu/gtceu/common/data/GTMaterials.TungstenSteel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1776: sipush        144
+    1779: ldc_w         #2239               // String Tungstensteel Crate
+    1782: invokestatic  #2197               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerCrate:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1785: putstatic     #2241               // Field TUNGSTENSTEEL_CRATE:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1788: getstatic     #2191               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Wood:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1791: sipush        16000
+    1794: ldc_w         #2243               // String Wooden Barrel
+    1797: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1800: putstatic     #2248               // Field WOODEN_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1803: getstatic     #2202               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Bronze:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1806: sipush        32000
+    1809: ldc_w         #2250               // String Bronze Drum
+    1812: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1815: putstatic     #2252               // Field BRONZE_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1818: getstatic     #2209               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Steel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1821: ldc_w         #952                // int 64000
+    1824: ldc_w         #2254               // String Steel Drum
+    1827: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1830: putstatic     #2256               // Field STEEL_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1833: getstatic     #2216               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Aluminium:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1836: ldc_w         #2257               // int 128000
+    1839: ldc_w         #2259               // String Aluminium Drum
+    1842: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1845: putstatic     #2261               // Field ALUMINIUM_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1848: getstatic     #2223               // Field com/gregtechceu/gtceu/common/data/GTMaterials.StainlessSteel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1851: ldc_w         #2262               // int 256000
+    1854: ldc_w         #2264               // String Stainless Steel Drum
+    1857: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1860: putstatic     #2266               // Field STAINLESS_STEEL_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1863: getstatic     #2269               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Gold:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1866: sipush        32000
+    1869: ldc_w         #2271               // String Gold Drum
+    1872: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1875: putstatic     #2273               // Field GOLD_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1878: getstatic     #2230               // Field com/gregtechceu/gtceu/common/data/GTMaterials.Titanium:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1881: ldc_w         #2274               // int 512000
+    1884: ldc_w         #2276               // String Titanium Drum
+    1887: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1890: putstatic     #2278               // Field TITANIUM_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1893: getstatic     #2237               // Field com/gregtechceu/gtceu/common/data/GTMaterials.TungstenSteel:Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;
+    1896: ldc_w         #2279               // int 1024000
+    1899: ldc_w         #2281               // String Tungstensteel Drum
+    1902: invokestatic  #2246               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerDrum:(Lcom/gregtechceu/gtceu/api/data/chemical/material/Material;ILjava/lang/String;)Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1905: putstatic     #2283               // Field TUNGSTENSTEEL_DRUM:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1908: ldc_w         #2285               // String input_bus
+    1911: invokedynamic #2289,  0           // InvokeDynamic #66:apply:()Ljava/util/function/BiFunction;
+    1916: invokedynamic #2293,  0           // InvokeDynamic #67:apply:()Ljava/util/function/BiFunction;
+    1921: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    1924: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1927: putstatic     #2295               // Field ITEM_IMPORT_BUS:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1930: ldc_w         #2297               // String output_bus
+    1933: invokedynamic #2301,  0           // InvokeDynamic #68:apply:()Ljava/util/function/BiFunction;
+    1938: invokedynamic #2305,  0           // InvokeDynamic #69:apply:()Ljava/util/function/BiFunction;
+    1943: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    1946: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1949: putstatic     #2307               // Field ITEM_EXPORT_BUS:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1952: ldc_w         #2309               // String input_hatch
+    1955: ldc_w         #2311               // String Input Hatch
+    1958: ldc_w         #2313               // String fluid_hatch.import
+    1961: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    1964: sipush        8000
+    1967: iconst_1
+    1968: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    1971: iconst_2
+    1972: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    1975: dup
+    1976: iconst_0
+    1977: getstatic     #2316               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    1980: aastore
+    1981: dup
+    1982: iconst_1
+    1983: getstatic     #2319               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS_1X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    1986: aastore
+    1987: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1990: putstatic     #2325               // Field FLUID_IMPORT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    1993: ldc_w         #2327               // String input_hatch_4x
+    1996: ldc_w         #2329               // String Quadruple Input Hatch
+    1999: ldc_w         #2313               // String fluid_hatch.import
+    2002: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    2005: sipush        2000
+    2008: iconst_4
+    2009: getstatic     #2332               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.MULTI_HATCH_TIERS:[I
+    2012: iconst_2
+    2013: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2016: dup
+    2017: iconst_0
+    2018: getstatic     #2316               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2021: aastore
+    2022: dup
+    2023: iconst_1
+    2024: getstatic     #2335               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS_4X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2027: aastore
+    2028: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2031: putstatic     #2337               // Field FLUID_IMPORT_HATCH_4X:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2034: ldc_w         #2339               // String input_hatch_9x
+    2037: ldc_w         #2341               // String Nonuple Input Hatch
+    2040: ldc_w         #2313               // String fluid_hatch.import
+    2043: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    2046: sipush        1000
+    2049: bipush        9
+    2051: getstatic     #2332               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.MULTI_HATCH_TIERS:[I
+    2054: iconst_2
+    2055: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2058: dup
+    2059: iconst_0
+    2060: getstatic     #2316               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2063: aastore
+    2064: dup
+    2065: iconst_1
+    2066: getstatic     #2344               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS_9X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2069: aastore
+    2070: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2073: putstatic     #2346               // Field FLUID_IMPORT_HATCH_9X:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2076: ldc_w         #2348               // String output_hatch
+    2079: ldc_w         #2350               // String Output Hatch
+    2082: ldc_w         #2352               // String fluid_hatch.export
+    2085: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    2088: sipush        8000
+    2091: iconst_1
+    2092: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    2095: iconst_2
+    2096: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2099: dup
+    2100: iconst_0
+    2101: getstatic     #2355               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2104: aastore
+    2105: dup
+    2106: iconst_1
+    2107: getstatic     #2358               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS_1X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2110: aastore
+    2111: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2114: putstatic     #2360               // Field FLUID_EXPORT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2117: ldc_w         #2362               // String output_hatch_4x
+    2120: ldc_w         #2364               // String Quadruple Output Hatch
+    2123: ldc_w         #2352               // String fluid_hatch.export
+    2126: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    2129: sipush        2000
+    2132: iconst_4
+    2133: getstatic     #2332               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.MULTI_HATCH_TIERS:[I
+    2136: iconst_2
+    2137: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2140: dup
+    2141: iconst_0
+    2142: getstatic     #2355               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2145: aastore
+    2146: dup
+    2147: iconst_1
+    2148: getstatic     #2367               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS_4X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2151: aastore
+    2152: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2155: putstatic     #2369               // Field FLUID_EXPORT_HATCH_4X:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2158: ldc_w         #2371               // String output_hatch_9x
+    2161: ldc_w         #2373               // String Nonuple Output Hatch
+    2164: ldc_w         #2352               // String fluid_hatch.export
+    2167: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    2170: sipush        1000
+    2173: bipush        9
+    2175: getstatic     #2332               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.MULTI_HATCH_TIERS:[I
+    2178: iconst_2
+    2179: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2182: dup
+    2183: iconst_0
+    2184: getstatic     #2355               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2187: aastore
+    2188: dup
+    2189: iconst_1
+    2190: getstatic     #2376               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.EXPORT_FLUIDS_9X:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2193: aastore
+    2194: invokestatic  #2323               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerFluidHatches:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/gregtechceu/gtceu/api/capability/recipe/IO;II[I[Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2197: putstatic     #2378               // Field FLUID_EXPORT_HATCH_9X:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2200: ldc_w         #762                // String energy_input_hatch
+    2203: invokedynamic #2382,  0           // InvokeDynamic #70:apply:()Ljava/util/function/BiFunction;
+    2208: invokedynamic #2386,  0           // InvokeDynamic #71:apply:()Ljava/util/function/BiFunction;
+    2213: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    2216: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2219: putstatic     #2388               // Field ENERGY_INPUT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2222: ldc_w         #753                // String energy_output_hatch
+    2225: invokedynamic #2392,  0           // InvokeDynamic #72:apply:()Ljava/util/function/BiFunction;
+    2230: invokedynamic #2396,  0           // InvokeDynamic #73:apply:()Ljava/util/function/BiFunction;
+    2235: getstatic     #1579               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ALL_TIERS:[I
+    2238: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2241: putstatic     #2398               // Field ENERGY_OUTPUT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2244: ldc_w         #744                // String energy_input_hatch_4a
+    2247: invokedynamic #2402,  0           // InvokeDynamic #74:apply:()Ljava/util/function/BiFunction;
+    2252: invokedynamic #2406,  0           // InvokeDynamic #75:apply:()Ljava/util/function/BiFunction;
+    2257: iconst_4
+    2258: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2261: arraylength
+    2262: iconst_1
+    2263: isub
+    2264: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2267: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2270: putstatic     #2412               // Field ENERGY_INPUT_HATCH_4A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2273: ldc_w         #737                // String energy_output_hatch_4a
+    2276: invokedynamic #2416,  0           // InvokeDynamic #76:apply:()Ljava/util/function/BiFunction;
+    2281: invokedynamic #2420,  0           // InvokeDynamic #77:apply:()Ljava/util/function/BiFunction;
+    2286: iconst_4
+    2287: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2290: arraylength
+    2291: iconst_1
+    2292: isub
+    2293: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2296: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2299: putstatic     #2422               // Field ENERGY_OUTPUT_HATCH_4A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2302: ldc_w         #730                // String energy_input_hatch_16a
+    2305: invokedynamic #2426,  0           // InvokeDynamic #78:apply:()Ljava/util/function/BiFunction;
+    2310: invokedynamic #2430,  0           // InvokeDynamic #79:apply:()Ljava/util/function/BiFunction;
+    2315: iconst_4
+    2316: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2319: arraylength
+    2320: iconst_1
+    2321: isub
+    2322: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2325: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2328: putstatic     #2432               // Field ENERGY_INPUT_HATCH_16A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2331: ldc_w         #718                // String energy_output_hatch_16a
+    2334: invokedynamic #2436,  0           // InvokeDynamic #80:apply:()Ljava/util/function/BiFunction;
+    2339: invokedynamic #2440,  0           // InvokeDynamic #81:apply:()Ljava/util/function/BiFunction;
+    2344: iconst_4
+    2345: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2348: arraylength
+    2349: iconst_1
+    2350: isub
+    2351: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2354: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2357: putstatic     #2442               // Field ENERGY_OUTPUT_HATCH_16A:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2360: ldc_w         #2444               // String substation_input_hatch_64a
+    2363: invokedynamic #2448,  0           // InvokeDynamic #82:apply:()Ljava/util/function/BiFunction;
+    2368: invokedynamic #2452,  0           // InvokeDynamic #83:apply:()Ljava/util/function/BiFunction;
+    2373: iconst_4
+    2374: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2377: arraylength
+    2378: iconst_1
+    2379: isub
+    2380: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2383: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2386: putstatic     #2454               // Field SUBSTATION_ENERGY_INPUT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2389: ldc_w         #2456               // String substation_output_hatch_64a
+    2392: invokedynamic #2460,  0           // InvokeDynamic #84:apply:()Ljava/util/function/BiFunction;
+    2397: invokedynamic #2464,  0           // InvokeDynamic #85:apply:()Ljava/util/function/BiFunction;
+    2402: iconst_4
+    2403: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    2406: arraylength
+    2407: iconst_1
+    2408: isub
+    2409: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    2412: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2415: putstatic     #2466               // Field SUBSTATION_ENERGY_OUTPUT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2418: ldc_w         #650                // String muffler_hatch
+    2421: invokedynamic #2471,  0           // InvokeDynamic #86:apply:()Ljava/util/function/BiFunction;
+    2426: invokedynamic #2475,  0           // InvokeDynamic #87:apply:()Ljava/util/function/BiFunction;
+    2431: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+    2434: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2437: putstatic     #2477               // Field MUFFLER_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2440: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2443: ldc_w         #2479               // String steam_input_bus
+    2446: invokedynamic #2483,  0           // InvokeDynamic #88:apply:()Ljava/util/function/Function;
+    2451: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2454: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2457: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2460: iconst_1
+    2461: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2464: dup
+    2465: iconst_0
+    2466: getstatic     #2486               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.STEAM_IMPORT_ITEMS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2469: aastore
+    2470: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2473: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2476: iconst_0
+    2477: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2480: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2483: ldc_w         #796                // String overlay_item_hatch_input
+    2486: ldc_w         #774                // String overlay_pipe
+    2489: ldc_w         #798                // String overlay_pipe_in_emissive
+    2492: invokevirtual #2489               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.colorOverlaySteamHullModel:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2495: ldc_w         #2491               // String Steam Input Bus
+    2498: invokevirtual #328                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.langValue:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2501: iconst_3
+    2502: anewarray     #396                // class net/minecraft/network/chat/Component
+    2505: dup
+    2506: iconst_0
+    2507: ldc_w         #800                // String gtceu.machine.item_bus.import.tooltip
+    2510: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2513: aastore
+    2514: dup
+    2515: iconst_1
+    2516: ldc_w         #2493               // String gtceu.machine.steam_bus.tooltip
+    2519: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2522: aastore
+    2523: dup
+    2524: iconst_2
+    2525: ldc_w         #477                // String gtceu.universal.tooltip.item_storage_capacity
+    2528: iconst_1
+    2529: anewarray     #4                  // class java/lang/Object
+    2532: dup
+    2533: iconst_0
+    2534: iconst_4
+    2535: invokestatic  #459                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+    2538: aastore
+    2539: invokestatic  #450                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+    2542: aastore
+    2543: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2546: iconst_1
+    2547: invokevirtual #786                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowCoverOnFront:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2550: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2553: putstatic     #2495               // Field STEAM_IMPORT_BUS:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2556: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2559: ldc_w         #2497               // String steam_output_bus
+    2562: invokedynamic #2501,  0           // InvokeDynamic #89:apply:()Ljava/util/function/Function;
+    2567: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2570: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2573: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2576: iconst_1
+    2577: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2580: dup
+    2581: iconst_0
+    2582: getstatic     #2504               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.STEAM_EXPORT_ITEMS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2585: aastore
+    2586: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2589: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2592: iconst_0
+    2593: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2596: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2599: ldc_w         #772                // String overlay_item_hatch_output
+    2602: ldc_w         #774                // String overlay_pipe
+    2605: ldc_w         #776                // String overlay_pipe_out_emissive
+    2608: invokevirtual #2489               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.colorOverlaySteamHullModel:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2611: ldc_w         #2506               // String Steam Output Bus
+    2614: invokevirtual #328                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.langValue:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2617: iconst_3
+    2618: anewarray     #396                // class net/minecraft/network/chat/Component
+    2621: dup
+    2622: iconst_0
+    2623: ldc_w         #782                // String gtceu.machine.item_bus.export.tooltip
+    2626: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2629: aastore
+    2630: dup
+    2631: iconst_1
+    2632: ldc_w         #2493               // String gtceu.machine.steam_bus.tooltip
+    2635: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2638: aastore
+    2639: dup
+    2640: iconst_2
+    2641: ldc_w         #477                // String gtceu.universal.tooltip.item_storage_capacity
+    2644: iconst_1
+    2645: anewarray     #4                  // class java/lang/Object
+    2648: dup
+    2649: iconst_0
+    2650: iconst_4
+    2651: invokestatic  #459                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+    2654: aastore
+    2655: invokestatic  #450                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+    2658: aastore
+    2659: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2662: iconst_1
+    2663: invokevirtual #786                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowCoverOnFront:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2666: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2669: putstatic     #2508               // Field STEAM_EXPORT_BUS:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2672: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2675: ldc_w         #2510               // String steam_input_hatch
+    2678: invokedynamic #2514,  0           // InvokeDynamic #90:apply:()Ljava/util/function/Function;
+    2683: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2686: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2689: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2692: iconst_1
+    2693: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2696: dup
+    2697: iconst_0
+    2698: getstatic     #2517               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.STEAM:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2701: aastore
+    2702: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2705: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2708: iconst_0
+    2709: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2712: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2715: ldc_w         #2519               // String steam_hatch
+    2718: invokevirtual #2522               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlaySteamHullModel:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2721: iconst_2
+    2722: anewarray     #396                // class net/minecraft/network/chat/Component
+    2725: dup
+    2726: iconst_0
+    2727: ldc_w         #1179               // String gtceu.universal.tooltip.fluid_storage_capacity
+    2730: iconst_1
+    2731: anewarray     #4                  // class java/lang/Object
+    2734: dup
+    2735: iconst_0
+    2736: ldc_w         #952                // int 64000
+    2739: invokestatic  #459                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+    2742: aastore
+    2743: invokestatic  #450                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+    2746: aastore
+    2747: dup
+    2748: iconst_1
+    2749: ldc_w         #2524               // String gtceu.machine.steam.steam_hatch.tooltip
+    2752: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2755: aastore
+    2756: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2759: iconst_1
+    2760: invokevirtual #786                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowCoverOnFront:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2763: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2766: putstatic     #2526               // Field STEAM_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2769: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2772: ldc_w         #2528               // String coke_oven_hatch
+    2775: invokedynamic #2532,  0           // InvokeDynamic #91:apply:()Ljava/util/function/Function;
+    2780: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2783: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2786: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2789: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2792: iconst_0
+    2793: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2796: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2799: iconst_1
+    2800: anewarray     #396                // class net/minecraft/network/chat/Component
+    2803: dup
+    2804: iconst_0
+    2805: ldc_w         #398                // String gtceu.part_sharing.disabled
+    2808: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2811: aastore
+    2812: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2815: ldc_w         #2534               // String block/machine/part/coke_oven_hatch
+    2818: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    2821: invokevirtual #2537               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.simpleModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2824: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2827: putstatic     #2539               // Field COKE_OVEN_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2830: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2833: ldc_w         #2541               // String pump_hatch
+    2836: invokedynamic #2545,  0           // InvokeDynamic #92:apply:()Ljava/util/function/Function;
+    2841: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2844: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2847: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2850: iconst_1
+    2851: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2854: dup
+    2855: iconst_0
+    2856: getstatic     #2548               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.PUMP_FLUID_HATCH:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2859: aastore
+    2860: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2863: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2866: iconst_0
+    2867: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2870: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2873: ldc_w         #2550               // String block/machine/part/pump_hatch
+    2876: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    2879: invokestatic  #2553               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createBasicReplaceableTextureMachineModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    2882: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2885: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2888: putstatic     #2555               // Field PUMP_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2891: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2894: ldc_w         #2557               // String maintenance_hatch
+    2897: invokedynamic #2561,  0           // InvokeDynamic #93:apply:()Ljava/util/function/Function;
+    2902: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2905: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2908: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2911: iconst_1
+    2912: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    2915: dup
+    2916: iconst_0
+    2917: getstatic     #2564               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.MAINTENANCE:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    2920: aastore
+    2921: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2924: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2927: iconst_0
+    2928: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2931: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2934: iconst_1
+    2935: anewarray     #396                // class net/minecraft/network/chat/Component
+    2938: dup
+    2939: iconst_0
+    2940: ldc_w         #398                // String gtceu.part_sharing.disabled
+    2943: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    2946: aastore
+    2947: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2950: getstatic     #2567               // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_TAPED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    2953: iconst_0
+    2954: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    2957: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2960: ldc_w         #2569               // String block/machine/part/maintenance_hatch
+    2963: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    2966: invokestatic  #2572               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createMaintenanceModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    2969: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2972: iconst_1
+    2973: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2976: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2979: putstatic     #2574               // Field MAINTENANCE_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    2982: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    2985: ldc_w         #2576               // String configurable_maintenance_hatch
+    2988: invokedynamic #2580,  0           // InvokeDynamic #94:apply:()Ljava/util/function/Function;
+    2993: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    2996: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    2999: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3002: iconst_1
+    3003: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    3006: dup
+    3007: iconst_0
+    3008: getstatic     #2564               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.MAINTENANCE:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3011: aastore
+    3012: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3015: iconst_1
+    3016: anewarray     #396                // class net/minecraft/network/chat/Component
+    3019: dup
+    3020: iconst_0
+    3021: ldc_w         #398                // String gtceu.part_sharing.disabled
+    3024: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3027: aastore
+    3028: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3031: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    3034: iconst_0
+    3035: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    3038: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3041: getstatic     #2567               // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_TAPED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    3044: iconst_0
+    3045: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    3048: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3051: ldc_w         #2582               // String block/machine/part/configurable_maintenance_hatch
+    3054: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3057: invokestatic  #2572               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createMaintenanceModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    3060: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3063: iconst_3
+    3064: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3067: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3070: putstatic     #2584               // Field CONFIGURABLE_MAINTENANCE_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3073: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    3076: ldc_w         #2586               // String cleaning_maintenance_hatch
+    3079: invokedynamic #2590,  0           // InvokeDynamic #95:apply:()Ljava/util/function/Function;
+    3084: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3087: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    3090: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3093: iconst_1
+    3094: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    3097: dup
+    3098: iconst_0
+    3099: getstatic     #2564               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.MAINTENANCE:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3102: aastore
+    3103: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3106: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    3109: iconst_0
+    3110: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    3113: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3116: iconst_3
+    3117: anewarray     #396                // class net/minecraft/network/chat/Component
+    3120: dup
+    3121: iconst_0
+    3122: ldc_w         #398                // String gtceu.part_sharing.disabled
+    3125: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3128: aastore
+    3129: dup
+    3130: iconst_1
+    3131: ldc_w         #2592               // String gtceu.machine.maintenance_hatch_cleanroom_auto.tooltip.0
+    3134: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3137: aastore
+    3138: dup
+    3139: iconst_2
+    3140: ldc_w         #2594               // String gtceu.machine.maintenance_hatch_cleanroom_auto.tooltip.1
+    3143: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3146: aastore
+    3147: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3150: invokedynamic #2598,  0           // InvokeDynamic #96:accept:()Ljava/util/function/BiConsumer;
+    3155: invokevirtual #1046               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltipBuilder:(Ljava/util/function/BiConsumer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3158: ldc_w         #2600               // String block/machine/part/cleaning_maintenance_hatch
+    3161: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3164: invokevirtual #2602               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlayTieredHullModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3167: iconst_3
+    3168: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3171: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3174: putstatic     #2604               // Field CLEANING_MAINTENANCE_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3177: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    3180: ldc_w         #2606               // String auto_maintenance_hatch
+    3183: invokedynamic #2611,  0           // InvokeDynamic #97:apply:()Ljava/util/function/Function;
+    3188: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3191: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    3194: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3197: iconst_1
+    3198: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    3201: dup
+    3202: iconst_0
+    3203: getstatic     #2564               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.MAINTENANCE:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3206: aastore
+    3207: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3210: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    3213: iconst_0
+    3214: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    3217: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3220: iconst_1
+    3221: anewarray     #396                // class net/minecraft/network/chat/Component
+    3224: dup
+    3225: iconst_0
+    3226: ldc_w         #398                // String gtceu.part_sharing.disabled
+    3229: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3232: aastore
+    3233: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3236: ldc_w         #2613               // String block/machine/part/auto_maintenance_hatch
+    3239: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3242: invokevirtual #2602               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlayTieredHullModel:(Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3245: iconst_3
+    3246: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3249: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3252: putstatic     #2615               // Field AUTO_MAINTENANCE_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3255: ldc_w         #550                // String item_passthrough_hatch
+    3258: invokedynamic #2619,  0           // InvokeDynamic #98:apply:()Ljava/util/function/BiFunction;
+    3263: invokedynamic #2623,  0           // InvokeDynamic #99:apply:()Ljava/util/function/BiFunction;
+    3268: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+    3271: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3274: putstatic     #2625               // Field ITEM_PASSTHROUGH_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3277: ldc_w         #535                // String fluid_passthrough_hatch
+    3280: invokedynamic #2629,  0           // InvokeDynamic #100:apply:()Ljava/util/function/BiFunction;
+    3285: invokedynamic #2633,  0           // InvokeDynamic #101:apply:()Ljava/util/function/BiFunction;
+    3290: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+    3293: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3296: putstatic     #2635               // Field FLUID_PASSTHROUGH_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3299: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    3302: ldc_w         #2637               // String reservoir_hatch
+    3305: invokedynamic #2641,  0           // InvokeDynamic #102:apply:()Ljava/util/function/Function;
+    3310: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3313: ldc_w         #2643               // String Reservoir Hatch
+    3316: invokevirtual #328                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.langValue:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3319: iconst_4
+    3320: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3323: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    3326: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3329: iconst_1
+    3330: anewarray     #340                // class com/gregtechceu/gtceu/api/machine/multiblock/PartAbility
+    3333: dup
+    3334: iconst_0
+    3335: getstatic     #2316               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.IMPORT_FLUIDS:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3338: aastore
+    3339: invokevirtual #347                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.abilities:([Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3342: getstatic     #353                // Field com/gregtechceu/gtceu/api/machine/property/GTMachineModelProperties.IS_FORMED:Lnet/minecraft/world/level/block/state/properties/BooleanProperty;
+    3345: iconst_0
+    3346: invokestatic  #359                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+    3349: invokevirtual #363                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.modelProperty:(Lnet/minecraft/world/level/block/state/properties/Property;Ljava/lang/Comparable;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3352: iconst_2
+    3353: anewarray     #396                // class net/minecraft/network/chat/Component
+    3356: dup
+    3357: iconst_0
+    3358: ldc_w         #1179               // String gtceu.universal.tooltip.fluid_storage_capacity
+    3361: iconst_1
+    3362: anewarray     #4                  // class java/lang/Object
+    3365: dup
+    3366: iconst_0
+    3367: ldc_w         #2644               // int 2000000000
+    3370: invokestatic  #875                // Method com/gregtechceu/gtceu/utils/FormattingUtil.formatNumbers:(I)Ljava/lang/String;
+    3373: aastore
+    3374: invokestatic  #450                // InterfaceMethod net/minecraft/network/chat/Component.m_237110_:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;
+    3377: aastore
+    3378: dup
+    3379: iconst_1
+    3380: ldc_w         #495                // String gtceu.part_sharing.enabled
+    3383: invokestatic  #402                // InterfaceMethod net/minecraft/network/chat/Component.m_237115_:(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;
+    3386: aastore
+    3387: invokevirtual #405                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tooltips:([Lnet/minecraft/network/chat/Component;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3390: ldc_w         #2637               // String reservoir_hatch
+    3393: invokevirtual #473                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.overlayTieredHullModel:(Ljava/lang/String;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3396: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3399: putstatic     #2646               // Field RESERVOIR_HATCH:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3402: ldc_w         #516                // String dual_input_hatch
+    3405: invokedynamic #2650,  0           // InvokeDynamic #103:apply:()Ljava/util/function/BiFunction;
+    3410: invokedynamic #2654,  0           // InvokeDynamic #104:apply:()Ljava/util/function/BiFunction;
+    3415: getstatic     #2657               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.DUAL_HATCH_TIERS:[I
+    3418: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3421: putstatic     #2659               // Field DUAL_IMPORT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3424: ldc_w         #470                // String dual_output_hatch
+    3427: invokedynamic #2663,  0           // InvokeDynamic #105:apply:()Ljava/util/function/BiFunction;
+    3432: invokedynamic #2667,  0           // InvokeDynamic #106:apply:()Ljava/util/function/BiFunction;
+    3437: getstatic     #2657               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.DUAL_HATCH_TIERS:[I
+    3440: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3443: putstatic     #2669               // Field DUAL_EXPORT_HATCH:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3446: ldc_w         #2671               // String diode
+    3449: invokedynamic #2674,  0           // InvokeDynamic #107:apply:()Ljava/util/function/BiFunction;
+    3454: invokedynamic #2678,  0           // InvokeDynamic #108:apply:()Ljava/util/function/BiFunction;
+    3459: getstatic     #1834               // Field com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.ELECTRIC_TIERS:[I
+    3462: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3465: putstatic     #2680               // Field DIODE:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3468: ldc_w         #2682               // String rotor_holder
+    3471: invokedynamic #2687,  0           // InvokeDynamic #109:apply:()Ljava/util/function/BiFunction;
+    3476: invokedynamic #2691,  0           // InvokeDynamic #110:apply:()Ljava/util/function/BiFunction;
+    3481: iconst_3
+    3482: getstatic     #440                // Field com/gregtechceu/gtceu/api/GTValues.V:[J
+    3485: arraylength
+    3486: iconst_1
+    3487: isub
+    3488: invokestatic  #2410               // Method com/gregtechceu/gtceu/api/GTValues.tiersBetween:(II)[I
+    3491: invokestatic  #1583               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerTieredMachines:(Ljava/lang/String;Ljava/util/function/BiFunction;Ljava/util/function/BiFunction;[I)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3494: putstatic     #2693               // Field ROTOR_HOLDER:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3497: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3500: sipush        256
+    3503: getstatic     #2696               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.INPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3506: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3509: putstatic     #2702               // Field LASER_INPUT_HATCH_256:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3512: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3515: sipush        256
+    3518: getstatic     #2705               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.OUTPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3521: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3524: putstatic     #2707               // Field LASER_OUTPUT_HATCH_256:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3527: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3530: sipush        1024
+    3533: getstatic     #2696               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.INPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3536: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3539: putstatic     #2709               // Field LASER_INPUT_HATCH_1024:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3542: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3545: sipush        1024
+    3548: getstatic     #2705               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.OUTPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3551: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3554: putstatic     #2711               // Field LASER_OUTPUT_HATCH_1024:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3557: getstatic     #522                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.IN:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3560: sipush        4096
+    3563: getstatic     #2696               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.INPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3566: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3569: putstatic     #2713               // Field LASER_INPUT_HATCH_4096:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3572: getstatic     #503                // Field com/gregtechceu/gtceu/api/capability/recipe/IO.OUT:Lcom/gregtechceu/gtceu/api/capability/recipe/IO;
+    3575: sipush        4096
+    3578: getstatic     #2705               // Field com/gregtechceu/gtceu/api/machine/multiblock/PartAbility.OUTPUT_LASER:Lcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;
+    3581: invokestatic  #2700               // Method com/gregtechceu/gtceu/common/data/machines/GTMachineUtils.registerLaserHatch:(Lcom/gregtechceu/gtceu/api/capability/recipe/IO;ILcom/gregtechceu/gtceu/api/machine/multiblock/PartAbility;)[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3584: putstatic     #2715               // Field LASER_OUTPUT_HATCH_4096:[Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3587: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    3590: ldc_w         #2717               // String monitor
+    3593: invokedynamic #2722,  0           // InvokeDynamic #111:apply:()Ljava/util/function/Function;
+    3598: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3601: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    3604: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3607: ldc_w         #2724               // String block/casings/solid/machine_casing_frost_proof
+    3610: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3613: ldc_w         #2726               // String block/machine/part/computer_monitor
+    3616: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3619: invokestatic  #2729               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createOverlayCasingMachineModel:(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    3622: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3625: iconst_2
+    3626: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3629: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3632: putstatic     #2731               // Field MONITOR:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3635: getstatic     #1436               // Field com/gregtechceu/gtceu/common/registry/GTRegistration.REGISTRATE:Lcom/gregtechceu/gtceu/api/registry/registrate/GTRegistrate;
+    3638: ldc_w         #2733               // String advanced_monitor
+    3641: invokedynamic #2738,  0           // InvokeDynamic #112:apply:()Ljava/util/function/Function;
+    3646: invokevirtual #1946               // Method com/gregtechceu/gtceu/api/registry/registrate/GTRegistrate.machine:(Ljava/lang/String;Ljava/util/function/Function;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3649: getstatic     #334                // Field com/gregtechceu/gtceu/api/data/RotationState.ALL:Lcom/gregtechceu/gtceu/api/data/RotationState;
+    3652: invokevirtual #338                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.rotationState:(Lcom/gregtechceu/gtceu/api/data/RotationState;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3655: ldc_w         #2740               // String block/casings/solid/machine_casing_clean_stainless_steel
+    3658: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3661: ldc_w         #2726               // String block/machine/part/computer_monitor
+    3664: invokestatic  #297                // Method com/gregtechceu/gtceu/GTCEu.id:(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;
+    3667: invokestatic  #2729               // Method com/gregtechceu/gtceu/common/data/models/GTMachineModels.createOverlayCasingMachineModel:(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;
+    3670: invokevirtual #382                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.model:(Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder$ModelInitializer;)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3673: iconst_3
+    3674: invokevirtual #1951               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.tier:(I)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3677: iconst_1
+    3678: invokevirtual #2116               // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.allowExtendedFacing:(Z)Lcom/gregtechceu/gtceu/api/registry/registrate/MachineBuilder;
+    3681: invokevirtual #409                // Method com/gregtechceu/gtceu/api/registry/registrate/MachineBuilder.register:()Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3684: putstatic     #2742               // Field ADVANCED_MONITOR:Lcom/gregtechceu/gtceu/api/machine/MachineDefinition;
+    3687: return
+}
