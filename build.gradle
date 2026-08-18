@@ -1,0 +1,420 @@
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+group = mod_group_id
+version = mod_version
+
+base {
+    archivesName = mod_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+minecraft {
+    // The mappings can be changed at any time and must be in the following format.
+    // Channel:   Version:
+    // official   MCVersion             Official field/method names from Mojang mapping files
+    // parchment  YYYY.MM.DD-MCVersion  Open community-sourced parameter names and javadocs layered on top of official
+    //
+    // You must be aware of the Mojang license when using the 'official' or 'parchment' mappings.
+    // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+    //
+    // Parchment is an unofficial project maintained by ParchmentMC, separate from MinecraftForge
+    // Additional setup is needed to use their mappings: https://parchmentmc.org/docs/getting-started
+    //
+    // Use non-default mappings at your own risk. They may not always work.
+    // Simply re-run your setup task after changing the mappings to update your workspace.
+    mappings channel: mapping_channel, version: mapping_version
+
+    // When true, this property will have all Eclipse/IntelliJ IDEA run configurations run the "prepareX" task for the given run configuration before launching the game.
+    // In most cases, it is not necessary to enable.
+    // enableEclipsePrepareRuns = true
+    // enableIdeaPrepareRuns = true
+
+    // This property allows configuring Gradle's ProcessResources task(s) to run on IDE output locations before launching the game.
+    // It is REQUIRED to be set to true for this template to function.
+    // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
+    copyIdeResources = true
+
+    // When true, this property will add the folder name of all declared run configurations to generated IDE run configurations.
+    // The folder name can be set on a run configuration using the "folderName" property.
+    // By default, the folder name of a run configuration is the name of the Gradle project containing it.
+    // generateRunFolders = true
+
+    // This property enables access transformers for use in development.
+    // They will be applied to the Minecraft artifact.
+    // The access transformer file can be anywhere in the project.
+    // However, it must be at "META-INF/accesstransformer.cfg" in the final mod jar to be loaded by Forge.
+    // This default location is a best practice to automatically put the file in the right place in the final jar.
+    // See https://docs.minecraftforge.net/en/latest/advanced/accesstransformers/ for more information.
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
+    runs {
+        // applies to all the run configs below
+        configureEach {
+            workingDirectory project.file('run')
+
+            // GTCEu patch 版以 files() 依赖接入，MixinGradle 不再自动扫描其 mixin 配置，
+            // 手动注册（否则 GTCEu 的 AbstractRegistrateAccessor 等 mixin 不生效）
+            args '--mixin.config', 'gtceu.mixins.json'
+
+            // Recommended logging data for a userdev environment
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
+
+
+            // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+            property 'forge.logging.console.level', 'debug'
+
+            // Trust the Windows certificate store so the game can reach Mojang's
+            // authentication servers through the Steamcommunity302 HTTPS proxy
+            // (its CA certificate is installed in the Windows root store).
+            property 'javax.net.ssl.trustStoreType', 'WINDOWS-ROOT'
+
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+
+        // This run config launches GameTestServer and runs all registered gametests, then exits.
+        // By default, the server will crash when no gametests are provided.
+        // The gametest system is also enabled by default for other run configs under the /test command.
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        data {
+            // example of overriding the workingDirectory set in configureEach above
+            workingDirectory project.file('run-data')
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+
+    config "${mod_id}.mixins.json"
+}
+
+// Include resources generated by data generators.
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+// ===== GTCEu patch 层 =====
+// 编译要覆盖进 gtceu 官方 jar 的类（com.gregtechceu.gtceu.*，official 映射，与
+// deobf gtceu jar 同构）。产物 build/patched/gtceu-patch.jar，合并进 deobf jar
+// 得到 patched gtceu jar（见 docs/api-material 或 patches/README）。
+sourceSets {
+    patch {
+        java {
+            srcDir 'src/patch/java'
+        }
+        compileClasspath += sourceSets.main.compileClasspath
+    }
+}
+
+tasks.register('patchJar', Jar) {
+    archiveFileName = 'gtceu-patch.jar'
+    destinationDirectory = file('build/patched')
+    from sourceSets.patch.output
+}
+
+// ===== jarjar 发布（改版 GTCEu 嵌入主 mod jar）=====
+// reobfJarJar 只重映射 gtnecore 自身类、不递归处理 META-INF/jarjar/ 里的嵌套 jar，
+// 所以嵌入 jar 必须整体 srg 化后才能发布：
+//   顶层 = maven 原始(srg) gtceu + reobfPatchJar(srg) 覆盖同名类
+//   嵌套 = maven 原始(srg) gtceu 自带（Registrate/LDlib/mixinextras/configuration）
+// dev 不受影响：仍用 deobf(official) patched jar（implementation files）。
+jarJar.enable()
+
+configurations {
+    gtceuSrg // maven 原始 srg 版（未 fg.deobf），发布 jar 的底子
+}
+
+dependencies {
+    gtceuSrg "com.gregtechceu.gtceu:gtceu-1.20.1:${gtm_version}"
+}
+
+def releaseGtceuJar = file('build/patched/gtceu-1.20.1-7.5.3-patched-release.jar')
+def srgPatchJar = file('build/patched/gtceu-patch-official.jar') // reobfPatchJar in-place 改写后即 srg 版
+
+// patch 类 official -> srg（与 reobfJar/reobfJarJar 同款：RenameJarInPlace + createMcpToSrg）
+def srgPatchSource = file('build/patched/gtceu-patch-official.jar')
+
+tasks.register('prepareSrgPatchSource', Copy) {
+    dependsOn patchJar
+    from patchJar.archiveFile
+    into file('build/patched')
+    rename { 'gtceu-patch-official.jar' }
+}
+
+tasks.register('reobfPatchJar', net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace) {
+    dependsOn prepareSrgPatchSource, createMcpToSrg
+    input.set(srgPatchSource) // in place：直接改写该文件
+    mappings.set(tasks.named('createMcpToSrg', net.minecraftforge.gradle.mcp.tasks.GenerateSRG).flatMap { it.output })
+    libraries.from(sourceSets.main.runtimeClasspath, sourceSets.patch.compileClasspath)
+}
+
+tasks.register('makeReleaseGtceuJar', Exec) {
+    dependsOn reobfPatchJar
+    inputs.files(configurations.gtceuSrg)
+    inputs.file(srgPatchJar)
+    inputs.file('scripts/make-release-jar.py')
+    outputs.file(releaseGtceuJar)
+    doFirst {
+        def srgFile = configurations.gtceuSrg.singleFile
+        commandLine 'python', file('scripts/make-release-jar.py').absolutePath,
+                srgFile.absolutePath, srgPatchJar.absolutePath, releaseGtceuJar.absolutePath
+    }
+}
+
+// flatDir 只认带版本的文件名：libs/gtceu-release-7.5.3.jar <-> blank:gtceu-release:7.5.3
+// Gradle 在配置期解析 jarJar 依赖，任务产物赶不上——所以由 updateReleaseGtceuJar 手动同步，
+// jarJar 执行前校验两者一致（patch 改动后必须重跑 updateReleaseGtceuJar，否则打包旧版）。
+tasks.register('updateReleaseGtceuJar', Copy) {
+    dependsOn makeReleaseGtceuJar
+    from releaseGtceuJar
+    into file('libs')
+    rename { 'gtceu-release-7.5.3.jar' }
+}
+
+def sha256 = { File f ->
+    def md = java.security.MessageDigest.getInstance('SHA-256')
+    f.withInputStream { s ->
+        def buf = new byte[8192]
+        int n
+        while ((n = s.read(buf)) != -1) md.update(buf, 0, n)
+    }
+    md.digest().encodeHex().toString()
+}
+
+tasks.named('jarJar') {
+    doFirst {
+        def libsJar = file('libs/gtceu-release-7.5.3.jar')
+        if (!libsJar.exists()) {
+            throw new GradleException("libs/gtceu-release-7.5.3.jar 不存在，先跑: ./gradlew updateReleaseGtceuJar")
+        }
+        if (sha256(libsJar) != sha256(releaseGtceuJar)) {
+            throw new GradleException('libs/gtceu-release-7.5.3.jar 与最新 patched release 不一致（可能改了 patch），先跑: ./gradlew updateReleaseGtceuJar')
+        }
+    }
+}
+
+// ===== 开源 addon 强兼容版（二进制 patch）=====
+// gregic_tinkering 是开源 mod（LGPL-3.0），编译时按 int[] 引用 GTValues.VA/VH/VHA；
+// patch 后是 long[]，字段描述符 [I -> [J，直接放整合包会 NoSuchFieldError。
+// tools/PatchGtseJar.java 用 ASM 改写：getstatic [I -> [J、iaload -> laload、删 i2l、i2d -> l2d。
+// 用法: ./gradlew patchAllGtAddons  ->  build/patched/<name>-patched.jar（替换整合包原版）
+configurations {
+    asmTool
+}
+
+dependencies {
+    asmTool 'org.ow2.asm:asm:9.5'
+}
+
+tasks.register('compilePatchGtseTool', JavaCompile) {
+    source fileTree('tools') { include 'PatchGtseJar.java' }
+    classpath = configurations.asmTool
+    destinationDirectory = file('build/tools')
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
+
+// 需要特供的闭源 mod：libs/<name>.jar -> build/patched/<name>-patched.jar
+def gtAddonPatches = [
+        'gregic_tinkering-1.3.0',
+]
+
+gtAddonPatches.forEach { name ->
+    def inJar = file("libs/${name}.jar")
+    def outJar = file("build/patched/${name}-patched.jar")
+    tasks.register("patchGtAddon_${name.replaceAll('[^a-zA-Z0-9]', '_')}", JavaExec) {
+        dependsOn compilePatchGtseTool
+        classpath = files(file('build/tools'), configurations.asmTool)
+        mainClass = 'PatchGtseJar'
+        inputs.file(inJar)
+        inputs.file('tools/PatchGtseJar.java')
+        outputs.file(outJar)
+        args inJar.absolutePath, outJar.absolutePath
+    }
+}
+
+tasks.register('patchAllGtAddons') {
+    dependsOn tasks.matching { it.name.startsWith('patchGtAddon_') }
+}
+
+repositories {
+
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+    // flatDir：GT 发布链（jarjar 嵌入版）所需的改版 GTCEu release jar 存放于此
+    // （libs/gtceu-release-7.5.3.jar，由 updateReleaseGtceuJar 任务生成）
+    flatDir {
+        dir 'libs'
+    }
+
+    // JEI is hosted on the BlameJared Maven
+    maven {
+        name = 'BlameJared Maven'
+        url = 'https://maven.blamejared.com/'
+    }
+    maven { url 'https://modmaven.dev/' }
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+
+    }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+}
+
+dependencies {
+    // Specify the version of Minecraft to use.
+    // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
+    // The "userdev" classifier will be requested and setup by ForgeGradle.
+    // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
+    // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // JEI (Just Enough Items) - soft dependency: API for compile-time, full mod at runtime
+    // Using fg.deobf() ensures the dependency is remapped to the development mappings
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    //gtm —— GTNEcore patch 版（VH/VA/VHA 升级为 long[] 22 档真实值；由 patchJar 任务产出并合并）
+    implementation files('build/patched/gtceu-1.20.1-7.5.3-patched.jar')
+    // 发布嵌入（jarjar）：顶层 reobf 成 srg，嵌套已由 makeReleaseGtceuJar 换成 srg 原始版
+    jarJar('blank:gtceu-release:7.5.3') {
+        jarJar.ranged(it, '[7.5.3,)')
+    }
+    //Avaritia
+    implementation fg.deobf("curse.maven:avaritia-623969:8497793")
+    //mek —— 已移除（GTM↔Mek 化学联动暂停，Mek 化学品需专用管道交互，工作量与收益不匹配；恢复时按 GtnecoreAddon 注释）
+    //jade
+    compileOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
+    runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
+    // Registrate + LDlib (extracted from GTCEu's jarjar, same versions) - compile only;
+    // at runtime GTCEu's jarjar provides the classes, so no duplicate loading
+    compileOnly "com.tterrag.registrate:Registrate:MC1.20.1-1.3.11"
+    compileOnly "com.lowdragmc.ldlib:ldlib:1.0.40.b"
+    //Goety（依赖 Curios）
+    implementation fg.deobf("curse.maven:goety-586095:8647359")
+    //curios
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+
+
+    // Example mod dependency using a mod jar from ./libs with a flat dir repository
+    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
+    // The group id is ignored when searching -- in this case, it is "blank"
+    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+
+    // For more info:
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    // Lombok —— 仅 patch 层需要（GTCEu 源码大量使用 @Getter/@Setter/@RequiredArgsConstructor）
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    patchCompileOnly 'org.projectlombok:lombok:1.18.30'
+    patchAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    // GTCEu 软依赖（patch 类可能引用，运行时由整合包 mods 提供）
+    patchCompileOnly "appeng:appliedenergistics2-forge:15.4.9"
+    patchCompileOnly "mcjty.theoneprobe:theoneprobe:1.20.1-10.0.1-3"
+
+}
+
+// This block of code expands all declared replace properties in the specified resource targets.
+// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
+// When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.
+// See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version, forge_version_range: forge_version_range,
+            loader_version_range: loader_version_range,
+            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors: mod_authors, mod_description: mod_description,
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }}
+
+// Example for how to get properties into the manifest for reading at runtime.
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                "Specification-Title": mod_id,
+                "Specification-Vendor": mod_authors,
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.jar.archiveVersion,
+                "Implementation-Vendor": mod_authors,
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+
+    // This is the preferred method to reobfuscate your jar file
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
