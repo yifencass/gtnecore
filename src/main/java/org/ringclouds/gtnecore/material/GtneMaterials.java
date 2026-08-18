@@ -52,6 +52,7 @@ public final class GtneMaterials {
     public static Material SOUL;
     public static Material UNKNOWN;
     public static Material SOUL_UNKNOWN;
+    public static Material SCULK_BLOCK;
 
     private GtneMaterials() {
     }
@@ -122,7 +123,22 @@ public final class GtneMaterials {
                 .buildAndRegister();
         SOUL_UNKNOWN.setFormula("Sl" + FormattingUtil.toSmallDownNumbers("2") + "?");
 
-        // Sculk（幽匿）材料 = 幽匿化合物：2 灵魂 + 1 未知 → 化学式 Sl₂?
+        // 幽匿块材料：minecraft:sculk 的 GT 材料身份（无形态，纯归类用）
+        // 成分 = 幽匿化合物 + 二氧化硅 → 化学式 (Sl₂?)(SiO₂)，GT 原生 TooltipsHandler 显示
+        // DISABLE_DECOMPOSITION：有成分会自动带 DECOMPOSITION flag，无形态会崩
+        SCULK_BLOCK = new Material.Builder(Gtnecore.id("sculk_block"))
+                .langValue("Sculk Block")
+                .componentStacks(
+                        new MaterialStack(SOUL_UNKNOWN, 144),
+                        new MaterialStack(GTMaterials.SiliconDioxide, 144))
+                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+                .color(0x1D9E6F)
+                .buildAndRegister();
+        SCULK_BLOCK.setFormula(autoFormula(SCULK_BLOCK.getMaterialComponents()));
+
+        // 幽匿（Sculk）材料 = 幽匿粉：纯幽匿化合物（2 灵魂 + 1 未知）→ 化学式 Sl₂?
+        // 幽匿块（minecraft:sculk）= 复合物 (Sl₂?)(SiO₂)：物品级成分在 bindAvaritia 注册，
+        // 化学式由 TooltipsHandlerMixin 按物品级成分显示
         // DISABLE_DECOMPOSITION：不生成分解配方（无法电解/离心）
         GTMaterials.Sculk.setComponents(
                 new MaterialStack(SOUL, 288),
@@ -165,6 +181,12 @@ public final class GtneMaterials {
         ItemMaterialData.registerMaterialEntry(
                 () -> avaritiaItem("infinity_nugget"),
                 TagPrefix.nugget, INFINITY);
+
+        // 幽匿块（minecraft:sculk）归类为 SCULK_BLOCK 材料的 block 形态
+        // → TooltipsHandler 原生显示材料化学式 (Sl₂?)(SiO₂)
+        ItemMaterialData.registerMaterialEntry(
+                () -> ForgeRegistries.ITEMS.getValue(new ResourceLocation("minecraft", "sculk")),
+                TagPrefix.block, SCULK_BLOCK);
     }
 
     private static Item avaritiaItem(String path) {

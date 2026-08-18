@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.ringclouds.gtnecore.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "gtnecore.refmap.json",
+  "mixins": [
+    "GTValuesMixin",
+    "GTMachineUtilsMixin",
+    "TagLoaderMixin",
+    "GTCommonProxyMixin"
+  ],
+  "client": [
+    "FontInvoker",
+    "GuiGraphicsWaveCaptureMixin",
+    "ClientTextTooltipConsumeMixin",
+    "FontStringRenderOutputMixin",
+    "GuiSelectedItemNameWaveMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

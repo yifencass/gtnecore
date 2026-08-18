@@ -1,0 +1,134 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:mv_energy_cube",
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/mv_hull"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_down": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_down_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_down": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_down_out"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_up": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_up_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_up": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_up_out"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_north": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_north_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_north": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_north_out"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_south": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_south_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_south": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_south_out"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_west": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_west_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_west": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_west_out"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_east": "in"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_east_in"
+        }
+      ]
+    },
+    {
+      "when": {
+        "energy_io_east": "out"
+      },
+      "apply": [
+        {
+          "model": "gtnecore:block/energy_cube/overlay_east_out"
+        }
+      ]
+    }
+  ]
+}

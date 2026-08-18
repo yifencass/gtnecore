@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtnecore:block/hv_energy_cube"
+    }
+  }
+}
