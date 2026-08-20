@@ -261,7 +261,6 @@ tasks.register('compilePatchGtseTool', JavaCompile) {
     targetCompatibility = '17'
 }
 
-// 需要特供的闭源 mod：libs/<name>.jar -> build/patched/<name>-patched.jar
 def gtAddonPatches = [
         'gregic_tinkering-1.3.0',
 ]
