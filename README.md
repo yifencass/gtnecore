@@ -1,4 +1,6 @@
 # GTNEcore
+![Minecraft Version](https://img.shields.io/badge/Minecraft-1.20.1-brightgreen)
+![Mod Loader](https://img.shields.io/badge/Loader-Forge-orange)
 
 **MekaTech / GregTech-NewEra 整合包的核心扩展 mod**（Forge 1.20.1 / Java 17）
 
