@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "gtnecore:lv_thread_hatch",
+    "gtnecore:lv_split_thread_hatch",
+    "gtnecore:lv_mult_thread_hatch",
+    "gtnecore:mv_thread_hatch",
+    "gtnecore:mv_split_thread_hatch",
+    "gtnecore:mv_mult_thread_hatch",
+    "gtnecore:hv_thread_hatch",
+    "gtnecore:hv_split_thread_hatch",
+    "gtnecore:hv_mult_thread_hatch",
+    "gtnecore:ev_thread_hatch",
+    "gtnecore:ev_split_thread_hatch",
+    "gtnecore:ev_mult_thread_hatch",
+    "gtnecore:iv_thread_hatch",
+    "gtnecore:iv_split_thread_hatch",
+    "gtnecore:iv_mult_thread_hatch",
+    "gtnecore:luv_thread_hatch",
+    "gtnecore:luv_split_thread_hatch",
+    "gtnecore:luv_mult_thread_hatch",
+    "gtnecore:zpm_thread_hatch",
+    "gtnecore:zpm_split_thread_hatch",
+    "gtnecore:zpm_mult_thread_hatch",
+    "gtnecore:uv_thread_hatch",
+    "gtnecore:uv_split_thread_hatch",
+    "gtnecore:uv_mult_thread_hatch",
+    "gtnecore:uhv_thread_hatch",
+    "gtnecore:uhv_split_thread_hatch",
+    "gtnecore:uhv_mult_thread_hatch",
+    "gtnecore:thread_furnace"
+  ]
+}

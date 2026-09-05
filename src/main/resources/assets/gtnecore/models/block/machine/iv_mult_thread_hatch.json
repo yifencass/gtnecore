@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:iv_mult_thread_hatch",
+  "variants": {
+    "is_formed=false": {
+      "model": {
+        "parent": "gtnecore:block/machine/part/mult_thread_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/iv/bottom",
+          "side": "gtceu:block/casings/voltage/iv/side",
+          "top": "gtceu:block/casings/voltage/iv/top"
+        }
+      }
+    },
+    "is_formed=true": {
+      "model": {
+        "parent": "gtnecore:block/machine/part/mult_thread_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/iv/bottom",
+          "side": "gtceu:block/casings/voltage/iv/side",
+          "top": "gtceu:block/casings/voltage/iv/top"
+        }
+      }
+    }
+  }
+}

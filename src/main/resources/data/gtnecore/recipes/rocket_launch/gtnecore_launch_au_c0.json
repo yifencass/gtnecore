@@ -1,0 +1,26 @@
+{
+  "type": "gtnecore:rocket_launch",
+  "inputs": {
+    "item": [
+      {"content": {"item": "gtnecore:mk1_rocket"}, "chance": 0},
+      {"content": {"item": "gtnecore:astral_chart_au"}, "chance": 0},
+      {"content": {"type": "gtceu:nbt_predicate", "item": "gtceu:programmed_circuit", "count": 1, "nbt": "{Configuration:0}", "predicate": {"type": "equals", "key": "Configuration", "value": 0}}, "chance": 0}
+    ],
+    "fluid": [
+      {"content": {"amount": 32000, "value": {"fluid": "gtceu:hydrogen"}}}
+    ]
+  },
+  "outputs": {
+    "item": [
+      {"content": {"type": "gtceu:sized", "count": 64, "ingredient": {"item": "minecraft:raw_gold"}}},
+      {"content": {"type": "gtceu:sized", "count": 32, "ingredient": {"item": "minecraft:raw_gold"}}, "chance": 6500},
+      {"content": {"type": "gtceu:sized", "count": 32, "ingredient": {"item": "minecraft:raw_gold"}}, "chance": 2600}
+    ]
+  },
+  "tickInputs": {
+    "eu": [
+      {"content": 512}
+    ]
+  },
+  "duration": 9600
+}

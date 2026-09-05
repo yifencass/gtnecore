@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:omni_maintenance_hatch",
+  "variants": {
+    "is_formed=false": {
+      "model": {
+        "parent": "gtceu:block/machine/part/cleaning_maintenance_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/ev/bottom",
+          "side": "gtceu:block/casings/voltage/ev/side",
+          "top": "gtceu:block/casings/voltage/ev/top"
+        }
+      }
+    },
+    "is_formed=true": {
+      "model": {
+        "parent": "gtceu:block/machine/part/cleaning_maintenance_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/ev/bottom",
+          "side": "gtceu:block/casings/voltage/ev/side",
+          "top": "gtceu:block/casings/voltage/ev/top"
+        }
+      }
+    }
+  }
+}

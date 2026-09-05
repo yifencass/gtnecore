@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "minecraft:ice"
+  },
+  "result": {
+    "amount": 1600,
+    "fluid": "minecraft:water"
+  },
+  "temperature": 0,
+  "time": 28
+}

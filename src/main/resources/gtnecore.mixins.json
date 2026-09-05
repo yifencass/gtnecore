@@ -8,14 +8,41 @@
     "GTValuesMixin",
     "GTMachineUtilsMixin",
     "TagLoaderMixin",
-    "GTCommonProxyMixin"
+    "GTCommonProxyMixin",
+    "LivingEntityHurtMixin",
+    "EntityInvulnerableMixin",
+    "PlayerTickMixin",
+    "ItemCooldownsAccessor",
+    "GoetyFocusCooldownMixin",
+    "GoetySoulCostMixin",
+    "GoetyCastSpeedMixin",
+    "FoodDataMixin",
+    "TotemProtectionMixin",
+    "GTCoversTiersMixin",
+    "CoverRateMixins$PumpCoverRateMixin",
+    "CoverRateMixins$ConveyorCoverRateMixin",
+    "CoverRateMixins$RobotArmCoverRateMixin",
+    "CoverRateMixins$FluidRegulatorCoverRateMixin",
+    "PrimitivePumpPatternMixin",
+    "PlanetsScreenMixin"
   ],
   "client": [
     "FontInvoker",
     "GuiGraphicsWaveCaptureMixin",
     "ClientTextTooltipConsumeMixin",
+    "ClientTextTooltipRenderMixin",
     "FontStringRenderOutputMixin",
-    "GuiSelectedItemNameWaveMixin"
+    "ForgeGuiOverlayGuardMixin",
+    "GuiSelectedItemNameWaveMixin",
+    "SodiumWorldRendererGuardMixin",
+    "ModernUiTooltipGuardMixin",
+    "ClientHaloEffectsMixin",
+    "OptionsAccessor",
+    "GameRendererNightVisionMixin",
+    "LightTextureNightVisionMixin",
+    "InfinityTooltipDiagMixin",
+    "ForgeConfigSpecGetGuardMixin",
+    "LaserHatchCapacityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

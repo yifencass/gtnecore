@@ -200,7 +200,14 @@ public class GTRecipeWidget extends WidgetGroup {
             texts.add(Component.translatable("gtceu.recipe.duration", FormattingUtil.formatNumbers(duration / 20f)));
         }
         if (eu.voltage() > 0) {
-            long euTotal = eu.getTotalEU() * duration;
+            // GTNEcore patch：22 档电压下高阶配方 EUt×duration 可能超 long（>9.22e18），
+            // 朴素乘法会回绕成负数——溢出时饱和到 Long.MAX_VALUE，避免 JEI 显示负总能量
+            long euTotal;
+            try {
+                euTotal = Math.multiplyExact(eu.getTotalEU(), duration);
+            } catch (ArithmeticException ex) {
+                euTotal = Long.MAX_VALUE;
+            }
             // sadly we still need a custom override here, since computation uses duration and EU/t very differently
             if (recipe.data.getBoolean("duration_is_total_cwu") &&
                     recipe.tickInputs.containsKey(CWURecipeCapability.CAP)) {

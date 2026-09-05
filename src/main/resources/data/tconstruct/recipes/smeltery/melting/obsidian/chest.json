@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 400,
+      "tag": "forge:ender"
+    }
+  ],
+  "ingredient": {
+    "item": "minecraft:ender_chest"
+  },
+  "result": {
+    "amount": 12800,
+    "fluid": "tconstruct:molten_obsidian"
+  },
+  "temperature": 1000,
+  "time": 332
+}

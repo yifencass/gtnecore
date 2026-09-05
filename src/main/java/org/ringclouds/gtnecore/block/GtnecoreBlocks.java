@@ -21,6 +21,10 @@ public final class GtnecoreBlocks {
     /** CYV(17) 机壳方块。 */
     public static BlockEntry<Block> CYV_MACHINE_CASING;
 
+    /** 天文辅镜（Astronomical Finderscope）：天文观测站建材方块。
+     *  非机器、无方块实体——仅作结构件；顶面叠观测镜贴图（双层模型，GTM 同款 0.01px 悬浮层）。 */
+    public static BlockEntry<Block> ASTRONOMICAL_FINDERSCOPE;
+
     /** 补注册的机壳方块（档位 → 方块条目）。 */
     public static final Map<Integer, BlockEntry<Block>> EXTRA_MACHINE_CASINGS = new HashMap<>();
 
@@ -50,5 +54,13 @@ public final class GtnecoreBlocks {
             }
             EXTRA_MACHINE_CASINGS.put(EXTRA_TIERS[i], entry);
         }
+        // 天文辅镜：天文观测站建材（铁块属性，无方块实体）；blockstate/模型/贴图手工静态资产
+        ASTRONOMICAL_FINDERSCOPE = GTRegistration.REGISTRATE
+                .block("astronomical_finderscope", Block::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false))
+                .item(BlockItem::new)
+                .build()
+                .register();
     }
 }

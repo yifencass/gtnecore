@@ -1,0 +1,4 @@
+﻿{
+  "parent": "item/generated",
+  "textures": { "layer0": "gtnecore:item/celestial_star_map/star_map-sn" }
+}

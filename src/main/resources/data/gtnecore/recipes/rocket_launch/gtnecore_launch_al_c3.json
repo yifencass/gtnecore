@@ -1,0 +1,26 @@
+{
+  "type": "gtnecore:rocket_launch",
+  "inputs": {
+    "item": [
+      {"content": {"item": "gtnecore:mk1_rocket"}, "chance": 0},
+      {"content": {"item": "gtnecore:astral_chart_al"}, "chance": 0},
+      {"content": {"type": "gtceu:nbt_predicate", "item": "gtceu:programmed_circuit", "count": 1, "nbt": "{Configuration:3}", "predicate": {"type": "equals", "key": "Configuration", "value": 3}}, "chance": 0}
+    ],
+    "fluid": [
+      {"content": {"amount": 32000, "value": {"fluid": "gtceu:hydrogen"}}}
+    ]
+  },
+  "outputs": {
+    "item": [
+      {"content": {"type": "gtceu:sized", "count": 64, "ingredient": {"item": "gtceu:raw_spessartine"}}},
+      {"content": {"type": "gtceu:sized", "count": 32, "ingredient": {"item": "gtceu:raw_spessartine"}}, "chance": 6500},
+      {"content": {"type": "gtceu:sized", "count": 32, "ingredient": {"item": "gtceu:raw_spessartine"}}, "chance": 2600}
+    ]
+  },
+  "tickInputs": {
+    "eu": [
+      {"content": {"voltage": 512, "amperage": 2}}
+    ]
+  },
+  "duration": 9600
+}

@@ -1,0 +1,37 @@
+{
+  "type": "ad_astra:space_station_recipe",
+  "dimension": "gtnecore:blackhole_orbit",
+  "ingredients": [
+    {
+      "count": 32,
+      "ingredient": {
+        "tag": "ad_astra:steel_plates"
+      }
+    },
+    {
+      "count": 32,
+      "ingredient": {
+        "tag": "ad_astra:ostrum_plates"
+      }
+    },
+    {
+      "count": 16,
+      "ingredient": {
+        "tag": "ad_astra:calorite_plates"
+      }
+    },
+    {
+      "count": 16,
+      "ingredient": {
+        "tag": "forge:plates/neutronium"
+      }
+    },
+    {
+      "count": 8,
+      "ingredient": {
+        "tag": "forge:ingots/europium"
+      }
+    }
+  ],
+  "structure": "ad_astra:space_station"
+}

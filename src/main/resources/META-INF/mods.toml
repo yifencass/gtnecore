@@ -71,3 +71,21 @@ description='''${mod_description}'''
    versionRange="[7.5.3,)"
    ordering="AFTER"
    side="BOTH"
+
+# Curios 依赖：GT之环（头后 G 光环饰品）需要 Curios 饰品系统（CuriosApi）
+[[dependencies."${mod_id}"]]
+   modId="curios"
+   mandatory=true
+   versionRange="[5.14.1,)"
+   ordering="AFTER"
+   side="BOTH"
+
+# 匠魂（可选）：ordering=AFTER 保证 gtnecore 数据包在 tconstruct 之上——
+# data/tconstruct/recipes/ 下的流体量 ×1.6 覆盖（GT 144mB/锭 经济统一）才能生效。
+# 无匠魂环境不加载也无碍（mandatory=false）。
+[[dependencies."${mod_id}"]]
+   modId="tconstruct"
+   mandatory=false
+   versionRange="[3.8.0,)"
+   ordering="AFTER"
+   side="BOTH"

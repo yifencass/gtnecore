@@ -113,6 +113,8 @@ public final class WaveNameState {
     public static final ForgeConfigSpec.DoubleValue WAVE_AMPLITUDE;
     public static final ForgeConfigSpec.DoubleValue WAVE_SPEED;
     public static final ForgeConfigSpec.DoubleValue WAVE_WAVELENGTH;
+    /** EU 氧气分配机供氧区域覆盖层开关（同属 mod 客户端配置，默认开） */
+    public static final ForgeConfigSpec.BooleanValue SHOW_OXYGEN_AREA;
 
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -122,6 +124,10 @@ public final class WaveNameState {
                 .defineInRange("waveSpeed", 0.15, 0.01, 1.0);
         WAVE_WAVELENGTH = builder.comment("Wavelength in characters (larger = smoother, fewer characters per cycle)")
                 .defineInRange("waveWavelength", 5.0, 2.0, 20.0);
+        // 注意：一个 mod 只能注册一个 ModConfig.Type.CLIENT 配置——所有客户端项都放这一个 spec
+        SHOW_OXYGEN_AREA = builder.comment("Render the EU oxygen distributor's distributed area as a translucent shell",
+                        " (same as Ad Astra's Show Oxygen Distributor Area). Default: true.")
+                .define("showOxygenArea", true);
         CLIENT_SPEC = builder.build();
     }
 

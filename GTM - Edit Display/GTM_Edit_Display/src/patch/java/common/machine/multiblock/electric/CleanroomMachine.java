@@ -52,13 +52,16 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -93,6 +96,8 @@ public class CleanroomMachine extends WorkableElectricMultiblockMachine
     private int lDist = 0, rDist = 0, bDist = 0, fDist = 0, hDist = 0;
     @Nullable
     private CleanroomType cleanroomType = null;
+    // GTNEcore patch：加 getter 供子类（天文观测站）显示校准度
+    @Getter
     @Persisted
     private int cleanAmount;
     // runtime
@@ -398,6 +403,7 @@ public class CleanroomMachine extends WorkableElectricMultiblockMachine
                 .where('K', wallPredicate // very center floor, needed for height check
                         .or(getValidFloorBlocks()))
                 .where('W', wallPredicate.or(basePredicate)// walls
+                        .or(goetyApparitionDoor().setMaxGlobalLimited(6))
                         .or(doorPredicate().setMaxGlobalLimited(8)))
                 .where('A', wallPredicate.or(basePredicate)) // floor edges
                 .build();
@@ -419,6 +425,19 @@ public class CleanroomMachine extends WorkableElectricMultiblockMachine
         return Predicates.custom(blockWorldState -> blockWorldState.getBlockState().is(CustomTags.CLEANROOM_DOORS),
                 () -> new BlockInfo[] { new BlockInfo(Blocks.IRON_DOOR.defaultBlockState()), new BlockInfo(
                         Blocks.IRON_DOOR.defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER)) });
+    }
+
+    /**
+     * Goety's apparition door, usable as an alternative to the plastic concrete wall block.
+     * Matches nothing when goety is not installed. Limited globally via the caller.
+     */
+    @NotNull
+    protected static TraceabilityPredicate goetyApparitionDoor() {
+        Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("goety", "apparition_door"));
+        if (block == null || block == Blocks.AIR) {
+            return Predicates.blocks(new Block[0]);
+        }
+        return Predicates.blocks(block);
     }
 
     private TraceabilityPredicate getValidFloorBlocks() {
