@@ -5,7 +5,7 @@
 **MekaTech / GregTech-NewEra 整合包的核心扩展 mod**（Forge 1.20.1 / Java 17）
 
 GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 **22 档**、突破 21 亿 EU/t 上限，
-强化 Re-Avaritia 无尽系列装备，并提供 Goety 灵魂能量的流体化桥接。
+强化 Re-Avaritia 无尽系列装备（波浪/双层文字渲染等），并兼容 Goety 灵魂体系材料。
 
 > ⚠️ **基于 GTCEu 7.5.3 的修改作品（LGPL-3.0）**：对 GTCEu 的全部修改源码（`src/patch/`
 > 字节码修改层、`src/main/` 中锚定 GTCEu 的 mixin 与材料/组件修改）按 LGPL-3.0 §4 提供，
@@ -23,7 +23,6 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 **22 档**、突破 21
 - **自定义元素与材料**：Godium / Strium / Timeium / Infinite / Soulium / Magic / Soul /
   Unknown 等元素与材料，含幽匿（Sculk）成分体系重定义
 - **无尽系列强化**：波浪文字 / 双层文字物品名渲染（tag 驱动，配置可调）
-- **液态灵魂能量**：Goety 灵魂能量的流体化载体（`gtnecore:liquid_soul_energy`）
 
 ## 构建
 
@@ -58,7 +57,6 @@ src/
 │   ├── material/       # 自定义材料（Timeium/Infinity/Magic/Soul/Unknown 等）
 │   ├── mixin/          # GTCEu / Minecraft 注入
 │   ├── recipe/         # 22 档电路/部件组件重绑
-│   ├── soulenergy/     # 液态灵魂能量流体
 │   └── voltages/       # 22 档电压表
 ├── patch/java/         # ★ GTCEu 修改层源码（LGPL，另见 GTM - Edit Display/）
 └── main/resources/     # 资产（blockstate/lang/模型/贴图）
