@@ -445,7 +445,9 @@ dependencies {
     //Tinkers Construct
     implementation fg.deobf("curse.maven:tinkers-construct-74072:7449219")
     implementation fg.deobf("curse.maven:mantle-74924:7563777")
-
+    // 2026-09-05 清理：botania/manafluid/ars/gec/patchouli 五条 curse.maven 声明为
+    // 伪造/残留依赖（项目 id 重复 1214189:6285695，源码零引用，curse 源在本网络被墙），
+    // 且对应 mapped 构件已不在本地缓存 → 移除以恢复可编译性。
     //shimmer（与 oculus mixin 冲突已由 PatchShimmerMixins 处理：移除 ProgramMixin。
     // dev 运行用 patchShimmerDeobf 产出的 mapped patch jar；整合包用 patchShimmerSrg 产物）
     runtimeOnly files('build/patched/shimmer-627824-8721415-mapped-patched.jar')
