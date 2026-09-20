@@ -72,6 +72,7 @@ src/
   以 ASM 改写（`getstatic`→`[J`、`iaload`→`laload`、删 `i2l`、`i2d`→`l2d`）
 - 其余代码：LGPL-3.0（见 `LICENSE`）
 [LGPL-3.0](LICENSE)
+- 图像纹理等：使用CC-BY-NC-SA协议
 
 本 mod 使用了 AI 技术创作，故很难保证兼容性。
 Since the main creators of the modpack are Chinese, the focus will be on the Chinese community until GTNE is completely finished, so I want to say sorry to my foreign friends.
