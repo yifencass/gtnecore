@@ -75,7 +75,6 @@ minecraft {
             workingDirectory project.file('run')
 
             // GTCEu patch (cn)? files() (cn)??ixinGradle (cn)?(cn)??mixin (cn)?            // (cn)??(cn)?GTCEu (cn)??AbstractRegistrateAccessor (cn)??mixin (cn)?(cn)?
-            args '--mixin.config', 'gtceu.mixins.json'
 
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
@@ -132,7 +131,6 @@ minecraft {
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
 
-    config "${mod_id}.mixins.json"
 }
 
 // (cn) Mixin AP (cn) refmap(cn)?SRG (cn)?(cn)?// mixingradle 0.7-SNAPSHOT (cn)?(cn)?Gradle 8.8 (cn)?(cn)? -A (cn) compileJava

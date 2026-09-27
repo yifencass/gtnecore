@@ -1,0 +1,37 @@
+fix(dev): 移除强制 mixin 配置注册，修复 dev 启动崩溃
+
+症状（用户报的）：
+  MixinInitialisationError: Error initialising mixin config gtceu.mixins.json
+  Caused by: IllegalArgumentException: The specified resource 'gtceu.mixins.json'
+             was invalid or could not be read
+  另一形态（插件被间接触发时）：
+  Caused by: NoClassDefFoundError: net/minecraftforge/fml/ModList
+    at gtceu.patched/...GTMixinPlugin.isModLoaded(GTMixinPlugin.java:90)
+    at ...DisplayWindow.updateModuleReads(DisplayWindow.java:615)
+
+根因：build.gradle 的 runs 块里手动加了
+  args '--mixin.config', 'gtceu.mixins.json'
+且 mixin 块声明了 config "${mod_id}.mixins.json"。
+两者都会让 Mixin 在 **announceLaunch** 阶段就去读配置（MixinBootstrap.doInit:196
+-> MixinPlatformManager.prepare:169 -> MixinConfig.create:1282），而那时类路径
+尚未就绪 -> IMixinService.getResourceAsStream() 返回 null -> 报"配置读不了"。
+
+排查过程中否定的假设（都不成立）：
+- 配置内容/JSON 合法性：合法，且与原版逐字节相同（sha cce912ae）
+- 引用的 mixin 类缺失：72 个条目全部存在
+- refmap 缺失：gtceu.refmap.json 在位
+- zip 元数据（data descriptor）：已核对与原版零差异
+- 类路径不含目标：用 javaagent dump 游戏 JVM 的真实类路径（150 条），
+  build/resources/main 与 patched jar 都在，且用同一条类路径跑子 JVM 时
+  TCCL(AppClassLoader) 能正常读到配置 —— 所以问题是**时序**，不是内容或路径
+
+修法：不再强制注册，交给正常路径加载。
+- build.gradle: 移除 args '--mixin.config' 与 mixin { config ... }
+- GTCEu 的配置由 jar manifest 的 MixinConfigs 交给 FML 在正确时机加载
+- 实测：runClient BUILD SUCCESSFUL，游戏完整启动（Mod List / Setting user /
+  LWJGL / Sound engine 都正常），Mixin 正常 Preparing mixins for MixinEnvironment[DEFAULT]
+
+附带保留的补丁（本次排查中发现并修复的真实缺陷）：
+- src/patch/.../GTMixinPlugin.java：原版 isModLoaded 只防 ModList.get()==null，
+  却直接使用 LoadingModList.get()，且其 static{} 会调 addModCompatMixin -> isModLoaded。
+  改为 try/catch 全包，FML 未就绪时降级为 false。
