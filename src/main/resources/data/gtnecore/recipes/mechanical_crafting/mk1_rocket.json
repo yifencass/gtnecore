@@ -1,0 +1,32 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "pattern": [
+    "             ",
+    "      D      ",
+    "     DED     ",
+    "    DEGED    ",
+    "    EG GE    ",
+    "    EG GE    ",
+    "    EG GE    ",
+    "    EEGEE    ",
+    "  DPFCgCFPD  ",
+    " LCDSDCDSDCL ",
+    "SDDSDRRRDSDDS",
+    "DRRDDRRRDDRRD",
+    "DRRD     DRRD"
+  ],
+  "key": {
+    "D": { "item": "gtceu:double_aluminium_plate" },
+    "R": { "item": "gtceu:steel_rotor" },
+    "L": { "item": "gtceu:long_aluminium_rod" },
+    "S": { "item": "gtceu:aluminium_screw" },
+    "P": { "item": "gtceu:aluminium_spring" },
+    "C": { "item": "gtceu:aluminium_fluid_cell" },
+    "g": { "item": "gtceu:small_aluminium_gear" },
+    "G": { "item": "gtceu:steel_gear" },
+    "E": { "item": "gtceu:dense_steel_plate" },
+    "F": { "item": "gtceu:steel_foil" }
+  },
+  "result": { "item": "gtnecore:mk1_rocket" }
+}

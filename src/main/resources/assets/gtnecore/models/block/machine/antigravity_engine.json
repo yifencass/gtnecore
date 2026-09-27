@@ -1,0 +1,86 @@
+{
+  "parent": "minecraft:block/block",
+  "dynamic_renders": [
+    {
+      "type": "gtnecore:antigravity_engine"
+    }
+  ],
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:antigravity_engine",
+  "replaceable_textures": [
+    "bottom",
+    "top",
+    "side"
+  ],
+  "texture_overrides": {
+    "bottom": "gtceu:block/casings/voltage/luv/bottom",
+    "side": "gtceu:block/casings/voltage/luv/side",
+    "top": "gtceu:block/casings/voltage/luv/top"
+  },
+  "variants": {
+    "is_formed=false,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/void"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/void"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/void"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/void"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/multiblock/cleanroom/overlay_top"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/multiblock/cleanroom/overlay_top"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/multiblock/cleanroom/overlay_top_active"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/luv",
+        "textures": {
+          "overlay_top": "gtceu:block/multiblock/cleanroom/overlay_top_active"
+        }
+      }
+    }
+  }
+}

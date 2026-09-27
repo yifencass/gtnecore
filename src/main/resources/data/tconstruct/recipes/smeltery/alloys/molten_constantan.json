@@ -1,0 +1,37 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/nickel"
+    },
+    {
+      "type": "forge:or",
+      "values": [
+        {
+          "type": "tconstruct:config",
+          "prop": "allow_ingotless_alloys"
+        },
+        {
+          "type": "mantle:tag_filled",
+          "tag": "forge:ingots/constantan"
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 144,
+      "tag": "forge:molten_copper"
+    },
+    {
+      "amount": 144,
+      "tag": "forge:molten_nickel"
+    }
+  ],
+  "result": {
+    "amount": 288,
+    "tag": "forge:molten_constantan"
+  },
+  "temperature": 920
+}

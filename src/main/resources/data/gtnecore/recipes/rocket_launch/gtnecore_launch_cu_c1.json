@@ -1,0 +1,147 @@
+{
+  "type": "gtnecore:rocket_launch",
+  "inputs": {
+    "item": [
+      {
+        "content": {
+          "item": "gtnecore:mk1_rocket"
+        },
+        "chance": 0
+      },
+      {
+        "content": {
+          "item": "gtnecore:astral_chart_cu"
+        },
+        "chance": 0
+      },
+      {
+        "content": {
+          "type": "gtceu:nbt_predicate",
+          "item": "gtceu:programmed_circuit",
+          "count": 1,
+          "nbt": "{Configuration:1}",
+          "predicate": {
+            "type": "equals",
+            "key": "Configuration",
+            "value": 1
+          }
+        },
+        "chance": 0
+      }
+    ],
+    "fluid": [
+      {
+        "content": {
+          "amount": 32000,
+          "value": {
+            "fluid": "gtceu:hydrogen"
+          }
+        }
+      }
+    ]
+  },
+  "outputs": {
+    "item": [
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        }
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 8536
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 7316
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 6533
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 5764
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 4687
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 3888
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 2666
+      },
+      {
+        "content": {
+          "type": "gtceu:sized",
+          "count": 64,
+          "ingredient": {
+            "item": "gtceu:raw_chalcopyrite"
+          }
+        },
+        "chance": 1333
+      }
+    ]
+  },
+  "tickInputs": {
+    "eu": [
+      {
+        "content": {
+          "voltage": 128,
+          "amperage": 2
+        }
+      }
+    ]
+  },
+  "duration": 9600
+}

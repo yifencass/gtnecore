@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:block/block",
+  "dynamic_renders": [
+    {
+      "type": "gtnecore:wigner_huntington_anvil"
+    }
+  ],
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:wigner_huntington_anvil",
+  "texture_overrides": {
+    "all": "gtceu:block/casings/voltage/uev/side"
+  },
+  "variants": {
+    "is_formed=false,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_emissive"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_paused",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_paused_emissive"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_paused",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_paused_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/uev",
+        "textures": {
+          "overlay_front": "gtceu:block/multiblock/distillation_tower/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/multiblock/distillation_tower/overlay_front_active_emissive"
+        }
+      }
+    }
+  }
+}

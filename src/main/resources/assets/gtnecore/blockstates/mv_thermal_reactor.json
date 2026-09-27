@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gtnecore:block/machine/mv_thermal_reactor"
+    },
+    "facing=east": {
+      "model": "gtnecore:block/machine/mv_thermal_reactor",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gtnecore:block/machine/mv_thermal_reactor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtnecore:block/machine/mv_thermal_reactor",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gtnecore:block/machine/eu_oxygen_distributor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtnecore:block/machine/eu_oxygen_distributor"
+    },
+    "facing=south": {
+      "model": "gtnecore:block/machine/eu_oxygen_distributor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtnecore:block/machine/eu_oxygen_distributor",
+      "y": 270
+    }
+  }
+}

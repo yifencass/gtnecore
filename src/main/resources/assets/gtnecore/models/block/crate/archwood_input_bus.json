@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ars_nouveau:block/archwood_log_top",
+    "bottom": "ars_nouveau:block/archwood_log_top",
+    "side": "ars_nouveau:block/archwood_planks"
+  }
+}

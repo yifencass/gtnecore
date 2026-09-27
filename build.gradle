@@ -1,0 +1,604 @@
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+group = mod_group_id
+version = mod_version
+
+base {
+    archivesName = mod_id
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+minecraft {
+    // The mappings can be changed at any time and must be in the following format.
+    // Channel:   Version:
+    // official   MCVersion             Official field/method names from Mojang mapping files
+    // parchment  YYYY.MM.DD-MCVersion  Open community-sourced parameter names and javadocs layered on top of official
+    //
+    // You must be aware of the Mojang license when using the 'official' or 'parchment' mappings.
+    // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
+    //
+    // Parchment is an unofficial project maintained by ParchmentMC, separate from MinecraftForge
+    // Additional setup is needed to use their mappings: https://parchmentmc.org/docs/getting-started
+    //
+    // Use non-default mappings at your own risk. They may not always work.
+    // Simply re-run your setup task after changing the mappings to update your workspace.
+    mappings channel: mapping_channel, version: mapping_version
+
+    // When true, this property will have all Eclipse/IntelliJ IDEA run configurations run the "prepareX" task for the given run configuration before launching the game.
+    // In most cases, it is not necessary to enable.
+    // enableEclipsePrepareRuns = true
+    // enableIdeaPrepareRuns = true
+
+    // This property allows configuring Gradle's ProcessResources task(s) to run on IDE output locations before launching the game.
+    // It is REQUIRED to be set to true for this template to function.
+    // See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
+    copyIdeResources = true
+
+    // When true, this property will add the folder name of all declared run configurations to generated IDE run configurations.
+    // The folder name can be set on a run configuration using the "folderName" property.
+    // By default, the folder name of a run configuration is the name of the Gradle project containing it.
+    // generateRunFolders = true
+
+    // This property enables access transformers for use in development.
+    // They will be applied to the Minecraft artifact.
+    // The access transformer file can be anywhere in the project.
+    // However, it must be at "META-INF/accesstransformer.cfg" in the final mod jar to be loaded by Forge.
+    // This default location is a best practice to automatically put the file in the right place in the final jar.
+    // See https://docs.minecraftforge.net/en/latest/advanced/accesstransformers/ for more information.
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    // Default run configurations.
+    // These can be tweaked, removed, or duplicated as needed.
+    runs {
+        // applies to all the run configs below
+        configureEach {
+            workingDirectory project.file('run')
+
+            // GTCEu patch (cn)? files() (cn)??ixinGradle (cn)?(cn)??mixin (cn)?            // (cn)??(cn)?GTCEu (cn)??AbstractRegistrateAccessor (cn)??mixin (cn)?(cn)?
+            args '--mixin.config', 'gtceu.mixins.json'
+
+            // Recommended logging data for a userdev environment
+            // The markers can be added/remove as needed separated by commas.
+            // "SCAN": For mods scan.
+            // "REGISTRIES": For firing of registry events.
+            // "REGISTRYDUMP": For getting the contents of all registries.
+            property 'forge.logging.markers', 'REGISTRIES'
+
+
+            // Recommended logging level for the console
+            // You can set various levels here.
+            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+            property 'forge.logging.console.level', 'debug'
+
+            // Trust the Windows certificate store so the game can reach Mojang's
+            // authentication servers through the Steamcommunity302 HTTPS proxy
+            // (its CA certificate is installed in the Windows root store).
+            property 'javax.net.ssl.trustStoreType', 'WINDOWS-ROOT'
+
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+
+        // This run config launches GameTestServer and runs all registered gametests, then exits.
+        // By default, the server will crash when no gametests are provided.
+        // The gametest system is also enabled by default for other run configs under the /test command.
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        data {
+            // example of overriding the workingDirectory set in configureEach above
+            workingDirectory project.file('run-data')
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+mixin {
+    add sourceSets.main, "${mod_id}.refmap.json"
+
+    config "${mod_id}.mixins.json"
+}
+
+// (cn) Mixin AP (cn) refmap(cn)?SRG (cn)?(cn)?// mixingradle 0.7-SNAPSHOT (cn)?(cn)?Gradle 8.8 (cn)?(cn)? -A (cn) compileJava
+// (cn)ompilerArgs (cn)fmap (cn)?jar (cn)??(cn)?(cn)?(cn)??// AP (cn)?(cn)?(cn)? refmap (cn) classes (cn)?(cn)?(cn)r (cn)?(cn)?(cn)?// (cn)??Mixin AP (cn) refmap (cn)?(cn) classes (cn)?(cn)?(cn)r (cn)?(cn)?(cn)??SRG (cn)?(cn)?// mixingradle 0.7-SNAPSHOT (cn)?(cn)?(cn)? refmap (cn)?build/tmp/compileJava/(cn)??// (cn)? jar (cn)??"sourceSet already added" (cn)?(cn)??// 0.0.2 (cn)?(cn)? refmap (cn)iGraphicsWaveCaptureMixin No refMap loaded(cn)?(cn)?
+tasks.named('compileJava', JavaCompile).configure {
+    doLast {
+// AP (cn)mixingradle (cn)?= <mod_id>.refmap.json(cn)??        // (cn)? = (cn)?(cn) compileJava-refmap.json(cn)?(cn)?(cn)?
+def src = file("${layout.buildDirectory.get()}/tmp/compileJava/${mod_id}.refmap.json")
+        if (!src.exists()) {
+            src = file("${layout.buildDirectory.get()}/tmp/compileJava/compileJava-refmap.json")
+        }
+        def dst = file("${layout.buildDirectory.get()}/classes/java/main/${mod_id}.refmap.json")
+        if (src.exists()) {
+            java.nio.file.Files.copy(src.toPath(), dst.toPath(),
+                    java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+            logger.lifecycle('GTNEcore: refmap ????{} ({} ?????)', dst.name, src.length())
+        } else {
+            throw new GradleException("refmap not generated: ${src} (Mixin AP args not effective?)")
+        }
+    }
+}
+
+// Include resources generated by data generators.
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+// ===== GTCEu patch (cn)??=====
+// (cn)? gtceu (cn)? jar (cn)?(cn)om.gregtechceu.gtceu.*(cn)?(cn)ficial (cn)
+// deobf gtceu jar (cn)?(cn)?(cn)??build/patched/gtceu-patch.jar(cn) deobf jar
+// (cn)??(cn)? patched gtceu jar(cn)? docs/api-material (cn)??patches/README(cn)?(cn)?//
+// (cn)? patch (cn)??main (cn)??*(cn)??(cn)**(cn)??026-09-24 (cn)?(cn)?(cn)
+//   patch (cn)?(cn)?(cn)?(cn)??(cn)CircuitRecipes (cn)??GtneEnvironments.VACUUM(cn)??//   CokeOvenHatch (cn)??ItemHandlerComposite/FluidTankComposite(cn)?(cn)?(cn)?(cn)?//   patch (cn)?(cn)?(cn)?(cn) GTCEu jar (cn) mod (cn)??classpath(cn)??//   (cn)?(cn)?(cn)?patch (cn)?GTCEu"(cn)? CleanroomType (cn)?(cn)??patch (cn)?
+//   (cn)?(cn)?(cn)??(cn)?(cn)??cleanroom() (cn)? String (cn)?//   getByName (cn)?(cn)?(cn)?(cn)?(cn)?//   (cn)??(cn)? compilePatchJava (cn)? compileJava (cn)?(cn)?**(cn)?(cn)?(cn)?(cn)?*(cn)?(cn)?
+sourceSets {
+    patch {
+        java {
+            srcDir 'src/patch/java'
+        }
+        // main.compileClasspath (cn)?**(cn)?**(cn)orge/gtceu/(cn)?(cn)?(cn)??        // (cn) main.output (cn)??patch (cn)?(cn)?(cn)
+        compileClasspath += sourceSets.main.compileClasspath
+        compileClasspath += sourceSets.main.output
+    }
+}
+
+tasks.register('patchJar', Jar) {
+    archiveFileName = 'gtceu-patch.jar'
+    destinationDirectory = file('build/patched')
+    from sourceSets.patch.output
+}
+
+// ===== clean (cn)?026-09-27 (cn)?(cn)??====
+// build/patched/ (cn)??(cn)? jar (cn)??*(cn)??(cn)?/(cn)??*(cn)radle (cn)??(cn)?(cn)"(cn)??(cn)?"(cn)??//   gtceu-1.20.1-7.5.3-patched.jar  (cn)??patchJar + scripts/make-dev-patched.py(cn)?(cn)?(cn)?
+// (cn)? `gradlew clean` (cn)?(cn)?(cn)?(cn)??//   compileJava (cn)??patched jar(cn)?(cn)?VA/VHA (cn)?(cn)?(cn)
+//   compilePatchJava (cn)??main (cn)?(cn)atchJar (cn)??compilePatchJava
+// (cn)??(cn)?026-09-27 clean (cn)?(cn) scripts/bootstrap-dev-patched.py(cn)??//
+// (cn)?*(cn)?doFirst (cn)??*(cn)??build/ (cn)??(cn)? (cn)??(cn)?
+// (cn)?(cn)? .patched-backup(cn)? clean (cn)??Delete (cn)?(cn)? doFirst (cn)?// (cn)/(cn)?(cn)?(cn)?(cn)?(cn)??+ (cn)?(cn)?(cn)?
+def patchedBackupDir = file("${projectDir}/patched-backup")
+
+tasks.register('backupPatchedJars', Copy) {
+    description = 'clean ???? build/patched/*.jar ????patched-backup/'
+    from fileTree('build/patched') { include '*.jar' }
+    into patchedBackupDir
+    onlyIf { file('build/patched').exists() }
+}
+
+tasks.register('restorePatchedJars', Copy) {
+    description = 'clean ???? patched-backup/ ???? jar ????? build/patched/'
+    dependsOn tasks.named('backupPatchedJars')
+    from fileTree(patchedBackupDir) { include '*.jar' }
+    into file('build/patched')
+    onlyIf { patchedBackupDir.exists() }
+    doLast { delete patchedBackupDir }
+}
+
+// clean (cn)?(cn)?(cn)
+tasks.named('clean') {
+    dependsOn tasks.named('backupPatchedJars')
+    finalizedBy tasks.named('restorePatchedJars')
+}
+
+
+// ===== jarjar (cn)??GTCEu (cn)?mod jar(cn)??====
+// reobfJarJar (cn) gtnecore (cn)?(cn)? META-INF/jarjar/ (cn) jar(cn)??// (cn)?jar (cn) srg (cn)?//   (cn)? = maven (cn)?(srg) gtceu + reobfPatchJar(srg) (cn)??//   (cn)? = maven (cn)?(srg) gtceu (cn)?(cn)egistrate/LDlib/mixinextras/configuration(cn)??// dev (cn)?deobf(official) patched jar(cn)mplementation files(cn)?(cn)?
+jarJar.enable()
+
+configurations {
+    // maven original (srg) version, without fg.deobf; the base of the release jar
+    gtceuSrg
+}
+
+dependencies {
+    gtceuSrg "com.gregtechceu.gtceu:gtceu-1.20.1:${gtm_version}"
+}
+
+def releaseGtceuJar = file('build/patched/gtceu-1.20.1-7.5.3-patched-release.jar')
+def srgPatchJar = file('build/patched/gtceu-patch-official.jar') // reobfPatchJar in-place (cn)?(cn)? srg (cn)??
+// patch (cn)??official -> srg(cn)? reobfJar/reobfJarJar (cn)nameJarInPlace + createMcpToSrg(cn)??
+def srgPatchSource = file('build/patched/gtceu-patch-official.jar')
+
+tasks.register('prepareSrgPatchSource', Copy) {
+    dependsOn patchJar
+    from patchJar.archiveFile
+    into file('build/patched')
+    rename { 'gtceu-patch-official.jar' }
+}
+
+tasks.register('reobfPatchJar', net.minecraftforge.gradle.userdev.tasks.RenameJarInPlace) {
+    dependsOn prepareSrgPatchSource, createMcpToSrg
+    input.set(srgPatchSource) // in place(cn)??
+    mappings.set(tasks.named('createMcpToSrg', net.minecraftforge.gradle.mcp.tasks.GenerateSRG).flatMap { it.output })
+    libraries.from(sourceSets.main.runtimeClasspath, sourceSets.patch.compileClasspath)
+}
+
+tasks.register('makeReleaseGtceuJar', Exec) {
+    dependsOn reobfPatchJar
+    inputs.files(configurations.gtceuSrg)
+    inputs.file(srgPatchJar)
+    inputs.file('scripts/make-release-jar.py')
+    outputs.file(releaseGtceuJar)
+    doFirst {
+        def srgFile = configurations.gtceuSrg.singleFile
+        commandLine 'python', file('scripts/make-release-jar.py').absolutePath,
+                srgFile.absolutePath, srgPatchJar.absolutePath, releaseGtceuJar.absolutePath
+    }
+}
+
+// flatDir (cn)?(cn)libs/gtceu-release-7.5.3.jar <-> blank:gtceu-release:7.5.3
+// Gradle (cn)? jarJar (cn)?(cn)?(cn)?(cn) updateReleaseGtceuJar (cn)??(cn)??// jarJar (cn)?(cn)?(cn)patch (cn)?(cn)?(cn)?(cn)??updateReleaseGtceuJar(cn)?(cn)?
+tasks.register('updateReleaseGtceuJar', Copy) {
+    dependsOn makeReleaseGtceuJar
+    from releaseGtceuJar
+    into file('libs')
+    rename { 'gtceu-release-7.5.3.jar' }
+}
+
+// GTMT(cn)TMThings(cn)?(cn)?(cn)?(cn)?GTCEu (cn)bs/ (cn)??(cn) + jarJar (cn)??sha256 (cn)?// (cn)??= patchGtAddon_gtmthings_1_6_0 (cn)???curse (cn)? jar (cn)??ASM (cn)?(cn)?(cn)??// (cn)?srg(cn)?jar (cn)?reobfJarJar (cn)?(cn)?
+tasks.register('updateReleaseGtmtJar', Copy) {
+    dependsOn 'patchGtAddon_gtmthings_1_6_0'
+    from file('build/patched/gtmthings-1.6.0-patched.jar')
+    into file('libs')
+    rename { 'gtmt-release-1.6.0.jar' }
+}
+
+def sha256 = { File f ->
+    def md = java.security.MessageDigest.getInstance('SHA-256')
+    f.withInputStream { s ->
+        def buf = new byte[8192]
+        int n
+        while ((n = s.read(buf)) != -1) md.update(buf, 0, n)
+    }
+    md.digest().encodeHex().toString()
+}
+
+tasks.named('jarJar') {
+    doFirst {
+        def libsJar = file('libs/gtceu-release-7.5.3.jar')
+        if (!libsJar.exists()) {
+            throw new GradleException("libs/gtceu-release-7.5.3.jar ????: ./gradlew updateReleaseGtceuJar")
+        }
+        if (sha256(libsJar) != sha256(releaseGtceuJar)) {
+            throw new GradleException('libs/gtceu-release-7.5.3.jar ????patched release ??? patch???????: ./gradlew updateReleaseGtceuJar')
+        }
+// GTMT (cn)?(cn)tchGtAddon (cn) (cn)??libs/ (cn)?(cn)?(cn)??
+def libsGtmtJar = file('libs/gtmt-release-1.6.0.jar')
+        def gtmtPatched = file('build/patched/gtmthings-1.6.0-patched.jar')
+        if (!libsGtmtJar.exists()) {
+            throw new GradleException("libs/gtmt-release-1.6.0.jar ????: ./gradlew updateReleaseGtmtJar")
+        }
+        if (sha256(libsGtmtJar) != sha256(gtmtPatched)) {
+            throw new GradleException('libs/gtmt-release-1.6.0.jar ????patched GTMThings ????: ./gradlew updateReleaseGtmtJar')
+        }
+    }
+}
+
+// ===== (cn)?(cn)?(cn)??addon (cn)?(cn)? patch(cn)??====
+// gregic_tinkering (cn)?mod(cn)GPL-3.0(cn)?(cn) int[] (cn)?(cn) GTValues.VA/VH/VHA(cn)??// patch (cn)? long[](cn)?(cn)?(cn)? [I -> [J(cn)?(cn)? NoSuchFieldError(cn)??// tools/PatchGtseJar.java (cn)??ASM (cn)?(cn)??etstatic [I -> [J(cn)aload -> laload(cn)? i2l(cn)2d -> l2d(cn)??// (cn)?(cn): ./gradlew patchAllGtAddons  ->  build/patched/<name>-patched.jar(cn)?(cn)?
+configurations {
+    asmTool
+}
+
+dependencies {
+    asmTool 'org.ow2.asm:asm:9.5'
+}
+
+tasks.register('compilePatchGtseTool', JavaCompile) {
+    source fileTree('tools') { include 'PatchGtseJar.java' }
+    classpath = configurations.asmTool
+    destinationDirectory = file('build/tools')
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
+
+def gtAddonPatches = [
+        'gregic_tinkering-1.3.0',
+        'gtmthings-1.6.0',
+]
+
+gtAddonPatches.forEach { name ->
+    def inJar = file("libs/${name}.jar")
+    def outJar = file("build/patched/${name}-patched.jar")
+    tasks.register("patchGtAddon_${name.replaceAll('[^a-zA-Z0-9]', '_')}", JavaExec) {
+        dependsOn compilePatchGtseTool
+        classpath = files(file('build/tools'), configurations.asmTool)
+        mainClass = 'PatchGtseJar'
+        inputs.file(inJar)
+        inputs.file('tools/PatchGtseJar.java')
+        outputs.file(outJar)
+        args inJar.absolutePath, outJar.absolutePath
+    }
+}
+
+tasks.register('patchAllGtAddons') {
+    dependsOn tasks.matching { it.name.startsWith('patchGtAddon_') }
+}
+
+// ===== shimmer dev (cn)? =====
+// shimmer.mixins.json (cn)??ProgramMixin (cn)??oculus (cn)??MixinProgram (cn)?(cn)??// Program.compileShaderInternal(cn)ev (cn)?"The call compileShaderInternal is not cancellable"
+// (cn)??.2.4 (cn)??(cn)tchShimmerMixins (cn)??json (cn)?(cn)??mixin(cn)??// (cn)?(cn)roduction(cn)?(cn) patch (cn)?(cn)??
+configurations {
+    shimmerDeobf
+}
+
+dependencies {
+    shimmerDeobf fg.deobf("curse.maven:shimmer-627824:8721415")
+}
+
+def shimmerPatchedOut = file('build/patched/shimmer-627824-8721415-mapped-patched.jar')
+
+tasks.register('compilePatchShimmerTool', JavaCompile) {
+    source fileTree('tools') { include 'PatchShimmerMixins.java' }
+    classpath = files()
+    destinationDirectory = file('build/tools')
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
+
+tasks.register('patchShimmerDeobf', JavaExec) {
+    dependsOn compilePatchShimmerTool, configurations.shimmerDeobf
+    classpath = files(file('build/tools'))
+    mainClass = 'PatchShimmerMixins'
+    outputs.file(shimmerPatchedOut)
+    doFirst {
+        def mapped = configurations.shimmerDeobf.files.find {
+            it.name.contains('shimmer') && it.name.contains('mapped')
+        }
+        if (mapped == null) throw new GradleException('shimmer mapped jar not found (fg.deobf produced nothing?)')
+        args mapped.absolutePath, shimmerPatchedOut.absolutePath
+    }
+}
+
+tasks.matching { it.name == 'runClient' || it.name == 'runServer' }.configureEach {
+    it.dependsOn('patchShimmerDeobf')
+}
+
+// (cn)?(cn)? patch(cn)rg (cn)? jar (cn)??build/patched/shimmer-627824-8721415-patched.jar(cn)??
+def shimmerSrgIn = file('libs/shimmer-627824-8721415.jar')
+def shimmerSrgOut = file('build/patched/shimmer-627824-8721415-patched.jar')
+tasks.register('patchShimmerSrg', JavaExec) {
+    dependsOn compilePatchShimmerTool
+    classpath = files(file('build/tools'))
+    mainClass = 'PatchShimmerMixins'
+    inputs.file(shimmerSrgIn)
+    outputs.file(shimmerSrgOut)
+    args shimmerSrgIn.absolutePath, shimmerSrgOut.absolutePath
+    onlyIf { shimmerSrgIn.exists() }
+}
+
+repositories {
+
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+    // flatDir only recognizes versioned filenames: libs/gtceu-release-7.5.3.jar
+    // Gradle resolves jarJar deps at configuration time, so the file must already
+    // exist; updateReleaseGtceuJar syncs it after the patch changes.
+    flatDir {
+        dir 'libs'
+    }
+
+    // JEI is hosted on the BlameJared Maven
+    maven {
+        name = 'BlameJared Maven'
+        url = 'https://maven.blamejared.com/'
+    }
+    maven { url 'https://modmaven.dev/' }
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" }
+    maven { url = "https://maven.createmod.net" }
+}
+
+dependencies {
+    // Specify the version of Minecraft to use.
+    // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
+    // The "userdev" classifier will be requested and setup by ForgeGradle.
+    // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
+    // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // JEI (Just Enough Items) - soft dependency: API for compile-time, full mod at runtime
+    // Using fg.deobf() ensures the dependency is remapped to the development mappings
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    // PneumaticCraft: Repressurized -- compileOnly + runtimeOnly (not implementation):
+    // the api artifact is LGPLv3, so only me.desht.pneumaticcraft.api.* is used at
+    // compile time; the mod itself is not redistributed by us.
+    compileOnly fg.deobf("me.desht.pneumaticcraft:pneumaticcraft-repressurized:${pnc_version}:api")
+    runtimeOnly fg.deobf("me.desht.pneumaticcraft:pneumaticcraft-repressurized:${pnc_version}")
+
+    //gtm (cn)??GTNEcore patch (cn)H/VA/VHA (cn)?long[] 22 (cn)?(cn)?(cn)
+    implementation files('build/patched/gtceu-1.20.1-7.5.3-patched.jar')
+// (cn)arjar(cn)?(cn)? reobf (cn)??srg(cn)?(cn)?makeReleaseGtceuJar (cn)? srg (cn)?
+jarJar('blank:gtceu-release:7.5.3') {
+        jarJar.ranged(it, '[7.5.3,)')
+    }
+    // GTMThings 1.6.0(cn)GPL-3.0(cn)?(cn) GTValues.VA=int[](cn) GTCEu (cn)??long[] (cn)?
+    // (cn)oSuchFieldError: VA(cn)?(cn)?(cn)tchGtAddon_gtmthings_1_6_0 (cn)
+// dev(official)/(cn)?srg) (cn)?? jar(cn)? gradlew patchGtAddon_gtmthings_1_6_0 (cn)?
+implementation files('build/patched/gtmthings-1.6.0-dev-patched.jar')
+    // (cn)arjar(cn)?(cn)patched GTMThings(cn)rg(cn)?(cn)?(cn)?GTCEu(cn)??*(cn)?**(cn)?(cn)?(cn)?
+// GTMThings(cn)arjar (cn)?(cn)??(cn) GTMThings (cn)?(cn)? AE2 [15.4.2,)(cn)??    // (cn)?(cn)?(cn)?(cn) AE2(cn)??mod (cn)?(cn)bs/gtmt-release-1.6.0.jar (cn)??updateReleaseGtmtJar (cn)?
+jarJar('blank:gtmt-release:1.6.0') {
+        jarJar.ranged(it, '[1.6.0,)')
+    }
+    //Avaritia
+    implementation fg.deobf("curse.maven:avaritia-623969:8497793")
+    //mek (cn)??(cn)TM(cn)?(cn)k (cn)?ek (cn)?(cn)?GtnecoreAddon (cn)?    //jade
+    compileOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
+    runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
+    // Registrate + LDlib (extracted from GTCEu's jarjar, same versions) - compile only;
+    // at runtime GTCEu's jarjar provides the classes, so no duplicate loading
+// (cn)?(cn)? blank:(cn)latDir (cn)??libs/<name>-<version>.jar (cn)?    // (cn)? maven (cn)m.tterrag.registrate / com.lowdragmc.ldlib(cn)?(cn) flatDir (cn)??    // (cn)?(cn)?(cn)?(cn)??maven (cn)?(cn)?
+compileOnly "blank:Registrate:1.3.11"
+    implementation fg.deobf("curse.maven:ldlib-626676:8430516")
+//Goety(cn)?Curios(cn)??
+implementation fg.deobf("curse.maven:goety-586095:8647359")
+    //curios
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+    //Modern UI(cn)?(cn)?(cn)ev (cn)?(cn)?
+    implementation fg.deobf("curse.maven:modern-ui-352491:6956345")
+    //Tinkers Construct
+    implementation fg.deobf("curse.maven:tinkers-construct-74072:7449219")
+    implementation fg.deobf("curse.maven:mantle-74924:7563777")
+    //botania
+    implementation fg.deobf("curse.maven:botania-225643:8702079")
+    implementation fg.deobf("curse.maven:manafluid-1214189:6285695")
+    //ars
+    implementation fg.deobf("curse.maven:ars-401955:6688854")
+    //gec
+    implementation fg.deobf("curse.maven:gec-388172:8285794")
+    //patchouli
+    runtimeOnly fg.deobf("curse.maven:patchouli-306770:7731017")
+//shimmer(cn)? oculus mixin (cn)?(cn)? PatchShimmerMixins (cn)?ProgramMixin(cn)??    // dev (cn)?patchShimmerDeobf (cn)??mapped patch jar(cn)??patchShimmerSrg (cn)??    //
+runtimeOnly files('build/patched/shimmer-627824-8721415-mapped-patched.jar')
+    //oculus
+    implementation fg.deobf("curse.maven:oculus-581495:6020952")
+    //oculus (cn)beddium(cn)ev (cn)?(cn)? oculus (cn)?(cn)
+//(cn)?(cn)?(cn) Render thread mixin (cn) Java (cn)?/(cn)??    //
+    compileOnly fg.deobf("blank:embeddium:0.3.31")
+    runtimeOnly fg.deobf("blank:embeddium:0.3.31")
+//dev (cn)? mod(cn)ibs/ flatDir(cn) mods (cn)?(cn)?(cn)?(cn)?(cn)?
+runtimeOnly fg.deobf("blank:modernfix:5.27.66")
+    runtimeOnly fg.deobf("blank:jei-copy-recipe-json:1.1.2")
+    //create
+    implementation fg.deobf("curse.maven:create-328085:7178761")
+    //ponder
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
+    //Create Repair
+    implementation fg.deobf("curse.maven:create-repair-1477958:8382254")
+    //ae2
+    implementation fg.deobf("curse.maven:ae2-223794:7148487")
+    implementation fg.deobf("curse.maven:guideme-1173950:8204776")
+    implementation fg.deobf("curse.maven:eae-892005:8918777")
+    //ad astra
+    implementation fg.deobf("curse.maven:adastra-635042:6262032")
+    implementation fg.deobf("curse.maven:botarium-704113:5486070")
+    implementation fg.deobf("curse.maven:resourceful-config-714059:6231176")
+    implementation fg.deobf("curse.maven:resourceful-lib-570073:5659871")
+    //Research Table
+    compileOnly fg.deobf("curse.maven:research-table-307346:3479716")
+    // Example mod dependency using a mod jar from ./libs with a flat dir repository
+    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
+    // The group id is ignored when searching -- in this case, it is "blank"
+    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+
+    // For more info:
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+// Lombok (cn)??(cn)??patch (cn)GTCEu (cn) @Getter/@Setter/@RequiredArgsConstructor(cn)??
+compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    patchCompileOnly 'org.projectlombok:lombok:1.18.30'
+    patchAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    // GTCEu (cn)patch (cn)?(cn)?mods (cn)?    patchCompileOnly "appeng:appliedenergistics2-forge:15.4.9"
+    patchCompileOnly "mcjty.theoneprobe:theoneprobe:1.20.1-10.0.1-3"
+
+}
+
+// This block of code expands all declared replace properties in the specified resource targets.
+// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
+// When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.
+// See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version, forge_version_range: forge_version_range,
+            loader_version_range: loader_version_range,
+            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors: mod_authors, mod_description: mod_description,
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }}
+
+// Example for how to get properties into the manifest for reading at runtime.
+tasks.named('jar', Jar).configure {
+    // The refmap is manually copied into the classes output, so it can collide with
+    // the one mixingradle puts into the jar - keep the first and skip duplicates.
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+                "Specification-Title": mod_id,
+                "Specification-Vendor": mod_authors,
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.jar.archiveVersion,
+                "Implementation-Vendor": mod_authors,
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+
+    // This is the preferred method to reobfuscate your jar file
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+

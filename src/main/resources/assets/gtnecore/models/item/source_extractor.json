@@ -1,0 +1,9 @@
+{
+  "parent": "gtceu:block/casings/voltage/mv",
+  "textures": {
+    "bottom": "ars_nouveau:block/source_gem_block",
+    "top": "ars_nouveau:block/source_gem_block",
+    "side": "ars_nouveau:block/source_gem_block",
+    "overlay_top": "gtceu:block/machines/centrifuge/overlay_top"
+  }
+}

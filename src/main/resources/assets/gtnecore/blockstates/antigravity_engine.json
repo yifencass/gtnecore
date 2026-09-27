@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtnecore:block/machine/antigravity_engine"
+    }
+  }
+}

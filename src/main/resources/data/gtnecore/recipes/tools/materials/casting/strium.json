@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/strium"
+    }
+  ],
+  "fluid": {
+    "amount": 144,
+    "tag": "forge:molten_strium"
+  },
+  "output": "gtnecore:strium",
+  "temperature": 1500
+}

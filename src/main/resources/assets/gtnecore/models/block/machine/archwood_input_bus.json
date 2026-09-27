@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:archwood_input_bus",
+  "variants": {
+    "": {
+      "model": "gtnecore:block/crate/archwood_input_bus"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:block/block",
+  "dynamic_renders": [
+    {
+      "type": "gtnecore:source_extractor_ring"
+    },
+    {
+      "type": "gtnecore:source_extractor_orb"
+    }
+  ],
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:source_extractor",
+  "variants": {
+    "is_formed=false": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/mv",
+        "textures": {
+          "bottom": "ars_nouveau:block/source_gem_block",
+          "top": "ars_nouveau:block/source_gem_block",
+          "side": "ars_nouveau:block/source_gem_block",
+          "overlay_top": "gtceu:block/void"
+        }
+      }
+    },
+    "is_formed=true": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/mv",
+        "textures": {
+          "bottom": "ars_nouveau:block/source_gem_block",
+          "top": "ars_nouveau:block/source_gem_block",
+          "side": "ars_nouveau:block/source_gem_block",
+          "overlay_top": "gtceu:block/machines/centrifuge/overlay_top"
+        }
+      }
+    }
+  }
+}

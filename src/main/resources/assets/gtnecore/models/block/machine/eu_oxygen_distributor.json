@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtnecore:eu_oxygen_distributor",
+  "variants": {
+    "recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/hv",
+        "textures": {
+          "overlay_front": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front",
+          "overlay_back": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front",
+          "overlay_side": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front"
+        }
+      }
+    },
+    "recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/hv",
+        "textures": {
+          "overlay_front": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front",
+          "overlay_back": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front",
+          "overlay_side": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front"
+        }
+      }
+    },
+    "recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/hv",
+        "textures": {
+          "overlay_front": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active",
+          "overlay_back": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active",
+          "overlay_side": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active"
+        }
+      }
+    },
+    "recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/casings/voltage/hv",
+        "textures": {
+          "overlay_front": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active",
+          "overlay_back": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active",
+          "overlay_side": "gtnecore:block/machines/eu_oxygen_distributor/overlay_front_active"
+        }
+      }
+    }
+  }
+}

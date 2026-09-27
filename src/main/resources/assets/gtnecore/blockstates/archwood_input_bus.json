@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtnecore:block/machine/archwood_input_bus"
+    }
+  }
+}

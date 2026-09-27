@@ -1,0 +1,70 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gtnecore-obj2gltf"
+ },
+ "buffers": [
+  {
+   "uri": "demonic_source_converted.bin",
+   "byteLength": 28800
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 17280
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 17280,
+   "byteLength": 11520
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 1440,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 1440,
+   "type": "VEC2"
+  }
+ ],
+ "meshes": [
+  {
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "TEXCOORD_0": 1
+     },
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "materials": [
+  {
+   "pbrMetallicRoughness": {
+    "baseColorTexture": {
+     "index": 0
+    }
+   }
+  }
+ ],
+ "textures": [
+  {
+   "source": 0
+  }
+ ],
+ "images": [
+  {
+   "uri": "textures/demonic_source.png"
+  }
+ ]
+}

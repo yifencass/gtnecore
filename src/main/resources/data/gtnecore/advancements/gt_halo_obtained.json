@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "gtnecore:gt_halo"
+    },
+    "title": {
+      "translate": "advancements.gtnecore.gt_halo_obtained.title"
+    },
+    "description": {
+      "translate": "advancements.gtnecore.gt_halo_obtained.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "obtained": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gtnecore:gt_halo"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

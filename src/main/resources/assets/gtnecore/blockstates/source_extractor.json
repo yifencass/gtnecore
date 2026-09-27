@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtnecore:block/machine/source_extractor"
+    }
+  }
+}

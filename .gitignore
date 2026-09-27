@@ -1,0 +1,36 @@
+# Gradle / build
+.gradle/
+build/
+build-patch*.log
+out/
+
+# Dev run environment (world saves / logs / local config)
+run/
+run-data/
+
+# Local IDE
+.idea/
+*.iml
+.claude/
+
+# Local dev notes (not published)
+ailog/
+
+# Third-party dependency jars (flatDir, not from maven; see README)
+libs/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Manual patched jar backup (clean guard)
+/patched-backup/
+
+# Large local archives / exports (not part of the source repo)
+github需要上传项/
+特供版/
+来自整合包实例的报错/

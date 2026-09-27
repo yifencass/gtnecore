@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch",
+      "x": 270
+    },
+    "facing=north": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch"
+    },
+    "facing=south": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "gtnecore:block/machine/zpm_split_thread_hatch",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtnecore:item/agi_self_solving_logic_unit"
+  }
+}

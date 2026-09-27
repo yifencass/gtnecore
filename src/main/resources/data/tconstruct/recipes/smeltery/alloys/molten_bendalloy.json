@@ -1,0 +1,40 @@
+{
+  "type": "tconstruct:alloy",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/bendalloy"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/tin"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/lead"
+    },
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/cadmium"
+    }
+  ],
+  "inputs": [
+    {
+      "amount": 288,
+      "tag": "forge:molten_tin"
+    },
+    {
+      "amount": 144,
+      "tag": "forge:molten_lead"
+    },
+    {
+      "amount": 144,
+      "tag": "forge:molten_cadmium"
+    }
+  ],
+  "result": {
+    "amount": 576,
+    "tag": "forge:molten_bendalloy"
+  },
+  "temperature": 100
+}

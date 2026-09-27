@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtnecore:item/general_ai_full_stack_computing"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "gtceu:block/cube/tinted/bottom_top",
+  "textures": {
+    "bottom": "gtceu:block/casings/voltage/umv/bottom",
+    "side": "gtceu:block/casings/voltage/umv/side",
+    "top": "gtceu:block/casings/voltage/umv/top"
+  }
+}

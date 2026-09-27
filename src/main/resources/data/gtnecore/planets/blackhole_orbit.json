@@ -1,0 +1,9 @@
+{
+  "dimension": "gtnecore:blackhole_orbit",
+  "gravity": 0.0,
+  "oxygen": false,
+  "solar_power": 64,
+  "solar_system": "gtnecore:event_horizon",
+  "temperature": -270,
+  "tier": 999
+}

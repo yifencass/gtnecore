@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gtnecore:block/machine/uhv_planisphere_programmer",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtnecore:block/machine/uhv_planisphere_programmer"
+    },
+    "facing=south": {
+      "model": "gtnecore:block/machine/uhv_planisphere_programmer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gtnecore:block/machine/uhv_planisphere_programmer",
+      "y": 270
+    }
+  }
+}
