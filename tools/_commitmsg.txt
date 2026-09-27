@@ -1,0 +1,11 @@
+patch: 新增 GTMixinPlugin 补丁类，修复启动期 NoClassDefFoundError: ModList
+
+原版 GTMixinPlugin.isModLoaded 只防了 ModList.get() == null，却在同一分支里
+直接使用 LoadingModList.get()。而它的 static{} 会调 addModCompatMixin -> isModLoaded。
+
+Forge 在 FMLLoader.beforeStart -> DisplayWindow.updateModuleReads 用
+Class.forName(forgeModule, "...ForgeLoadingOverlay") 触发类解析，Mixin 因此实例化
+本插件 -> 静态初始化 -> 此时 LoadingModList 尚未对 gtceu.patched 模块开放 -> 崩。
+
+补丁用 try/catch 把两种查询都包住，FML 未就绪时安全降级为 false。
+实测：ClassNotFoundException: ModList 的整段异常链已消失。

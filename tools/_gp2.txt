@@ -1,0 +1,155 @@
+﻿Compiled from "GTMixinPlugin.java"
+public class com.gregtechceu.gtceu.core.mixins.GTMixinPlugin implements org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin {
+  private static final java.lang.String MIXIN_PACKAGE;
+
+  private static final java.util.Map<java.lang.String, java.lang.String> MOD_COMPAT_MIXINS;
+
+  private static final java.lang.String DEV_PACKAGE;
+
+  private static final java.lang.String DATAGEN_PACKAGE;
+
+  public com.gregtechceu.gtceu.core.mixins.GTMixinPlugin();
+    Code:
+       0: aload_0
+       1: invokespecial #34                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void onLoad(java.lang.String);
+    Code:
+       0: return
+
+  public java.lang.String getRefMapperConfig();
+    Code:
+       0: aconst_null
+       1: areturn
+
+  public boolean shouldApplyMixin(java.lang.String, java.lang.String);
+    Code:
+       0: aload_2
+       1: ldc           #21                 // String com.gregtechceu.gtceu.core.mixins.
+       3: invokevirtual #49                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+       6: ifne          11
+       9: iconst_1
+      10: ireturn
+      11: aload_2
+      12: ldc           #21                 // String com.gregtechceu.gtceu.core.mixins.
+      14: invokevirtual #53                 // Method java/lang/String.length:()I
+      17: invokevirtual #57                 // Method java/lang/String.substring:(I)Ljava/lang/String;
+      20: astore_2
+      21: aload_2
+      22: ldc           #27                 // String dev.
+      24: invokevirtual #49                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      27: ifeq          66
+      30: invokestatic  #63                 // Method net/minecraftforge/fml/loading/FMLLoader.isProduction:()Z
+      33: ifeq          38
+      36: iconst_0
+      37: ireturn
+      38: aload_2
+      39: ldc           #27                 // String dev.
+      41: invokevirtual #53                 // Method java/lang/String.length:()I
+      44: invokevirtual #57                 // Method java/lang/String.substring:(I)Ljava/lang/String;
+      47: astore_2
+      48: aload_2
+      49: ldc           #30                 // String datagen.
+      51: invokevirtual #49                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+      54: ifeq          64
+      57: invokestatic  #67                 // Method net/minecraftforge/fml/loading/FMLLoader.getLaunchHandler:()Lnet/minecraftforge/fml/loading/targets/CommonLaunchHandler;
+      60: invokevirtual #72                 // Method net/minecraftforge/fml/loading/targets/CommonLaunchHandler.isData:()Z
+      63: ireturn
+      64: iconst_1
+      65: ireturn
+      66: getstatic     #74                 // Field MOD_COMPAT_MIXINS:Ljava/util/Map;
+      69: invokeinterface #78,  1           // InterfaceMethod java/util/Map.entrySet:()Ljava/util/Set;
+      74: invokeinterface #84,  1           // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+      79: astore_3
+      80: aload_3
+      81: invokeinterface #89,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+      86: ifeq          134
+      89: aload_3
+      90: invokeinterface #93,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      95: checkcast     #9                  // class java/util/Map$Entry
+      98: astore        4
+     100: aload_2
+     101: aload         4
+     103: invokeinterface #96,  1           // InterfaceMethod java/util/Map$Entry.getValue:()Ljava/lang/Object;
+     108: checkcast     #45                 // class java/lang/String
+     111: invokevirtual #49                 // Method java/lang/String.startsWith:(Ljava/lang/String;)Z
+     114: ifeq          131
+     117: aload         4
+     119: invokeinterface #99,  1           // InterfaceMethod java/util/Map$Entry.getKey:()Ljava/lang/Object;
+     124: checkcast     #45                 // class java/lang/String
+     127: invokestatic  #102                // Method isModLoaded:(Ljava/lang/String;)Z
+     130: ireturn
+     131: goto          80
+     134: iconst_1
+     135: ireturn
+
+  public void acceptTargets(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>);
+    Code:
+       0: return
+
+  public java.util.List<java.lang.String> getMixins();
+    Code:
+       0: aconst_null
+       1: areturn
+
+  public void preApply(java.lang.String, org.objectweb.asm.tree.ClassNode, java.lang.String, org.spongepowered.asm.mixin.extensibility.IMixinInfo);
+    Code:
+       0: return
+
+  public void postApply(java.lang.String, org.objectweb.asm.tree.ClassNode, java.lang.String, org.spongepowered.asm.mixin.extensibility.IMixinInfo);
+    Code:
+       0: return
+
+  private static void addModCompatMixin(java.lang.String);
+    Code:
+       0: getstatic     #74                 // Field MOD_COMPAT_MIXINS:Ljava/util/Map;
+       3: aload_0
+       4: aload_0
+       5: invokedynamic #137,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      10: invokeinterface #141,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      15: pop
+      16: return
+
+  private static boolean isModLoaded(java.lang.String);
+    Code:
+       0: invokestatic  #148                // Method net/minecraftforge/fml/ModList.get:()Lnet/minecraftforge/fml/ModList;
+       3: ifnonnull     22
+       6: invokestatic  #153                // Method net/minecraftforge/fml/loading/LoadingModList.get:()Lnet/minecraftforge/fml/loading/LoadingModList;
+       9: aload_0
+      10: invokevirtual #157                // Method net/minecraftforge/fml/loading/LoadingModList.getModFileById:(Ljava/lang/String;)Lnet/minecraftforge/fml/loading/moddiscovery/ModFileInfo;
+      13: ifnull        20
+      16: iconst_1
+      17: goto          21
+      20: iconst_0
+      21: ireturn
+      22: invokestatic  #148                // Method net/minecraftforge/fml/ModList.get:()Lnet/minecraftforge/fml/ModList;
+      25: aload_0
+      26: invokevirtual #160                // Method net/minecraftforge/fml/ModList.isLoaded:(Ljava/lang/String;)Z
+      29: ireturn
+
+  static {};
+    Code:
+       0: new           #163                // class java/util/HashMap
+       3: dup
+       4: invokespecial #164                // Method java/util/HashMap."<init>":()V
+       7: putstatic     #74                 // Field MOD_COMPAT_MIXINS:Ljava/util/Map;
+      10: getstatic     #74                 // Field MOD_COMPAT_MIXINS:Ljava/util/Map;
+      13: ldc           #166                // String roughlyenoughitems
+      15: ldc           #168                // String rei.
+      17: invokeinterface #141,  3          // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+      22: pop
+      23: ldc           #170                // String emi
+      25: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      28: ldc           #174                // String jei
+      30: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      33: ldc           #176                // String top
+      35: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      38: ldc           #178                // String ftbchunks
+      40: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      43: ldc           #180                // String xaerominimap
+      45: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      48: ldc           #182                // String xaeroworldmap
+      50: invokestatic  #172                // Method addModCompatMixin:(Ljava/lang/String;)V
+      53: return
+}
