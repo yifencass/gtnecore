@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * 注入到 init() 调用之后，绑定必然先于配方生成（recipeAddition）执行。
  *
  * remap=false：registerPackFinders 与 GTCraftingComponents.init 都是 mod 类方法
- * （非 Minecraft 类），无 SRG 映射，按官方名锚定（参考 Goety mixin 先例）。
+ * （非 Minecraft 类），无 SRG 映射，按官方名锚定。
  */
 @Mixin(CommonProxy.class)
 public abstract class GTCommonProxyMixin {

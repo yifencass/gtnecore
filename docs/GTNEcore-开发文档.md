@@ -5,8 +5,11 @@
 >
 > 本文件记录**本项目自己的开发内容**（patch 机制、电压体系、装备强化、构建流程）。
 > GTCEu 的 API 参考见同目录下《GTM-7.5.3-API指导文档》；
-> GTCEu 的 KubeJS 支持见同目录下《GTCEu-KubeJS开发文档》（详细版）、《GTCEu-KubeJS快速上手》（简单版）与《GTCEu-KubeJS多方块开发文档》（专题）；
-> Goety 灵魂能量对接参考见同目录下《Goety-2.5.56.4-API指导文档》。
+> GTCEu 的 KubeJS 支持见同目录下《GTCEu-KubeJS开发文档》（详细版）、《GTCEu-KubeJS快速上手》（简单版）与《GTCEu-KubeJS多方块开发文档》（专题）。
+>
+> 2026-10 Goety 联动已整体移除（依赖、3 个 mixin、幻影门谓词、overlay 守卫），
+> 仅保留 GT之环对 Goety `UnholyHatModel` 的 MIT 署名；残留资料见 `docs/废案/Goety联动-废案①.md`
+> 与 `docs/废案/Goety-2.5.56.4-API指导文档.md`。
 
 ---
 
@@ -16,8 +19,8 @@
 |---|---|
 | mod_id | `gtnecore` |
 | 包名 | `org.ringclouds.gtnecore` |
-| 依赖 | GTCEu 7.5.3（**patch 版**，见 §4）、Re-Avaritia 1.4.1、Goety 2.5.56.4（+Curios）、JEI、Jade |
-| 目标 | GTM 电压 22 档 + 21 亿 EU/t 突破、EU↔FE 能量转换、无尽剑强化、灵魂能量流体化（§9） |
+| 依赖 | GTCEu 7.5.3（**patch 版**，见 §4）、Re-Avaritia 1.4.1、Curios 5.14.1（GT之环佩戴判定）、JEI、Jade |
+| 目标 | GTM 电压 22 档 + 21 亿 EU/t 突破、EU↔FE 能量转换、无尽剑强化 |
 | 许可 | LGPL 3.0 |
 
 源码结构：
@@ -32,7 +35,6 @@ src/main/java/org/ringclouds/gtnecore/
 ├── mixin/                         # GTMachineUtils/GTValues/TagLoader + 无尽剑三件套
 ├── handler/VoidMarkHandler.java   # 虚空诅咒标记执行器
 ├── recipe/TestVoltageRecipes.java # 电压上限测试配方（临时，测完删）
-├── soulenergy/SoulEnergyFluids.java # 液态灵魂能量（Goety 兼容，§9）
 └── voltages/GtneVoltages.java     # 22 档电压表（Unsafe 安装 + 名称/颜色表）
 src/patch/java/                    # GTCEu patch 层（§4，路径不带 com.gregtechceu.gtceu 前缀）
 ```
@@ -41,7 +43,12 @@ src/patch/java/                    # GTCEu patch 层（§4，路径不带 com.gr
 
 ## 2. 开发环境
 
-- **JDK**：Microsoft JDK 17.0.20（`C:\Users\Administrator\.jdks\ms-17.0.20`，Gradle 自动检测）
+- **JDK**：编译目标 Java 17（`java.toolchain.languageVersion = 17`）。
+  **Gradle 自身**须跑在 JDK 21 上——`gradle.properties` 已固定
+  `org.gradle.java.home=C:\\Program Files\\Java\\jdk-21`。
+  原因：PATH 上的 `java` 已升到 25，Gradle 8.8 不认识 Java 25 的 class 文件
+  （启动即 `Unsupported class file major version 69`），命令行构建会直接失败。
+  换机器/换 JDK 目录时改这一行即可，不必再设 `JAVA_HOME`。
 - **S302 代理**：gradle.properties 的 jvmargs 必须保留
   `-Dnet.minecraftforge.gradle.check.certs=false` + `-Djavax.net.ssl.trustStoreType=WINDOWS-ROOT`，
   否则 PKIX 证书错误
@@ -244,17 +251,16 @@ GTNEcore 的定位：**做 KJS 做不到的事 + 提供接口**（给整合包�
 方案 B：jarjar 把 patched gtceu 内置进 GTNEcore（单 jar 核心，mods.toml 声明
 `embedded=true`），整合包不装官方 gtceu——不急，先做框架。
 
-## 9. 灵魂能量流体化（Goety 兼容）★进行中
+## 9. 灵魂能量流体化（Goety 兼容）—— 已废弃（2026-10）
 
-> 详见《Goety-2.5.56.4-API指导文档》（同目录）。
+Goety 依赖已在 2026-10 整体移除，本节的液态灵魂能量方案**未实现、不再推进**。
+当时的调研（`gtnecore:liquid_soul_energy` 的 FluidType 细节、`SEHelper.increase/decreaseSESouls`
+对接思路、纹理缺失导致 Jade NPE 的坑）全部保留在：
 
-- 已注册 `gtnecore:liquid_soul_energy`（FluidType 青绿 tint #4FE3C1 + ForgeFlowingFluid +
-  方块 + 桶 + 标签 + 4 帧动画贴图），实现见 `soulenergy/SoulEnergyFluids.java`
-- 踩坑：`FluidType.Properties` 无 color()（客户端扩展走 `getRenderPropertiesInternal`）；
-  纹理必须提供（null → Jade 渲染 NPE）
-- 依赖：Goety 2.5.56.4（curse 8647359）+ Curios 5.14.1（modmaven 无 pom，fg.deobf 直引）
-- 待办：液态灵魂能量 ↔ 玩家 ISoulEnergy 对接（SEHelper.increase/decreaseSESouls），
-  方案见 Goety 文档 §7（推荐先做"灵魂接口"方块）
+- `docs/废案/Goety-2.5.56.4-API指导文档.md`（原《Goety-2.5.56.4-API指导文档》）
+- `docs/废案/Goety联动-废案①.md`（移除清单与源码存档）
+
+若将来重新引入 Goety，直接照这两份走即可。
 
 ## 10. GTCEu-fork 双轨架构（2026-08 起）
 
@@ -264,8 +270,6 @@ GTNEcore 的定位：**做 KJS 做不到的事 + 提供接口**（给整合包�
   （dev 的 `make-dev-patched.py` 合并、release 的 `make-release-jar.py` 打包均以
   patch 层产物为准）。**fork 的改动必须手动同步进 patch 层才会进游戏**
 - fork 已合入 patch 层的修复（2026-08-27）：
-  - 超净间幻影门（`CleanroomMachine.goetyApparitionDoor()`，'W' 墙体独立 6 块上限，
-    Goety 未装时匹配空）
   - `PatternPreviewWidget` JEI 槽修复（候选槽 `IngredientIO.INPUT` + null 谓词防护）
   - `MultiblockInfoCategory` 越界防护（JEI 槽数 > widget 数）
 - patch 版 `PatternPreviewWidget.updateScreen()` 省略了 fork 的 EMI/REI 屏幕分支
