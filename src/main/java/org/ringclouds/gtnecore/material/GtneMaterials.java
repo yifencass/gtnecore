@@ -1,7 +1,6 @@
 package org.ringclouds.gtnecore.material;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
-import com.gregtechceu.gtceu.api.data.chemical.material.ItemMaterialData;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -58,7 +57,7 @@ public final class GtneMaterials {
     /** Matrix：Mx 元素材料（液态） */
     public static Material MATRIX;
 
-    /** Crystal Matrix：水晶矩阵合金（无尽贪婪），Mx4C4004 = 4×Mx + 4004×C */
+    /** Crystal Matrix：水晶矩阵合金（无尽贪婪），Mx4C4080 = 4×Mx + 4080×C（= 68 个 C60 笼） */
     public static Material CRYSTAL_MATRIX;
     public static Material MAGIC;
     public static Material SOUL;
@@ -115,10 +114,11 @@ public final class GtneMaterials {
         //
         // 环/箔/圆盘三者的配方前置是 PropertyKey.INGOT，加 .ingot() 后**也能完整生成**。
         //
-        // 注意：.ingot() 会让 GTCEu 生成自己的 gtceu:infinity_ingot 物品。
-        // 无尽贪婪的 avaritia:infinity_ingot 仍然存在（物品没被删），两者的关系由数据包 tag 决定：
-        //   data/forge/tags/items/ingots/infinity.json（Forge 惯例命名空间，材料解析用的就是它）
-        //   data/forge/tags/items/nuggets/infinity.json
+        // .ingot() / .nugget 配合下方的 TagPrefix.setIgnored(...)（**Supplier 重载**）：
+        // GTCEu 不再生成自己的 gtceu:infinity_ingot/nugget，而是**直接把 avaritia 的物品
+        // 当作 Infinity 的锭/粒形态**——与 GTCEu 对原版铁锭的做法完全一致
+        // （GTMaterials 静态初始化：TagPrefix.ingot.setIgnored(Iron, Items.IRON_INGOT)）。
+        // 见本方法中段"avaritia 物品接管 GT 的锭/粒形态"那段的详细说明。
         INFINITY = new Material.Builder(Gtnecore.id("infinity"))
                 .langValue("Infinity")
                 .element(GTElements.get("Infinite"))
@@ -150,18 +150,45 @@ public final class GtneMaterials {
                 .iconSet(SHINY)
                 .buildAndRegister();
 
-        // Crystal Matrix：水晶矩阵合金（无尽贪婪）——Mx4C4004 = 4×Mx + 4004×C。
+        // Crystal Matrix：水晶矩阵合金（无尽贪婪）——Mx4C4080 = 4×Mx + 4080×C。
+        //
+        // 4080（2026-09-27 由 4004 改）：设定为**内嵌富勒烯分子笼**，Mx 是高能等离子体
+        // （温度极低、具备空间折叠特性）。选 4080 的数学依据：
+        //   4080 / 60 = 68        ← 整数，正好 68 个 C60 笼拼成的超结构
+        //   4004 / 60 = 66.73…    ← 非整数，拼不出整数个 C60
+        // （纯拓扑上两者都合法：欧拉公式要求 12 个五边形 + n/2−10 个六边形，
+        //   任何偶数 n≥20 且 n≠22 都能闭合；4080 的优势只在"整数个 C60 组装"。）
         // 自动分解禁用（不电解不离心）；锭形态用 avaritia 的水晶矩阵锭（FMLCommonSetup 里归类绑定）
         CRYSTAL_MATRIX = new Material.Builder(Gtnecore.id("crystal_matrix"))
                 .langValue("Crystal Matrix")
                 .componentStacks(new MaterialStack[]{
                         new MaterialStack(MATRIX, 4),
-                        new MaterialStack(GTMaterials.Carbon, 4004)})
-                .formula("Mx4C4004")
+                        new MaterialStack(GTMaterials.Carbon, 4080)})
+                .formula("Mx4C4080")
                 .flags(MaterialFlags.DISABLE_DECOMPOSITION)
                 .color(0x4FC3F7)
                 .iconSet(SHINY)
                 .buildAndRegister();
+
+        // ===== avaritia 物品接管 GT 的锭/粒形态（方案 A：彻底消除重复物品，2026-09-27）=====
+        //
+        // 与 GTCEu 对原版铁锭的做法完全同构（GTMaterials 静态初始化）：
+        //     TagPrefix.ingot.setIgnored(GTMaterials.Iron, Items.IRON_INGOT);
+        // → GTCEu **不生成** gtceu:iron_ingot，原版铁锭就是铁的锭形态。
+        //
+        // ⚠ 必须用 **Supplier 重载**：本方法在 MaterialEvent 阶段执行，此时 avaritia 的物品
+        //   还没注册。`setIgnored(Material, ItemLike...)` 会**立即求值** → 拿到 AIR
+        //   （历史上"无尽锭永远识别不了"的死结就是它）；Supplier 重载是懒求值，
+        //   GTCEu 真正需要时才取，那时物品早已注册。
+        //
+        // 收益：
+        //   1. gtceu:infinity_ingot / infinity_nugget 不再生成 → 不再需要"两物品共存 + 共享 tag"的糊法
+        //   2. 映射由 reinitializeMaterialData() 内部按 getIgnored() 自动登记 →
+        //      顺带规避 registerMaterialEntry 被 ITEM_MATERIAL_ENTRY.clear() 清掉的时序问题
+        //   3. 贴图直接用 avaritia 的，不再需要给 gtceu: 那个隐藏物品做贴图覆盖伪装
+        TagPrefix.ingot.setIgnored(INFINITY, avaritiaItemSupplier("infinity_ingot"));
+        TagPrefix.nugget.setIgnored(INFINITY, avaritiaItemSupplier("infinity_nugget"));
+        TagPrefix.ingot.setIgnored(CRYSTAL_MATRIX, avaritiaItemSupplier("crystal_matrix_ingot"));
 
         // Magic：补上原版只有元素（GTElements.Ma=Magic）没有材料的空缺，宝石+粉+流体
         MAGIC = new Material.Builder(Gtnecore.id("magic"))
@@ -357,55 +384,52 @@ public final class GtneMaterials {
     }
 
     /**
-     * FMLCommonSetup（物品注册后）执行：Re-Avaritia 无尽锭/无尽粒归类为 Infinity 材料形态。
-     * 之前挂在 PostMaterialEvent（mod 构造期），当时 avaritia 物品尚未注册，
-     * 条目解析到 AIR，ChemicalHelper.getMaterialEntry 永远查不到（entryEmpty=true）。
+     * FMLCommonSetup（物品注册后）执行：**自检** avaritia 物品 → Infinity/CRYSTAL_MATRIX 的映射。
+     *
+     * <p>2026-09-27 起重构：映射本身改由 {@link TagPrefix#setIgnored} 承担
+     * （见 {@link #register()} 里"avaritia 物品接管 GT 的锭/粒形态"那段），
+     * <b>不再需要</b>手工 {@code registerMaterialEntry}，也不再需要"两个物品共存 + 共享 tag"的旧方案。
+     *
+     * <p>顺带记录当时查明的旧方案真实缺陷：{@code registerMaterialEntry} 只写
+     * {@code ITEM_MATERIAL_ENTRY}（待处理列表），而 {@code GTRecipes.recipeAddition()}
+     * → {@code ItemMaterialData.reinitializeMaterialData()} 会把它 {@code clear()}。
+     * 本方法在 FMLCommonSetup 调用，早于那次 clear；若期间没有 {@code getMaterialEntry()}
+     * 查询触发懒收集，注册就被抹掉 —— 这正是"无尽锭识别时好时坏"的根因。
+     * {@code setIgnored} 的条目由 {@code reinitializeMaterialData()} **内部**登记，天然没有这个问题。
+     *
+     * <p>本方法现在只打一行自检日志，便于确认换实现后没有回归。
      */
     public static void bindAvaritia() {
-        Item item = avaritiaItem("infinity_ingot");
-        Item nugget = avaritiaItem("infinity_nugget");
-        if (item != net.minecraft.world.item.Items.AIR) {
-            ItemMaterialData.registerMaterialEntry(item, TagPrefix.ingot, INFINITY);
-        }
-        if (nugget != net.minecraft.world.item.Items.AIR) {
-            ItemMaterialData.registerMaterialEntry(nugget, TagPrefix.nugget, INFINITY);
-        }
-        // 无尽锭/粒：**两种物品共存，靠同一个 Forge 惯例 tag 公用**（用户 2026-09-26 指定）。
-        //
-        // 现状：
-        //   gtceu:infinity_ingot   —— GTCEu 按 .ingot() 生成（藏在 hidden_from_recipe_viewers 里）
-        //   avaritia:infinity_ingot —— 无尽贪婪的锭，贴图好看，JEI 里可见
-        //   两者都在 #forge:ingots/infinity（数据包 data/forge/tags/items/ingots/infinity.json）
-        //
-        // 因此这里把 avaritia 物品也注册成 INFINITY 的 ingot/nugget 形态，
-        // 让 ChemicalHelper.getMaterialEntry(avaritia 锭) 能解析到 INFINITY。
-        // 注意：GTCEu 的材料 tag 走 forge 命名空间（TagUtil.createItemTag → new ResourceLocation("forge", path)），
-        // 所以下面手动补的是历史遗留的 gtceu: 命名空间 tag，作为后备映射保留。
-        ItemMaterialData.TAG_MATERIAL_ENTRY.putIfAbsent(
-                net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
-                        new ResourceLocation("gtceu", "ingots/infinity")),
-                new com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry(TagPrefix.ingot, INFINITY));
-        ItemMaterialData.TAG_MATERIAL_ENTRY.putIfAbsent(
-                net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
-                        new ResourceLocation("gtceu", "nuggets/infinity")),
-                new com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry(TagPrefix.nugget, INFINITY));
+        LOGGER.info("GTNEcore: bindAvaritia 自检 —— infinity_ingot={}, infinity_nugget={}, crystal_matrix_ingot={}",
+                describeEntry(avaritiaItem("infinity_ingot")),
+                describeEntry(avaritiaItem("infinity_nugget")),
+                describeEntry(avaritiaItem("crystal_matrix_ingot")));
+    }
 
-        // Matrix 系列：水晶矩阵锭（化学式 Mx4C4004），同样的绑定流程（合金无 ingot 形态 → 手动注册 tag 映射）
-        Item crystal = avaritiaItem("crystal_matrix_ingot");
-        if (crystal != net.minecraft.world.item.Items.AIR) {
-            ItemMaterialData.registerMaterialEntry(crystal, TagPrefix.ingot, CRYSTAL_MATRIX);
-            ItemMaterialData.TAG_MATERIAL_ENTRY.putIfAbsent(
-                    net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
-                            new ResourceLocation("gtceu", "ingots/crystal_matrix")),
-                    new com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry(TagPrefix.ingot, CRYSTAL_MATRIX));
+    /** 自检用：把物品解析出的 (形态, 材料) 打印成可读文本。 */
+    private static String describeEntry(Item item) {
+        if (item == null || item == net.minecraft.world.item.Items.AIR) {
+            return "<物品缺失>";
         }
-        LOGGER.info("GTNEcore: bindAvaritia registered, formula='{}'/'{}'/'{}', ingot={}, nugget={}, crystal={}",
-                INFINITY.getChemicalFormula(), MATRIX.getChemicalFormula(), CRYSTAL_MATRIX.getChemicalFormula(),
-                item, nugget, crystal);
+        Object entry = com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.getMaterialEntry(item);
+        return entry == null ? "<未映射>" : entry.toString();
     }
 
     private static Item avaritiaItem(String path) {
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation("avaritia", path));
         return item != null ? item : net.minecraft.world.item.Items.AIR;
+    }
+
+    /**
+     * 懒求值的 avaritia 物品，供 {@code TagPrefix.setIgnored(Material, Supplier...)} 使用。
+     *
+     * <p><b>为什么必须是 Supplier</b>：{@code setIgnored} 在 {@link #register()}（MaterialEvent）
+     * 里调用，此时 avaritia 的物品**尚未注册**。若用 {@code setIgnored(Material, ItemLike...)}
+     * 重载，它会在调用瞬间把物品取出来（拿到 {@code Items.AIR}）——这正是历史上
+     * "无尽锭永远识别不了"的死结。Supplier 重载延迟到 GTCEu 真正需要时才求值。
+     */
+    private static java.util.function.Supplier<net.minecraft.world.level.ItemLike>
+            avaritiaItemSupplier(String path) {
+        return () -> avaritiaItem(path);
     }
 }

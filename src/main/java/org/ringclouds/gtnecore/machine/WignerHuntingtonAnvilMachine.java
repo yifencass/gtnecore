@@ -56,66 +56,45 @@ public class WignerHuntingtonAnvilMachine extends WorkableElectricMultiblockMach
     public static final long PRESS_EUT = GTValues.V[GTValues.UEV];
     /** 能源仓上限（= 结构内 B 位数，用户 2026-09-12 定：最多 9 个） */
     public static final int MAX_ENERGY_HATCHES = 9;
-    /** 内置并行上限（用户 2026-09-12：自带 16 并行） */
-    public static final int BUILTIN_PARALLELS = 16;
-
     /**
-     * 内置 16 并行 modifier。
+     * 并行仓上限（结构里最多 1 个，用户 2026-09-27 定）。
      *
-     * 按**实际可容纳的输入/输出**取并行数（GT 并行语义：料不够就少跑几路，不空转），
-     * 输入/输出 ×并行数，**duration 与 EUt 保持不变**——即"并行不放大功耗"
-     * （用户 2026-09-12 明确：这个并行不会 16 倍功耗；GT 并行仓那种"并行越多越费电"不适用本机）。
-     * 注册时 alwaysTryModify=true：并行数依赖当前库存，每次匹配都要重算。
+     * ⚠ 必须是 1：官方 {@code MultiblockControllerMachine} 的 {@code parallelHatch} 是**单个字段**，
+     * {@code onStructureFormed} 遍历部件时**后写覆盖前者**（`if (part instanceof IParallelHatch h)
+     * this.parallelHatch = h;`），{@code getParallelHatch()} 也返回 {@code Optional<IParallelHatch>}。
+     * 放多个只有最后一个生效，其余白放——所以这里限死 1。
      */
-    public static final com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier BUILTIN_PARALLEL = (machine, recipe) -> {
-        // 允许裁剪（用户 2026-09-12）：料够就跑满 16 路，不够就按实际能支撑的路数跑（最少 1 路）。
-        // 主判定走 GT 自己的 ParallelLogic.getParallelAmount（输入可支撑数 ∩ 输出可容纳数）。
-        // 兜底：它在**创造类输入仓**上会被读成"只够 1 路"（该类 handler 上报存量的形式特殊），
-        // 此时退回"只按输出空间裁剪"，避免因为输入判定失灵而白瞎整个并行能力。
-        int byInput = BUILTIN_PARALLELS;
-        int parallel = BUILTIN_PARALLELS;
-        if (machine instanceof com.gregtechceu.gtceu.api.machine.feature.IRecipeLogicMachine rlm) {
-            byInput = com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic
-                    .getParallelAmount(machine, recipe, BUILTIN_PARALLELS);
-            parallel = byInput;
-            if (parallel <= 1) {
-                parallel = Math.max(1, com.gregtechceu.gtceu.api.recipe.modifier.ParallelLogic
-                        .limitByOutputMerging(rlm, recipe, BUILTIN_PARALLELS,
-                                cap -> true, java.util.Collections.emptyList()));
-            }
-        }
-        logParallel(machine, byInput, parallel);
-        if (parallel <= 1) {
-            return com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction.IDENTITY;
-        }
-        return com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction.builder()
-                .inputModifier(com.gregtechceu.gtceu.api.recipe.content.ContentModifier.multiplier(parallel))
-                .outputModifier(com.gregtechceu.gtceu.api.recipe.content.ContentModifier.multiplier(parallel))
-                .parallels(parallel)
-                .build();
-    };
-
-    /** 并行诊断：只在数值变化时打一条，把"输入判定 / 最终采用"都打出来（值变了才打，不刷屏）。 */
-    private static int lastLoggedParallel = -1;
-
-    private static void logParallel(com.gregtechceu.gtceu.api.machine.MetaMachine machine,
-                                    int byInput, int parallel) {
-        if (parallel == lastLoggedParallel) return;
-        lastLoggedParallel = parallel;
-        LOGGER.info("GTNEcore: 对顶砧[{}] 内置并行 —— 输入判定能跑 {} 路，最终采用 {} 路（上限 {}）",
-                machine.getPos(), byInput, parallel, BUILTIN_PARALLELS);
-    }
+    public static final int MAX_PARALLEL_HATCHES = 1;
 
     /**
-     * 本机配方 modifier 链：**默认超频（OC_NON_PERFECT）+ 内置 16 并行**。
+     * 并行：**改用官方并行仓**（用户 2026-09-27 定）。
      *
-     * ⚠ `MachineBuilder.recipeModifier(...)` 是**覆盖**默认列表的（构造器默认 `[OC_NON_PERFECT]`），
-     * 只传并行会把超频顶掉——所以这里必须把 OC 一起写进链里（火箭发射台当年同理，
-     * 它的 PAD_OC 自带了超频数学）。
+     * 原先本机自带 16 硬编码并行（{@code BUILTIN_PARALLEL}，功耗不放大）。现移除，
+     * 改为在结构上开一个并行仓位（{@code 'J'}：UEV 机壳 or 并行仓），由玩家用并行仓决定并行数。
+     *
+     * 官方 {@code GTRecipeModifiers.PARALLEL_HATCH}（= {@code hatchParallel}）的语义：
+     * <pre>
+     *   int parallel = controller.getParallelHatch()
+     *           .map(h -> ParallelLogic.getParallelAmount(machine, recipe, h.getCurrentParallel()))
+     *           .orElse(1);
+     *   ModifierFunction.builder()
+     *           .modifyAllContents(ContentModifier.multiplier(parallel))   // 输入输出全 ×N
+     *           .eutMultiplier(parallel)                                    // ⚠ 功耗 ×N
+     *           .parallels(parallel)
+     * </pre>
+     * 即**并行会放大功耗**（GT 并行仓的常规语义，用户 2026-09-27 明确接受）。
+     *
+     * 并行数上限由并行仓档位决定：{@code maxParallel = (int) Math.pow(4, tier - 4)}
+     * —— EV=1、IV=4、LuV=16、ZPM=64、UV=256、UHV=1024；玩家可在仓 UI 里调小。
+     * {@code getParallelAmount} 会再按实际可容纳的输入/输出裁剪（料不够就少跑几路，不空转）。
+     *
+     * ⚠ {@code MachineBuilder.recipeModifier(...)} 是**覆盖**默认列表的（构造器默认
+     * {@code [OC_NON_PERFECT]}），所以这里必须把超频一起写进链里。
      */
     public static final com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier MODIFIERS =
             new com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifierList(
-                    com.gregtechceu.gtceu.common.data.GTRecipeModifiers.OC_NON_PERFECT, BUILTIN_PARALLEL);
+                    com.gregtechceu.gtceu.common.data.GTRecipeModifiers.OC_NON_PERFECT,
+                    com.gregtechceu.gtceu.common.data.GTRecipeModifiers.PARALLEL_HATCH);
 
     public WignerHuntingtonAnvilMachine(IMachineBlockEntity holder) {
         super(holder);
@@ -382,7 +361,7 @@ public class WignerHuntingtonAnvilMachine extends WorkableElectricMultiblockMach
      * {@link #createPattern} 建模式与 {@link #DIAMOND_OFFSETS}（幽灵隐藏位）读同一份数据，改结构只改这里。
      */
     public static final String[][] PATTERN = {
-            { "####AAAAA####", "####AAAAA####", "####ABBBA####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####AAAAA####", "####AAAAA####", "####AAAAA####" },
+            { "####AAAAA####", "####AJAAA####", "####ABBBA####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####CCCCC####", "####AAAAA####", "####AAAAA####", "####AAAAA####" },
             { "##AAAAAAAAA##", "##AAAAAAAAA##", "##AAAAAAAAA##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##CC#####CC##", "##AAAAAAAAA##", "##AAAAAAAAA##", "##AAAAAAAAA##" },
             { "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#C##DDDDD##C#", "#C##DDDDD##C#", "#C##DDDDD##C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C##DDDDD##C#", "#C##DDDDD##C#", "#C##DDDDD##C#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#" },
             { "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#C#DDDDDDD#C#", "#C#DDDDDDD#C#", "#C#DDDDDDD#C#", "#C##DDDDD##C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C#########C#", "#C##DDDDD##C#", "#C#DDDDDDD#C#", "#C#DDDDDDD#C#", "#C#DDDDDDD#C#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#", "#AAAAAAAAAAA#" },
@@ -468,6 +447,7 @@ public class WignerHuntingtonAnvilMachine extends WorkableElectricMultiblockMach
      *  C = 聚变玻璃（外壳）· D = avaritia 钻石晶格块（砧体）· E = UHV 机壳（中段环）
      *  G = 控制器（z=12 端面正中，朝向轴两端留空 → 正面 overlay 朝外可见）
      *  F / I = **物品输出总线 / 流体输入仓（两位可对调）** · H = 维护仓（高位）· # = 任意
+     *  J = **并行仓（1 个；空位用 UEV 机壳顶替）**——用户 2026-09-27 加，替代原先自带的 16 并行
      */
     public static BlockPattern createPattern(Block controller) {
         var builder = FactoryBlockPattern.start();
@@ -482,6 +462,15 @@ public class WignerHuntingtonAnvilMachine extends WorkableElectricMultiblockMach
                 .where('E', Predicates.blocks(GTBlocks.MACHINE_CASING_UHV.get()))
                 .where('C', Predicates.blocks(GTBlocks.FUSION_GLASS.get()))
                 .where('H', Predicates.abilities(PartAbility.MAINTENANCE))
+                // J 位：**并行仓**（1 个；空位可用 UEV 机壳顶替，用户 2026-09-27 定）。
+                // ⚠ setMaxGlobalLimited(1) 是必需的，不只是防呆：控制器侧 parallelHatch 是单个字段，
+                //    放多个只有最后一个生效（见 MAX_PARALLEL_HATCHES 注释）。
+                // ⚠ 顺序：setMaxGlobalLimited 必须作用在 abilities(...) 子谓词上、再 or(机壳)——
+                //    写反成 .or(blocks(...)).setMaxGlobalLimited(1) 会把机壳也限成 1 个
+                //    （GTCEu-API实践手册 §1.4 记过这个坑）。
+                .where('J', Predicates.abilities(PartAbility.PARALLEL_HATCH)
+                        .setMaxGlobalLimited(MAX_PARALLEL_HATCHES)
+                        .or(Predicates.blocks(GTBlocks.MACHINE_CASING_UEV.get())))
                 // B 位：能源仓 1..9 个（最多 9，用户 2026-09-12 定）；空位可用 UEV 机壳顶替
                 // （本 mod 惯例：观察站/发射台的能源仓位都带 .or(机壳) 备选）
                 .where('B', Predicates.abilities(PartAbility.INPUT_ENERGY)
