@@ -3,7 +3,7 @@
 **MekaTech 整合包的核心扩展 mod**（Forge 1.20.1 / Java 17）
 
 GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿 EU/t 上限，
-强化 Re-Avaritia 无尽剑，并提供 Goety 灵魂能量的流体化桥接。
+强化 Re-Avaritia 无尽剑，并提供 EU↔FE 能量转换与 GT 附属 mod 的二进制兼容支持。
 
 > ⚠️ **基于 GTCEu 7.5.3 的修改作品（LGPL-3.0）**：本仓库包含 GTCEu 的全部修改源码
 > ——`src/patch/`（字节码修改层，经 `patchJar` 合并进 gtceu-patched.jar）、
@@ -20,12 +20,14 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿
 - **高电压机器补全**：CYV+ 机壳方块、UMV+ 电动马达等部件（gtceu 命名空间注册）
 - **能量立方**：EU↔FE 双向转换，GTM "方向设置"页可视化配置
 - **无尽剑强化**：无视无敌帧 + 虚空诅咒标记 + 右键虚空处决
-- **液态灵魂能量**：Goety 灵魂能量的流体化载体（`gtnecore:liquid_soul_energy`），
-  科技管道与灵魂能量的桥接
+- **附属 mod 兼容**：GTMThings / gregic_tinkering 的二进制兼容补丁随发布 jar 内嵌，
+  把 `int[]` 电压字段访问改写为 `long[]`（工具源码见 `tools/PatchGtseJar.java`）
 
 ## 构建
 
-要求：JDK 17、Gradle 8.x（wrapper 自带）
+编译目标 Java 17；**Gradle 自身需 JDK 21**——`gradle.properties` 的
+`org.gradle.java.home` 已固定该路径（PATH 上的 Java 25 会让 Gradle 8.8 启动失败）。
+wrapper 自带 Gradle 8.8。
 
 ```bash
 ./gradlew.bat patchJar        # 编译 GTCEu patch 层 → build/patched/gtceu-patch.jar
@@ -42,7 +44,8 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿
 |---|---|---|
 | GTCEu | 7.5.3（**patch 版**） | 本 mod 修改的基底 |
 | Re-Avaritia | 1.4.1 | 无尽剑强化目标 |
-| Goety | 2.5.56.4（+Curios 5.14.1） | 灵魂能量体系 |
+| Curios API | 5.14.1+1.20.1 | GT之环佩戴判定 |
+| Applied Energistics 2 | 15.4.2+ | GTMThings 补丁版强制前置 |
 | GTMThings | 1.6.0（特供补丁版） | 二进制兼容补丁，随发布 jar 内嵌 |
 | gregic_tinkering | 1.3.0（特供补丁版） | 二进制兼容补丁，随发布 jar 内嵌 |
 | JEI / Jade | — | 配方查看 / 方块信息 |
@@ -60,38 +63,38 @@ GTNEcore 在开发与运行中依赖、参考或修改了以下开源项目。�
 
 | 项目 | 作者 | 许可证 |
 |---|---|---|
-| [GregTech CEu Modern](https://github.com/GregTechCEu/GregTech-Modern) | GregTechCEu 团队 | LGPL-3.0（本 mod 的 patch/mixin 修改层基于其源码与字节码，同样以 LGPL-3.0 提供修改版源码） |
-| [Registrate](https://github.com/tterrag1098/Registrate) | tterrag 等 | MIT |
-| [LDLib](https://github.com/LowDragMC/LDLib) | LowDragMC | LGPL-3.0 |
+| GregTech CEu Modern | GregTechCEu 团队 | LGPL-3.0（本 mod 的 patch/mixin 修改层基于其源码与字节码，同样以 LGPL-3.0 提供修改版源码） |
+| Registrate | tterrag 等 | MIT |
+| LDLib | LowDragMC | LGPL-3.0 |
 
 **运行时依赖 / API 使用（按其许可证分发）**
 
 | 项目 | 作者 | 许可证 |
 |---|---|---|
-| [Create](https://github.com/Creators-of-Create/Create) | simibubi 与 Create 团队 | MIT |
-| [Flywheel](https://github.com/Jozufozu/Flywheel) | Jozufozu | MIT |
-| [Ponder](https://github.com/Creators-of-Create/Ponder) | Create 团队 | MIT |
-| [Applied Energistics 2](https://github.com/AppliedEnergistics/Applied-Energistics-2) | TeamAppliedEnergistics | 见其仓库（MIT 系条款，详见上游 LICENSE） |
-| [Ad Astra](https://github.com/terrarium-earth/adastra) | Alex Nijjar 与 Terrarium 团队 | Terrarium License（MIT 系） |
-| [Botarium](https://github.com/CodexAdrian/Botarium) | CodexAdrian | MIT |
-| [Resourceful Lib / Resourceful Config](https://github.com/Team-Resourceful/Resourceful-Lib) | ThatGravyBoat, Epic_Oreo | MIT |
-| [Tinkers' Construct](https://github.com/Slime Knights/TinkersConstruct) | Slime Knights | MIT |
-| [Mantle](https://github.com/Slime Knights/Mantle) | Slime Knights | MIT |
-| [Goety](https://github.com/Polarice3/Goety) | Polarice3 | MIT |
-| [Re-Avaritia](https://github.com/MCTeamPotato/Re-Avaritia) / Avaritia 系 | cnlimiter, cu6, MHanHanBing, IAFEnvoy, Asek3, MikhailTapio 等（Re 版）；SpitefulFox（原版 Avaritia） | MIT（Re 版）/ 原版见其仓库 |
-| [Curios](https://github.com/TheIllusiveC4/Curios) | TheIllusiveC4 | LGPL-3.0-or-later（仓库亦标注 MIT，以随附 LICENSE 为准） |
-| [JEI (Just Enough Items)](https://github.com/mezz/JustEnoughItems) | mezz | MIT |
-| [Jade](https://github.com/Snownee/Jade) | Snownee | CC BY-NC-SA 4.0 |
-| [KubeJS](https://github.com/KubeJS/KubeJS) | LatvianModder | LGPL-3.0 |
-| [Rhino](https://github.com/LatvianModder/Rhino) | latvian.dev, Mozilla（基于 Mozilla Rhino） | MPL-2.0 |
-| [Architectury API](https://github.com/architectury/architectury-api) | shedaniel | LGPL-3.0 |
-| [GTm Things](https://github.com/liansishen/GtmThings) | liansishen | LGPL-3.0。**二进制兼容补丁**：其 1.6.0 编译目标 `GTValues.VA/VH/VHA` 为 `int[]`，与特供 GTCEu 的 `long[]` 不兼容（进存档 `NoSuchFieldError: VA`）；由 `tools/PatchGtseJar.java`（ASM，仓库内开源）自动改写为 `long[]` 访问，产物 `build/patched/gtmthings-1.6.0[-dev]-patched.jar`；发布 jar 以 jarjar 内嵌 SRG 补丁版（`META-INF/jarjar/gtmt-release-*.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
-| [Gregic Tinkering](https://github.com/SwardGames/GregicTinkering) | 见上游仓库 | LGPL-3.0（见分发 jar 的 `mods.toml`）。**二进制兼容补丁**：与 GTMThings 同款，其 1.3.0 按 `int[]` 引用 `GTValues.VA/VH/VHA`，由 `tools/PatchGtseJar.java`（ASM，仓库内开源）改写为 `long[]` 访问；特供版源存于 `特供版/gregic_tinkering-1.3.0-patched.jar`，经 `./gradlew updateReleaseGregicJar` 同步为 `libs/gregic-release-1.3.0.jar` 后以 jarJar 内嵌（`META-INF/jarjar/gregic-release-1.3.0.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
-| [Modern UI](https://github.com/BloCamLimb/ModernUI) | BloCamLimb | LGPL-3.0-or-later |
-| [Shimmer](https://github.com/KilaBash/Shimmer) | KilaBash, zomb_676 | MIT |
-| [GeckoLib](https://github.com/geckoanimals/geckolib) | Gecko, Eliot, AzureDoom 等 | MIT |
-| [Patchouli](https://github.com/Vazkii/Patchouli) | Vazkii | CC BY-NC-SA 3.0 |
-| [Ars Nouveau](https://github.com/baileyholl/Ars-Nouveau) | Bailey Hollingsworth | LGPL-3.0 |
+| Create | simibubi 与 Create 团队 | MIT |
+| Flywheel | Jozufozu | MIT |
+| Ponder | Create 团队 | MIT |
+| Applied Energistics 2 | TeamAppliedEnergistics | 见其仓库（MIT 系条款，详见上游 LICENSE） |
+| Ad Astra | Alex Nijjar 与 Terrarium 团队 | Terrarium License（MIT 系） |
+| Botarium | CodexAdrian | MIT |
+| Resourceful Lib / Resourceful Config | ThatGravyBoat, Epic_Oreo | MIT |
+| Tinkers' Construct | Slime Knights | MIT |
+| Mantle | Slime Knights | MIT |
+| Goety（仅模型结构参考；运行时依赖已于 2026-10-31 移除） | Polarice3 | MIT（署名义务不因此失效，见 `THIRD-PARTY-NOTICES.md`） |
+| Re-Avaritia / Avaritia 系 | cnlimiter, cu6, MHanHanBing, IAFEnvoy, Asek3, MikhailTapio 等（Re 版）；SpitefulFox（原版 Avaritia） | MIT（Re 版）/ 原版见其仓库 |
+| Curios | TheIllusiveC4 | LGPL-3.0-or-later（仓库亦标注 MIT，以随附 LICENSE 为准） |
+| JEI (Just Enough Items) | mezz | MIT |
+| Jade | Snownee | CC BY-NC-SA 4.0 |
+| KubeJS | LatvianModder | LGPL-3.0 |
+| Rhino | latvian.dev, Mozilla（基于 Mozilla Rhino） | MPL-2.0 |
+| Architectury API | shedaniel | LGPL-3.0 |
+| GTm Things | liansishen | LGPL-3.0。**二进制兼容补丁**：其 1.6.0 编译目标 `GTValues.VA/VH/VHA` 为 `int[]`，与特供 GTCEu 的 `long[]` 不兼容（进存档 `NoSuchFieldError: VA`）；由 `tools/PatchGtseJar.java`（ASM，仓库内开源）自动改写为 `long[]` 访问，产物 `build/patched/gtmthings-1.6.0[-dev]-patched.jar`；发布 jar 以 jarjar 内嵌 SRG 补丁版（`META-INF/jarjar/gtmt-release-*.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
+| Gregic Tinkering | 见上游仓库 | LGPL-3.0（见分发 jar 的 `mods.toml`）。**二进制兼容补丁**：与 GTMThings 同款，其 1.3.0 按 `int[]` 引用 `GTValues.VA/VH/VHA`，由 `tools/PatchGtseJar.java`（ASM，仓库内开源）改写为 `long[]` 访问；特供版源存于 `特供版/gregic_tinkering-1.3.0-patched.jar`，经 `./gradlew updateReleaseGregicJar` 同步为 `libs/gregic-release-1.3.0.jar` 后以 jarJar 内嵌（`META-INF/jarjar/gregic-release-1.3.0.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
+| Modern UI | BloCamLimb | LGPL-3.0-or-later |
+| Shimmer | KilaBash, zomb_676 | MIT |
+| GeckoLib | Gecko, Eliot, AzureDoom 等 | MIT |
+| Patchouli | Vazkii | CC BY-NC-SA 3.0 |
+| Ars Nouveau | Bailey Hollingsworth | LGPL-3.0 |
 | GuideME | shartte | 见其仓库（MIT 系） |
 > 我需要声明的是我本人对于mod开发的流程并不熟悉，特别是大量使用别人的代码。这里的署名由AI帮我代工因为我可能写的格式不对，如果这里标注的任何信息出现了谬误或者冒犯了您，我向你道歉，在任何人指出后我会立刻更正。
 
@@ -99,26 +102,24 @@ GTNEcore 在开发与运行中依赖、参考或修改了以下开源项目。�
 
 | 项目 | 作者 | 许可证 |
 |---|---|---|
-| [Oculus](https://github.com/Asek3/Oculus) | NanoLive, dima_dencep, coderbot | LGPL-3.0-only |
-| [Embeddium](https://github.com/embeddedt/embeddium) | embeddedt | LGPL-3.0 |
-| [ModernFix](https://github.com/embeddedt/modernfix) | embeddedt | LGPL-3.0-or-later |
+| Oculus | NanoLive, dima_dencep, coderbot | LGPL-3.0-only |
+| Embeddium | embeddedt | LGPL-3.0 |
+| ModernFix | embeddedt | LGPL-3.0-or-later |
 
 Minecraft 本体与 Minecraft Forge 归 Mojang AB 与 Forge 团队所有，
 依其 EULA 与 LGPL-2.1 分发。
 
-> 以上信息从各 mod 分发 jar 的 `mods.toml` 元数据与官方仓库提取。
-> 若作者/许可证信息有出入，以**上游仓库最新声明**为准；欢迎提 issue 更正。
+> 以上信息从各 mod 分发 jar 的 `mods.toml` 元数据整理；上游仓库地址未逐一核实，
+> 故此处只保留项目名、不放链接。若作者/许可证信息有出入，以**上游最新声明**为准；欢迎提 issue 更正。
 
-### 关于 build.gradle 的两个版本
+### 依赖来源与发布链
 
-- **`build.gradle.github`（上传版）**：无本地调试依赖。Registrate / LDlib 编译期
-  从 maven 拉取（BlameJared / GTCEu Maven）；patch 层软依赖（AE2/TOP）默认关闭。
-  **上传/分发时：`cp build.gradle.github build.gradle`，`gradle.properties.github`
-  同理**。
-- **`build.gradle`（本地开发版）**：带本地调试依赖（embeddium / oculus / modernfix
-  等 dev 体验 mod 及 Registrate / LDlib / AE2 / TOP 走 `libs/` flatDir），
-  需把 8 个 jar 放入 `libs/` 并启用 `flatDir`。若 maven 坐标拉取失败
-  （网络受限环境），回退到该本地版。
+- 编译 / 运行依赖统一走 maven 仓库；仅 `Registrate` 与三个 jarJar 内嵌产物
+  （特供 GTCEu、补丁版 GTMThings、补丁版 gregic_tinkering）保留在 `libs/` 走 `flatDir`。
+- 改动 `src/patch/` 后有**两条**独立链路，漏跑任一条都会出现「改了没生效」：
+  dev 链 `./gradlew patchJar` + `scripts/make-dev-patched.py`；发布链
+  `./gradlew updateReleaseGtceuJar` / `updateReleaseGtmtJar` / `updateReleaseGregicJar`
+  之后再 `./gradlew build`（发布链各步需分开执行）。
 
 ## 目录结构
 
@@ -127,8 +128,10 @@ src/
 ├── main/java/org/ringclouds/gtnecore/
 │   ├── addon/          # GTCEu addon 入口（@GTAddon）
 │   ├── block/ item/ machine/   # 高电压方块/部件/能量立方
+│   ├── client/ halo/   # 客户端渲染、GT之环
+│   ├── cover/ handler/ integration/ util/   # 覆盖板、事件、联动、工具
+│   ├── material/ recipe/ planner/ config/  # 材料、配方、规划器、配置
 │   ├── mixin/          # GTCEu / Re-Avaritia 注入
-│   ├── soulenergy/     # 液态灵魂能量流体
 │   └── voltages/       # 22 档电压表
 ├── patch/java/         # ★ GTCEu 修改层（LGPL 修改版源码）
 └── main/resources/     # 资产（blockstate/lang/模型/贴图）
