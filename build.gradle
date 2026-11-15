@@ -529,7 +529,8 @@ jarJar('blank:gregic-release:1.3.0') {
         jarJar.ranged(it, '[1.3.0,)')
     }
     //Avaritia
-    implementation fg.deobf("curse.maven:avaritia-623969:8497793")
+    implementation fg.deobf("curse.maven:avaritia-623969:9567516")
+    implementation fg.deobf("curse.maven:avaritia-1347675:9599137")
     //mek 系列依赖（GTM 侧）；jade 提供 GtnecoreAddon 的方块信息 HUD
     compileOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
     runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")

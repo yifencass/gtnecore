@@ -6969,7 +6969,6 @@
   "item.gtnecore.astral_chart_fe": "Fe 小行星星图",
   "item.gtnecore.astral_chart_ni": "Ni 小行星星图",
   "item.gtnecore.astral_chart_sn": "Sn 小行星星图",
-  "gtnecore.fluid.matrix_supercritical": "超临界-矩阵",
   "block.gtnecore.steam_oven_64": "蒸汽高炉",
   "block.gtnecore.steam_oven_64.tooltip.parallel": "并行 = 16×蒸汽输入仓数（1~4 仓 → 16~64）",
   "block.gtnecore.steam_oven_64.tooltip.steam": "耗蒸汽量为蒸汽熔炼炉的两倍",

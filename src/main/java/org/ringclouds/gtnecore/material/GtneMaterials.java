@@ -7,7 +7,6 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEv
 import com.gregtechceu.gtceu.api.data.chemical.material.event.PostMaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialStack;
-import com.gregtechceu.gtceu.api.fluids.attribute.FluidAttributes;
 import com.gregtechceu.gtceu.common.data.GTElements;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.mojang.logging.LogUtils;
@@ -49,8 +48,6 @@ public final class GtneMaterials {
 
     public static Material TIMEIUM;
 
-    /** Matrix：Mx 元素材料（液态） */
-    public static Material MATRIX;
     public static Material MAGIC;
     public static Material SOUL;
     public static Material UNKNOWN;
@@ -98,28 +95,8 @@ public final class GtneMaterials {
                 .iconSet(METALLIC)
                 .buildAndRegister();
 
-        // Matrix：Mx 元素材料（仅等离子体，化学式 Mx），显示名"超临界-矩阵"。
-        // 特性：致癌（GTCEu hazard 医疗条件）+ 腐蚀（ACID 流体属性）+ 绝对零度 0K（等离子体）
-        MATRIX = new Material.Builder(Gtnecore.id("matrix"))
-                .langValue("Matrix")
-                .element(GTElements.get("Matrix"))
-                .dust()
-                .fluid(com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys.PLASMA,
-                        new com.gregtechceu.gtceu.api.fluids.FluidBuilder()
-                                .state(com.gregtechceu.gtceu.api.fluids.FluidState.PLASMA)
-                                .temperature(0)
-                                .attribute(FluidAttributes.ACID)
-                                .translation("gtnecore.fluid.matrix_supercritical"))
-                .hazard(com.gregtechceu.gtceu.api.data.chemical.material.properties.HazardProperty.HazardTrigger.ANY,
-                        com.gregtechceu.gtceu.common.data.GTMedicalConditions.CARCINOGEN)
-                .flags(GENERATE_PLATE)
-                .color(0x4FC3F7)
-                .secondaryColor(0xB3E5FC)
-                .iconSet(SHINY)
-                .buildAndRegister();
-
-        // Infinity / Crystal Matrix 材料与 If 元素均不再由 GTNEcore 注册：
-        // 无尽材料改由整合包中其它 mod 提供，本仓库也不再对 avaritia 物品做材料归类。
+        // Infinity / Crystal Matrix / Matrix 材料与 If / Mx 元素均不再由 GTNEcore 注册：
+        // 无尽材料与矩阵材料改由整合包中的 avaritia_integration 等 mod 提供。
 
         // Magic：补上原版只有元素（GTElements.Ma=Magic）没有材料的空缺，宝石+粉+流体
         MAGIC = new Material.Builder(Gtnecore.id("magic"))

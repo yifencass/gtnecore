@@ -6888,7 +6888,6 @@
   "item.gtnecore.astral_chart_fe": "Fe Asteroid Chart",
   "item.gtnecore.astral_chart_ni": "Ni Asteroid Chart",
   "item.gtnecore.astral_chart_sn": "Sn Asteroid Chart",
-  "gtnecore.fluid.matrix_supercritical": "Supercritical Matrix",
   "block.gtnecore.steam_oven_64": "Steam Blast Furnace",
   "block.gtnecore.steam_oven_64.tooltip.parallel": "Parallel = 16 × steam hatches (1~4 → 16~64)",
   "block.gtnecore.steam_oven_64.tooltip.steam": "Consumes twice the steam of the Steam Oven",

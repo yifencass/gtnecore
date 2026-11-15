@@ -354,8 +354,6 @@ public class GtnecoreAddon implements IGTAddon {
         com.gregtechceu.gtceu.common.data.GTElements.createAndRegister(0, 0, -1, null, "Strium", "Str", false);
         // Timeium（时间元素）：质子=中子=0
         com.gregtechceu.gtceu.common.data.GTElements.createAndRegister(0, 0, -1, null, "Timeium", "Time", false);
-        // Matrix（矩阵）：质子=中子=0
-        com.gregtechceu.gtceu.common.data.GTElements.createAndRegister(0, 0, -1, null, "Matrix", "Mx", false);
         // Soulium（灵魂）：质子 0，中子 21
         com.gregtechceu.gtceu.common.data.GTElements.createAndRegister(0, 21, -1, null, "Soulium", "Sl", false);
         // Unknown（未知）：质子=中子=0
