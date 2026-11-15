@@ -9,7 +9,8 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿
 > ——`src/patch/`（字节码修改层，经 `patchJar` 合并进 gtceu-patched.jar）、
 > `src/main/` 的 mixin 注入（GTValues/GTMachineUtils）与 gtceu 命名空间资产。
 > 修改内容为 GTCEu 电压体系扩展（22 档 / 21 亿 EU/t 突破）、高电压机器与部件补全等。
-> GTCEu 版权归 GregTechCEu 团队所有。本 mod 与 GTCEu 均以 **LGPL-3.0** 授权（见 `LICENSE`）。
+> GTCEu 版权归 GregTechCEu 团队所有。本仓库**代码部分**与 GTCEu 均以 **LGPL-3.0** 授权
+> （见 `LICENSE`）；本仓库自行创作的非代码资产另行按 CC BY-NC-SA 传播，详见「许可」。
 
 ---
 
@@ -139,7 +140,15 @@ src/
 
 ## 许可
 
-[LGPL-3.0](LICENSE) —— 与 GTCEu 一致。基于 GTCEu 的修改（`src/patch/`）按
-LGPL-3.0 §4 提供源代码；使用/分发本 mod 请保留版权声明与许可证文本。
+本仓库按**内容类型**分别授权：
+
+- **代码部分**（`src/`、`build.gradle`、`gradle.properties`、脚本等）：
+  [LGPL-3.0](LICENSE) —— 与 GTCEu 一致。基于 GTCEu 的修改（`src/patch/`）按
+  LGPL-3.0 §4 提供源代码；使用/分发请保留版权声明与许可证文本。
+- **本仓库自行创作的非代码资产**（贴图、模型、图形、界面素材等）：
+  以 **CC BY-NC-SA**（署名—非商业性使用—相同方式共享）协议传播。
+
+第三方项目的代码与资产仍各自遵循其原许可证，见上方「第三方作品署名与许可证」
+与 `THIRD-PARTY-NOTICES.md`；`LICENSE` 文件是代码部分适用的 LGPL-3.0 全文。
 
 本 mod 使用了 AI 技术创作，故很难保证兼容性。
