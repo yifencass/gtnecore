@@ -34,7 +34,7 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿
 ```
 
 `patchJar` 把 `src/patch/` 的修改合并进 GTCEu 的 `gtceu-1.20.1-7.5.3-patched.jar`
-（构建流程见 `docs/GTNEcore-开发文档.md` §4）。
+（完整链路见 `build.gradle` 的 `patchJar` / `makeReleaseGtceuJar` / `updateReleaseGtceuJar` 任务）。
 
 ## 依赖
 
@@ -43,7 +43,13 @@ GTNEcore 扩展 GTCEu（GregTech Modern）电压体系到 22 档、突破 21 亿
 | GTCEu | 7.5.3（**patch 版**） | 本 mod 修改的基底 |
 | Re-Avaritia | 1.4.1 | 无尽剑强化目标 |
 | Goety | 2.5.56.4（+Curios 5.14.1） | 灵魂能量体系 |
+| GTMThings | 1.6.0（特供补丁版） | 二进制兼容补丁，随发布 jar 内嵌 |
+| gregic_tinkering | 1.3.0（特供补丁版） | 二进制兼容补丁，随发布 jar 内嵌 |
 | JEI / Jade | — | 配方查看 / 方块信息 |
+
+> ⚠️ 发布 jar（`gtnecore-0.1.0-Pre-alpha-all.jar`）已用 jarJar 内嵌**特供 GTCEu、补丁版 GTMThings、
+> 补丁版 gregic_tinkering**：请勿再自行安装这三个 mod 的官方版本，重复供给会触发版本冲突检测、
+> 游戏无法启动。
 
 ### 第三方作品署名与许可证（Acknowledgements）
 
@@ -80,6 +86,7 @@ GTNEcore 在开发与运行中依赖、参考或修改了以下开源项目。�
 | [Rhino](https://github.com/LatvianModder/Rhino) | latvian.dev, Mozilla（基于 Mozilla Rhino） | MPL-2.0 |
 | [Architectury API](https://github.com/architectury/architectury-api) | shedaniel | LGPL-3.0 |
 | [GTm Things](https://github.com/liansishen/GtmThings) | liansishen | LGPL-3.0。**二进制兼容补丁**：其 1.6.0 编译目标 `GTValues.VA/VH/VHA` 为 `int[]`，与特供 GTCEu 的 `long[]` 不兼容（进存档 `NoSuchFieldError: VA`）；由 `tools/PatchGtseJar.java`（ASM，仓库内开源）自动改写为 `long[]` 访问，产物 `build/patched/gtmthings-1.6.0[-dev]-patched.jar`；发布 jar 以 jarjar 内嵌 SRG 补丁版（`META-INF/jarjar/gtmt-release-*.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
+| [Gregic Tinkering](https://github.com/SwardGames/GregicTinkering) | 见上游仓库 | LGPL-3.0（见分发 jar 的 `mods.toml`）。**二进制兼容补丁**：与 GTMThings 同款，其 1.3.0 按 `int[]` 引用 `GTValues.VA/VH/VHA`，由 `tools/PatchGtseJar.java`（ASM，仓库内开源）改写为 `long[]` 访问；特供版源存于 `特供版/gregic_tinkering-1.3.0-patched.jar`，经 `./gradlew updateReleaseGregicJar` 同步为 `libs/gregic-release-1.3.0.jar` 后以 jarJar 内嵌（`META-INF/jarjar/gregic-release-1.3.0.jar`），玩家勿再自装官方版。补丁仅做类型适配、无功能修改，补丁工具源码即修改之对应源（LGPL-3.0 合规） |
 | [Modern UI](https://github.com/BloCamLimb/ModernUI) | BloCamLimb | LGPL-3.0-or-later |
 | [Shimmer](https://github.com/KilaBash/Shimmer) | KilaBash, zomb_676 | MIT |
 | [GeckoLib](https://github.com/geckoanimals/geckolib) | Gecko, Eliot, AzureDoom 等 | MIT |

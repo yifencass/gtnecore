@@ -27,7 +27,7 @@
 
 - 2026-10-31 起，本工程**不再依赖 Goety mod**：`build.gradle` 的 Goety 依赖、3 个针对 Goety 类的
   mixin、Goety 幻影门墙体谓词、Goety overlay 守卫均已移除。
-- 移除记录与源码存档：`docs/废案/Goety联动-废案①.md`、`docs/废案/Goety联动-废案①-源码/`。
+- 移除记录与相关源码存档保留在本地开发档案中，不随本仓库分发。
 - **本署名与许可证声明不因依赖移除而失效**：只要上述两个渲染文件仍留在仓库中，MIT 署名即须保留。
 
 ### MIT License 要点（全文见上游仓库）
@@ -53,7 +53,8 @@ Copyright (c) Polarice3 — Goety
 
 ## 其他依赖
 
-以下项目以**依赖形式**（非源码复制）使用，各自遵循其原许可证，本仓库不分发其代码：
+以下项目以**依赖形式**（非源码复制）使用，各自遵循其原许可证；本仓库不分发其源码，
+发布 jar 中以 jarJar 内嵌二进制的三个 mod 见下节：
 
 | 项目 | 用途 | 许可证（以其仓库为准） |
 |---|---|---|
@@ -62,3 +63,18 @@ Copyright (c) Polarice3 — Goety
 | Curios API | GT之环佩戴判定 | LGPL 3.0 / 见上游 |
 | Applied Energistics 2 | 样板携带虚拟电路号 | LGPL 3.0 |
 | PneumaticCraft: Repressurized | 仅用 `me.desht.pneumaticcraft.api.*`（LGPLv3），compileOnly，不 jarJar | GPLv3（API 部分 LGPLv3） |
+| GTMThings 1.6.0（patched 版） | 随发布 jar 以 jarJar 内嵌 | LGPL 3.0 |
+| Gregic Tinkering 1.3.0（特供/patched 版） | 随发布 jar 以 jarJar 内嵌 | LGPL 3.0（见分发 jar 的 `mods.toml`） |
+
+### jarJar 内嵌的第三方 mod（二进制分发）
+
+发布 jar `gtnecore-0.1.0-Pre-alpha-all.jar` 的 `META-INF/jarjar/` 内嵌三个 mod 的二进制：
+特供 GTCEu 7.5.3、补丁版 GTMThings 1.6.0、补丁版 Gregic Tinkering 1.3.0。
+后两者是**二进制兼容补丁**：因按 `int[]` 引用 `GTValues.VA/VH/VHA`，与特供 GTCEu 的
+`long[]` 不兼容（进存档会 `NoSuchFieldError: VA`），由 `tools/PatchGtseJar.java`
+（ASM，仓库内开源）改写为 `long[]` 访问；补丁仅做类型适配、无功能修改，
+补丁工具源码即修改之对应源（LGPL-3.0 合规）。
+Gregic Tinkering 的特供版源存放于 `特供版/gregic_tinkering-1.3.0-patched.jar`，
+由 `./gradlew updateReleaseGregicJar` 同步为 `libs/gregic-release-1.3.0.jar` 后内嵌。
+
+**玩家请勿再自行安装这三个 mod 的官方版本**——重复供给会触发版本冲突检测、游戏无法启动。

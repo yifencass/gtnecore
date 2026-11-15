@@ -15,6 +15,7 @@ run-data/
 
 # Local dev notes (not published)
 ailog/
+.workbuddy/
 
 # Third-party dependency jars (flatDir, not from maven; see README)
 libs/
@@ -31,6 +32,10 @@ logs/
 /patched-backup/
 
 # Large local archives / exports (not part of the source repo)
-github需要上传项/
 特供版/
 来自整合包实例的报错/
+
+# docs/ 为早期外置上下文档案（逆向 API 指导、AI 会话记录、研究/审计草稿、设计规格、
+# 废案源码存档），可能过时或有误，也不便公开逆向成果：整目录不随公开仓库分发，仅本地保留。
+docs/
+.zcode/

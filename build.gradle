@@ -297,6 +297,14 @@ tasks.register('updateReleaseGtmtJar', Copy) {
     rename { 'gtmt-release-1.6.0.jar' }
 }
 
+// gregic_tinkering 特供版（patched，存放在 特供版/）同样内嵌进 coremod。
+// mods.toml 的 modId = gregic_tinkering，内嵌后玩家勿再自装官方版。
+tasks.register('updateReleaseGregicJar', Copy) {
+    from file('特供版/gregic_tinkering-1.3.0-patched.jar')
+    into file('libs')
+    rename { 'gregic-release-1.3.0.jar' }
+}
+
 def sha256 = { File f ->
     def md = java.security.MessageDigest.getInstance('SHA-256')
     f.withInputStream { s ->
@@ -324,6 +332,15 @@ def libsGtmtJar = file('libs/gtmt-release-1.6.0.jar')
         }
         if (sha256(libsGtmtJar) != sha256(gtmtPatched)) {
             throw new GradleException('libs/gtmt-release-1.6.0.jar 与最新 patched GTMThings 不一致，先跑: ./gradlew updateReleaseGtmtJar')
+        }
+        // gregic：校验 libs/ 与 特供版/ 源一致，避免打包旧版
+        def libsGregicJar = file('libs/gregic-release-1.3.0.jar')
+        def gregicPatched = file('特供版/gregic_tinkering-1.3.0-patched.jar')
+        if (!libsGregicJar.exists()) {
+            throw new GradleException("libs/gregic-release-1.3.0.jar 不存在，先跑: ./gradlew updateReleaseGregicJar")
+        }
+        if (sha256(libsGregicJar) != sha256(gregicPatched)) {
+            throw new GradleException('libs/gregic-release-1.3.0.jar 与 特供版不一致，先跑: ./gradlew updateReleaseGregicJar')
         }
     }
 }
@@ -507,6 +524,10 @@ implementation files('build/patched/gtmthings-1.6.0-dev-patched.jar')
 jarJar('blank:gtmt-release:1.6.0') {
         jarJar.ranged(it, '[1.6.0,)')
     }
+    // gregic_tinkering 特供版内嵌进 coremod（libs/gregic-release-1.3.0.jar 由 updateReleaseGregicJar 同步）
+jarJar('blank:gregic-release:1.3.0') {
+        jarJar.ranged(it, '[1.3.0,)')
+    }
     //Avaritia
     implementation fg.deobf("curse.maven:avaritia-623969:8497793")
     //mek 系列依赖（GTM 侧）；jade 提供 GtnecoreAddon 的方块信息 HUD
@@ -541,14 +562,8 @@ compileOnly "blank:Registrate:1.3.11"
 runtimeOnly files('build/patched/shimmer-627824-8721415-mapped-patched.jar')
     //oculus
     implementation fg.deobf("curse.maven:oculus-581495:6020952")
-    //oculus 前置：Embeddium（dev 环境必须——缺失时 oculus 渲染初始化静默崩溃，
-    //进程死在 Render thread mixin 应用阶段且无任何 Java 错误/崩溃报告；
-    //compileOnly 供 SodiumWorldRendererGuardMixin 的 @Shadow 编译期引用）
-    compileOnly fg.deobf("blank:embeddium:0.3.31")
-    runtimeOnly fg.deobf("blank:embeddium:0.3.31")
-    //dev 辅助 mod（libs/ flatDir；整合包运行时由 mods 目录提供，这里仅本地测试环境）
-runtimeOnly fg.deobf("blank:modernfix:5.27.66")
-    runtimeOnly fg.deobf("blank:jei-copy-recipe-json:1.1.2")
+
+    // dev 辅助 mod 已改走 cursemaven（modernfix / jei-copy-recipe，见下方），不再依赖 libs/ 本地 jar
     //create
     implementation fg.deobf("curse.maven:create-328085:7178761")
     //ponder
@@ -567,6 +582,18 @@ runtimeOnly fg.deobf("blank:modernfix:5.27.66")
     implementation fg.deobf("curse.maven:resourceful-lib-570073:5659871")
     //Research Table
     compileOnly fg.deobf("curse.maven:research-table-307346:3479716")
+    //modernfix
+    runtimeOnly fg.deobf("curse.maven:modernfix-790626:9309378")
+    //jei-copy-recipe（dev 辅助 mod，可选）
+    // 1.1.3（fileId 9333190）引用 JEI 15.74+ 才有的 IRecipeButtonControllerFactory；
+    // 而把 JEI 升到 15.74 会让 GTCEu 7.5.3 的 jei.FluidHelperMixin 注入描述符失配
+    // （List -> ITooltipBuilder），直接导致启动崩溃。故固定用兼容 JEI 15.21.0.148 的
+    // 旧版本 fileId 7364314，勿随意升级本行或 jei_version。
+    runtimeOnly fg.deobf("curse.maven:jei-copy-recipe-1375689:7364314")
+    //embeddium（compileOnly 必需：SodiumWorldRendererGuardMixin 的 @Shadow 字段类型是
+    // me.jellysquid.mods.sodium.client.render.chunk.RenderSectionManager，编译期要能解析该类）
+    compileOnly fg.deobf("curse.maven:embeddium-908741:5681725")
+    runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
