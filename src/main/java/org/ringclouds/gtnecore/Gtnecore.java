@@ -120,14 +120,6 @@ public class Gtnecore {
         // 自定义材料（Timeium 等）：MaterialRegistryEvent 建注册表 + MaterialEvent 注册 + PostMaterialEvent 物品归类
         modEventBus.addListener(org.ringclouds.gtnecore.material.GtneMaterials::createRegistry);
         modEventBus.addListener(org.ringclouds.gtnecore.material.GtneMaterials::register);
-        // 无尽锭/粒归类必须在物品注册后（FMLCommonSetup）执行，否则注册条目解析到 AIR、
-        // ChemicalHelper.getMaterialEntry 永远查不到（PostMaterialEvent 时 avaritia 物品尚未注册）
-        modEventBus.addListener((FMLCommonSetupEvent event) -> event.enqueueWork(() -> {
-            // 官方部件补 IS_FORMED 渲染属性已提前到机器注册事件（GtnecoreMachines.onMachineRegister
-            // 尾部）执行——FMLCommonSetup 晚于模型解析，补晚会导致机器渲染状态与烘焙模型
-            // 的 stateDefinition 不一致（机器透明）
-            org.ringclouds.gtnecore.material.GtneMaterials.bindAvaritia();
-        }));
 
         // GT之环按键网络（回城/紫颂果传送）
         org.ringclouds.gtnecore.halo.HaloNetwork.register();

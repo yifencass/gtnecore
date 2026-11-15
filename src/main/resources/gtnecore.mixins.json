@@ -42,7 +42,6 @@
   "OptionsAccessor",
   "GameRendererNightVisionMixin",
   "LightTextureNightVisionMixin",
-  "InfinityTooltipDiagMixin",
   "ForgeConfigSpecGetGuardMixin",
   "LaserHatchCapacityMixin"
  ],
