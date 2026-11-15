@@ -647,7 +647,12 @@ tasks.named('jar', Jar).configure {
                 "Implementation-Title": project.name,
                 "Implementation-Version": project.jar.archiveVersion,
                 "Implementation-Vendor": mod_authors,
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                // 发布包必须声明 mixin 配置，否则整合包里 FML 不会加载 gtnecore.mixins.json，
+                // GTValuesMixin 不执行 → 22 档电压表装不上 → 特供 GTCEu 初始化时
+                // GTMachineModels 遍历到索引 21 越界（ArrayIndexOutOfBoundsException）。
+                // dev 环境靠 MixinGradle 注入 run 参数能加载，发布包只能靠这个 manifest 属性。
+                "MixinConfigs": "${mod_id}.mixins.json"
         ])
     }
 
