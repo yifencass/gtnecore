@@ -303,16 +303,38 @@ public class GtnecoreAddon implements IGTAddon {
                 new net.minecraft.world.item.ItemStack(gtItem2.apply("ev_sensor"), 1),
                 new net.minecraft.world.item.ItemStack(gtItem2.apply("ev_electric_pump"), 1));
 
-        // ---- 真空泵覆盖板（HV，用户指定：无运行消耗，门槛全在材料）----
+        // ---- 真空泵覆盖板（无运行消耗，门槛全在材料）----
         // 语义呼应：ULV 电路就叫"真空管"，所以造真空管要真空环境（见 VacuumRecipeInjector）
-        var stainlessPlate = gtItem2.apply("stainless_steel_plate");
-        if (stainlessPlate != null && org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER != null) {
+        // 材料降档：钢板 + LV 电动泵 + LV 电动活塞 + 基础电子电路。
+        // 焊料两条独立路线：144 mB 焊锡合金 或 288 mB 锡。
+        // GTCEu 的 getFluid(mB) 就是该材料流体的毫桶消耗量，两种材料各算各的，
+        // 不需要额外定义——写成两条 recipeBuilder 即可（焊锡版沿用原 id 以兼容外部引用）。
+        var steelPlate = gtItem2.apply("steel_plate");
+        var lvPump = gtItem2.apply("lv_electric_pump");
+        var lvPiston = gtItem2.apply("lv_electric_piston");
+        var basicCircuit = gtItem2.apply("basic_electronic_circuit");
+        if (steelPlate != null && lvPump != null && lvPiston != null && basicCircuit != null
+                && org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER != null) {
+            // 路线 A：焊锡合金 144 mB（原配方 id 不变）
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES
                     .recipeBuilder("vacuum_pump_cover")
-                    .inputItems(new net.minecraft.world.item.ItemStack(stainlessPlate, 4))
-                    .inputItems(new net.minecraft.world.item.ItemStack(gtItem2.apply("hv_electric_pump"), 1))
-                    .inputItems(com.gregtechceu.gtceu.data.recipe.CustomTags.HV_CIRCUITS, 2)
+                    .inputItems(new net.minecraft.world.item.ItemStack(steelPlate, 4))
+                    .inputItems(new net.minecraft.world.item.ItemStack(lvPump, 2))
+                    .inputItems(new net.minecraft.world.item.ItemStack(lvPiston, 1))
+                    .inputItems(new net.minecraft.world.item.ItemStack(basicCircuit, 2))
                     .inputFluids(com.gregtechceu.gtceu.common.data.GTMaterials.SolderingAlloy.getFluid(144))
+                    .outputItems(org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER.asStack())
+                    .duration(400)
+                    .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.HV])
+                    .save(consumer);
+            // 路线 B：锡 288 mB（焊锡合金不足时的替代路线）
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES
+                    .recipeBuilder("vacuum_pump_cover_tin")
+                    .inputItems(new net.minecraft.world.item.ItemStack(steelPlate, 4))
+                    .inputItems(new net.minecraft.world.item.ItemStack(lvPump, 2))
+                    .inputItems(new net.minecraft.world.item.ItemStack(lvPiston, 1))
+                    .inputItems(new net.minecraft.world.item.ItemStack(basicCircuit, 2))
+                    .inputFluids(com.gregtechceu.gtceu.common.data.GTMaterials.Tin.getFluid(288))
                     .outputItems(org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER.asStack())
                     .duration(400)
                     .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.HV])
