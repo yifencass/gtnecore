@@ -6623,7 +6623,7 @@
   "gtnecore.wigner_huntington_press": "對頂砧壓制",
   "gtnecore.recipe.vacuum.display_name": "真空環境",
   "item.gtnecore.vacuum_pump_cover": "真空泵覆蓋板",
-  "item.gtnecore.vacuum_pump_cover.tooltip": "§7給所在機器提供§f真空§7環境（無運行消耗，門檻在材料）",
+  "item.gtnecore.vacuum_pump_cover.tooltip": "§7給所在機器提供§f真空§7環境",
   "item.gtnecore.ai_general_purpose_computing_cluster": "AI通用計算集群",
   "item.gtnecore.general_ai_full_stack_computing": "通用AI全棧計算",
   "item.gtnecore.agi_self_solving_logic_unit": "AGI自解邏輯單元",

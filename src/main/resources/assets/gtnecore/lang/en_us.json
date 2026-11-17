@@ -7002,7 +7002,7 @@
   "gtnecore.wigner_huntington_press": "Diamond Anvil Pressing",
   "gtnecore.recipe.vacuum.display_name": "Vacuum",
   "item.gtnecore.vacuum_pump_cover": "Vacuum Pump Cover",
-  "item.gtnecore.vacuum_pump_cover.tooltip": "§7Provides a §fvacuum §7environment to the machine it is attached to (no running cost)",
+  "item.gtnecore.vacuum_pump_cover.tooltip": "§7Provides a §fvacuum §7environment to the machine it is attached to",
   "item.gtnecore.ai_general_purpose_computing_cluster": "AI General-Purpose Computing Cluster",
   "item.gtnecore.general_ai_full_stack_computing": "General AI Full-Stack Computing",
   "item.gtnecore.agi_self_solving_logic_unit": "AGI Self-Solving Logic Unit",

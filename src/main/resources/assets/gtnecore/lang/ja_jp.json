@@ -6870,7 +6870,7 @@
   "gtnecore.wigner_huntington_press": "対向アンビル圧縮",
   "gtnecore.recipe.vacuum.display_name": "真空環境",
   "item.gtnecore.vacuum_pump_cover": "真空ポンプカバー",
-  "item.gtnecore.vacuum_pump_cover.tooltip": "§7取り付けた機械に§f真空§7環境を提供（稼働コストなし）",
+  "item.gtnecore.vacuum_pump_cover.tooltip": "§7取り付けた機械に§f真空§7環境を提供",
   "item.gtnecore.ai_general_purpose_computing_cluster": "AI汎用計算クラスタ",
   "item.gtnecore.general_ai_full_stack_computing": "汎用AIフルスタック計算",
   "item.gtnecore.agi_self_solving_logic_unit": "AGI自己解決論理ユニット",

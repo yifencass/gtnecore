@@ -7020,7 +7020,7 @@
   "gtnecore.recipe.weightless.display_name": "失重状态",
   "gtnecore.recipe.vacuum.display_name": "真空环境",
   "item.gtnecore.vacuum_pump_cover": "真空泵覆盖板",
-  "item.gtnecore.vacuum_pump_cover.tooltip": "§7给所在机器提供§f真空§7环境（无运行消耗，门槛在材料）",
+  "item.gtnecore.vacuum_pump_cover.tooltip": "§7给所在机器提供§f真空§7环境",
   "item.gtnecore.ai_general_purpose_computing_cluster": "AI通用计算集群",
   "item.gtnecore.general_ai_full_stack_computing": "通用AI全栈计算",
   "item.gtnecore.agi_self_solving_logic_unit": "AGI自解逻辑单元",
