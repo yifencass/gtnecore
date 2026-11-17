@@ -325,7 +325,7 @@ public class GtnecoreAddon implements IGTAddon {
                     .inputFluids(com.gregtechceu.gtceu.common.data.GTMaterials.SolderingAlloy.getFluid(144))
                     .outputItems(org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER.asStack())
                     .duration(400)
-                    .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.HV])
+                    .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.LV])
                     .save(consumer);
             // 路线 B：锡 288 mB（焊锡合金不足时的替代路线）
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES
@@ -337,7 +337,7 @@ public class GtnecoreAddon implements IGTAddon {
                     .inputFluids(com.gregtechceu.gtceu.common.data.GTMaterials.Tin.getFluid(288))
                     .outputItems(org.ringclouds.gtnecore.item.GtnecoreItems.VACUUM_PUMP_COVER.asStack())
                     .duration(400)
-                    .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.HV])
+                    .EUt(com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.LV])
                     .save(consumer);
         }
     }
