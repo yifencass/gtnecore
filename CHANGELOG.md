@@ -69,6 +69,58 @@
 
 ---
 
+## 0.1.0-Pre-alpha（2026-11-15）
+
+> 首个 Pre-alpha 版本，整合 v0.0.2（2026-09-05）之后至 2026-11-15 的全部工作。
+> 本版含多项破坏性变更，升级前请确认存档中无相关物品/流体。
+
+### 【破坏性】
+
+- **移除 Goety 联动**：依赖、3 个 mixin、幻影门与液态灵魂能量桥接整体下线；
+  README 描述同步校正（模型结构参考的 MIT 署名仍保留）。
+- **移除自建无尽材料体系**：不再注册 `gtnecore:infinity` /
+  `gtnecore:crystal_matrix` / `gtnecore:matrix` 三个 GT Material 与
+  `If`（Infinite）/ `Mx`（Matrix）两个虚构元素；相关材料归类 tag、
+  `setIgnored` 绑定、自检、诊断 mixin、物品模型与语言键一并删除。
+  无尽材料改由整合包中的 AvaritiaIntegration 等 mod 提供。
+  **旧存档中上述物品/流体不再识别**；JEI 书签里残留的旧条目会打 WARN，
+  手动清除书签即可。
+- **依赖来源变更**：编译/运行依赖统一走 maven / cursemaven，仅 Registrate
+  与三个 jarJar 内嵌产物保留 `libs/` flatDir。JEI 固定 `15.21.0.148`
+  + `jei-copy-recipe` fileId `7364314`——升到 15.74 会与 GTCEu 的
+  `jei.FluidHelperMixin` 注入描述符失配，导致加载阶段崩溃。
+- **公开仓库内容收紧**：`docs/` 外置上下文档案、`ailog/` 会话记录、
+  `.workbuddy/` 开发记录不再随公开仓库分发（本地保留）；CHANGELOG 与两个
+  LGPL 修改源码展示目录收编进主仓库。
+
+### 【增量】
+
+- **发布包内嵌第三个 mod**：jarJar 加入 gregic_tinkering 特供补丁版
+  （`META-INF/jarjar/gregic-release-1.3.0.jar`），并补齐 LGPL 合规声明与
+  「勿再自装官方 GTCEu / GTMThings / gregic_tinkering」提示。
+- **修复整合包启动崩溃**：发布 jar 的 MANIFEST 声明
+  `MixinConfigs: gtnecore.mixins.json`。此前 mixin 配置未被加载 →
+  `GTValuesMixin` 不执行 → 22 档电压表未安装 → 特供 GTCEu 的
+  `GTMachineModels` 初始化时 `ArrayIndexOutOfBoundsException:
+  Index 21 out of bounds for length 15`。dev 环境不受影响。
+- **双许可**：代码部分 LGPL-3.0（`LICENSE`）；本仓库自创的非代码资产
+  （贴图、模型、图形、界面素材等）以 CC BY-NC-SA 传播；第三方项目
+  仍各按原许可证。
+- **README 更迭**：去除未逐一核实的上游链接、移除已下线的 Goety 描述与
+  不存在的 `build.gradle.github` 双版本说明、按现有源码包重列目录结构，
+  并补上 Gradle 自身需 JDK 21 与 dev / 发布两条链需分别执行的说明。
+
+### 【已知限制】
+
+- 升级到本版需**替换**整合包中同名 `-all.jar`，启动日志应出现
+  `GTNEcore: installed 22-tier voltage table (TIER_COUNT=22)`。
+- JEI 升压预览自 0.0.2 起失效；诊断确认升压调用本身成功（tier 6→7），
+  问题在显示层/事件层，尚未修复。
+- 构建仍有 40 条编译警告（多为 `[removal]` 过时 API 与 mixin `@Shadow`
+  映射提示），其中原始水泵结构与波浪文字渲染待实机验证。
+
+---
+
 ### 备注
 
 - 本仓库仅发布源码；运行需自备 GTCEu 7.5.3 及整合包运行时依赖（见 README 依赖说明）。

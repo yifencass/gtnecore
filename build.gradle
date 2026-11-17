@@ -539,7 +539,7 @@ jarJar('blank:gregic-release:1.3.0') {
     // 注意：坐标必须用 blank:（flatDir 按 libs/<name>-<version>.jar 文件名匹配），
     // 写成 maven 坐标（com.tterrag.registrate / com.lowdragmc.ldlib）在 flatDir 里
     // 版本对不上、公共 maven 也没有，会直接解析失败
-compileOnly "blank:Registrate:1.3.11"
+    compileOnly "blank:Registrate:1.3.11"
     implementation fg.deobf("curse.maven:ldlib-626676:8430516")
     //curios（GT之环的佩戴判定通道；不再随 Goety 引入，独立保留）
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
@@ -560,7 +560,7 @@ compileOnly "blank:Registrate:1.3.11"
     runtimeOnly fg.deobf("curse.maven:patchouli-306770:7731017")
     // shimmer（与 oculus mixin 冲突已由 PatchShimmerMixins 处理：移除 ProgramMixin。
     // dev 运行用 patchShimmerDeobf 产出的 mapped patch jar；整合包用 patchShimmerSrg 产物）
-runtimeOnly files('build/patched/shimmer-627824-8721415-mapped-patched.jar')
+    runtimeOnly files('build/patched/shimmer-627824-8721415-mapped-patched.jar')
     //oculus
     implementation fg.deobf("curse.maven:oculus-581495:6020952")
 
